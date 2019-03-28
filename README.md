@@ -2,7 +2,7 @@
 
 Outlook-Plugin, welches Ereignisse, Aufgaben und Kontakte zwischen Outlook und Google, SOGo, Horde oder einem anderen CalDAV- oder CardDAV-Server synchronisiert. Unterstützte Outlook-Versionen sind 2019, 2016, 2013, 2010 und 2007.
 
-### Project Homepage ###
+### Projekt-Homepage ###
 [http://caldavsynchronizer.org](http://caldavsynchronizer.org)
 
 ### Lizenz ###
@@ -15,7 +15,7 @@ Outlook-Plugin, welches Ereignisse, Aufgaben und Kontakte zwischen Outlook und G
 
 Dieses Projekt wurde 2015 zunächst als Masterarbeit an der [Technischen Universität Wien](http://www.technikum-wien.at) im Studiengang Software Engineering gestartet und wird jetzt von Generalize-IT Solutions OG, FN 466962i, 1210 Wien, Österreich betrieben.
 
-Outlook CalDav Synchronizer ist freie und Open-Source-Software (FOSS). Sie können das Projekt jedoch unterstützen, indem Sie bei Sourceforge oder direkt bei PayPal spenden.
+Outlook CalDav Synchronizer ist eine freie und Open-Source-Software (FOSS). Sie können das Projekt jedoch unterstützen, indem Sie bei Sourceforge oder direkt bei PayPal spenden.
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PWA2N6P5WRSJJ&lc=US).
 
@@ -25,12 +25,11 @@ Neue Zusammenarbeit mit Nextcloud, siehe [https://nextcloud.com/blog/nextcloud-o
 
 Für eine mögliche Unternehmensunterstützung (Enterprise-Kunden) kontaktieren Sie uns bitte [hier](https://caldavsynchronizer.org/enterprise/contact/)!
 
-### Recommended Android DAV client ###
+### Empfohlener Android DAV-Client ###
 
-We work closely together and test interopability with DAVx⁵ for Android, 
-see [https://www.davx5.com](https://www.davx5.com), so we can really recommend it! Together with DAVx⁵ we now have experimental support for per-event coloring by mapping the Outlook category color to the COLOR attribute of the event.
+Wir arbeiten eng zusammen und testen die Interopabilität mit DAVx⁵ für Android. Siehe [https://www.davx5.com] (https://www.davx5.com), wir können es wirklich weiterempfehlen! Zusammen mit DAVx⁵ haben wir jetzt experimentelle Unterstützung für die Farbgebung nach Ereignissen eingebaut, indem die Farbe der Outlook-Kategorie dem Attribut COLOR des Ereignisses zugeordnet wird.
 
-### Tested CalDAV Servers ###
+### Getestete CalDAV-Server ###
 
 - Baïkal
 - Cozy Cloud
@@ -68,38 +67,38 @@ see [https://www.davx5.com](https://www.davx5.com), so we can really recommend i
 
 ### Features ###
 
-- open source AGPL, the only free Outlook CalDav plugin
-- two-way-sync
-- Localization support
-- SSL/TLS support, support for self-signed certificates and client certificate authentication
-- Manual proxy configuration support for NTLM or basic auth proxies
-- Autodiscovery of calendars and addressbooks
-- configurable sync range
-- sync multiple calendars per profile
-- sync reminders, categories, recurrences with exceptions, importance, transparency
-- sync organizer and attendees and own response status
-- task support
-- Google native Contacts API support with mapping of Google contact groups to Outlook categories.
-- Google Tasklists support (sync via Google Task Api with Outlook task folders)
-- CardDAV support to sync contacts
-- Map Outlook Distribution Lists to contacts groups in SOGo VLIST, KIND:GROUP or iCloud group format
-- time-triggered-sync
-- change-triggered-sync
-- manual-triggered-sync
-- Support for WebDAV Collection Sync (RFC 6578)
-- Category Filtering (sync CalDAV calendar/tasks to Outlook categories)
-- map CalDAV server colors to Outlook category colors
-- show reports of last sync runs and status
-- System TrayIcon with notifications
-- bulk creation of multiple profiles
-- Use server settings from Outlook IMAP/POP3 account profile
-- Map Windows to standard IANA/Olson timezones
-- Configurable mapping of Outlook custom properties
-- create DAV server calendars/addressbooks with MKCOL
-- Map Outlook formatted RTFBody to html description via X-ALT-DESC attribute
-- Support for RFC7986 per-event color handling, mapping of Outlook category color to COLOR attribute
+- Open Source AGPL, das einzige kostenlose Outlook CalDav-Plugin
+- Zwei-Wege-Synchronisation
+- Unterstützung für Lokalisierung
+- SSL / TLS-Unterstützung, Unterstützung für selbstsignierte Zertifikate und Authentifizierung von Clientzertifikaten
+- Manuelle Proxy-Konfigurationsunterstützung für NTLM oder Basic-Auth-Proxys
+- Automatische Erkennung von Kalendern und Adressbüchern
+- Konfigurierbarer Synchronisationsbereich
+- Synchronisieren Sie mehrere Kalender pro Profil
+- Synchronisieren Sie Erinnerungen, Kategorien, Wiederholungen mit Ausnahmen, Wichtigkeit, Transparenz
+- Synchronisieren Sie Organizer und Teilnehmer und den eigenen Antwortstatus
+- Task-Unterstützung
+- Google native Kontakte-API-Unterstützung mit Zuordnung von Google-Kontaktgruppen zu Outlook-Kategorien.
+- Unterstützung für Google-Tasklisten (Synchronisierung über Google Task Api mit Outlook-Aufgabenordnern)
+- CardDAV-Unterstützung zum Synchronisieren von Kontakten
+- Ordnen Sie Outlook-Verteilungslisten Kontaktgruppen im SOGo VLIST-, KIND: GROUP- oder iCloud-Gruppenformat zu
+- Zeitgesteuerte Synchronisation
+- Änderungsgesteuerte Synchronisation
+- Manuell ausgelöste Synchronisation
+- Unterstützung für die Synchronisierung der WebDAV-Sammlung (RFC 6578)
+- Kategoriefilterung (CalDAV-Kalender / -Tasks mit Outlook-Kategorien synchronisieren)
+- Ordnen Sie die CalDAV-Serverfarben den Outlook-Kategorienfarben zu
+- Zeigt Berichte über die letzten Synchronisierungsläufe und den Status an
+- Taskleistensymbol mit Benachrichtigungen
+- Massenerstellung mehrerer Profile
+- Verwenden Sie die Servereinstellungen aus dem Outlook IMAP / POP3-Kontoprofil
+- Ordnen Sie die Windows- den Standard-IANA / Olson-Zeitzonen zu
+- Konfigurierbare Zuordnung von benutzerdefinierten Eigenschaften von Outlook
+- Erstellen Sie DAV-Serverkalender / Adressbücher mit MKCOL
+- Zuordnen von Outlook-formatierten RTF-Objekten zu HTML-Beschreibungen über das Attribut X-ALT-DESC
+- Unterstützung für RFC7986-Farbverarbeitung für Ereignisse, Zuordnung der Farbe der Outlook-Kategorie zum Attribut COLOR
 
-### Used Libraries ###
+### Verwendete Bibliotheken ###
 
 -  [DDay.iCal](http://www.ddaysoftware.com/Pages/Projects/DDay.iCal/)
 -  [Apache log4net](https://logging.apache.org/log4net/)
@@ -107,7 +106,7 @@ see [https://www.davx5.com](https://www.davx5.com), so we can really recommend i
 -  [NodaTime](http://nodatime.org/)
 -  [ColorMine](https://www.nuget.org/packages/ColorMine/)
 
-### Install instructions ###
+### Installationsanweisungen ###
 
 **WARNING**: Beginning with release 3.0.0 .NET framework 4.6.1 is the minimal requirement.
 
