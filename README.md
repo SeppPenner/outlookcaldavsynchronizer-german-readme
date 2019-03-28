@@ -27,7 +27,7 @@ Für eine mögliche Unternehmensunterstützung (Enterprise-Kunden) kontaktieren 
 
 ### Empfohlener Android DAV-Client ###
 
-Wir arbeiten eng zusammen und testen die Interopabilität mit DAVx⁵ für Android. Siehe [https://www.davx5.com] (https://www.davx5.com), wir können es wirklich weiterempfehlen! Zusammen mit DAVx⁵ haben wir jetzt experimentelle Unterstützung für die Farbgebung nach Ereignissen eingebaut, indem die Farbe der Outlook-Kategorie dem Attribut COLOR des Ereignisses zugeordnet wird.
+Wir arbeiten eng zusammen und testen die Interopabilität mit DAVx⁵ für Android. Siehe [https://www.davx5.com](https://www.davx5.com), wir können es wirklich weiterempfehlen! Zusammen mit DAVx⁵ haben wir jetzt experimentelle Unterstützung für die Farbgebung nach Ereignissen eingebaut, indem die Farbe der Outlook-Kategorie dem Attribut COLOR des Ereignisses zugeordnet wird.
 
 ### Getestete CalDAV-Server ###
 
