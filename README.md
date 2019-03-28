@@ -1,29 +1,29 @@
 ## Outlook CalDav Synchronizer ##
 
-Outlook Plugin, which synchronizes events, tasks and contacts between Outlook and Google, SOGo, Horde or any other CalDAV or CardDAV server. Supported Outlook versions are 2019, 2016, 2013, 2010 and 2007.
+Outlook-Plugin, welches Ereignisse, Aufgaben und Kontakte zwischen Outlook und Google, SOGo, Horde oder einem anderen CalDAV- oder CardDAV-Server synchronisiert. Unterstützte Outlook-Versionen sind 2019, 2016, 2013, 2010 und 2007.
 
 ### Project Homepage ###
 [http://caldavsynchronizer.org](http://caldavsynchronizer.org)
 
-### License ###
+### Lizenz ###
 [Affero GNU Public License](https://www.gnu.org/licenses/agpl-3.0.html)
 
-### Authors ###
+### Autoren ###
 
 - [Gerhard Zehetbauer](https://sourceforge.net/u/nertsch/profile/)
 - [Alexander Nimmervoll](https://sourceforge.net/u/nimm/profile/)
 
-This project was initially started in 2015 as a master thesis project at the [University of Applied Sciences Technikum Wien](http://www.technikum-wien.at), Software Engineering Degree program and is now powered by Generalize-IT Solutions OG, FN 466962i, 1210 Vienna, Austria.
+Dieses Projekt wurde 2015 zunächst als Masterarbeit an der [Technischen Universität Wien](http://www.technikum-wien.at) im Studiengang Software Engineering gestartet und wird jetzt von Generalize-IT Solutions OG, FN 466962i, 1210 Wien, Österreich betrieben.
 
-Outlook CalDav Synchronizer is Free and Open-Source Software (FOSS), still you can support the project by donating on Sourceforge or directly at PayPal
+Outlook CalDav Synchronizer ist freie und Open-Source-Software (FOSS). Sie können das Projekt jedoch unterstützen, indem Sie bei Sourceforge oder direkt bei PayPal spenden.
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PWA2N6P5WRSJJ&lc=US).
 
-### Collaboration with Nextcloud ###
+### Zusammenarbeit mit Nextcloud ###
 
-New collaboration with Nextcloud, see [https://nextcloud.com/blog/nextcloud-offers-caldav-synchronizer-for-outlook-users/](https://nextcloud.com/blog/nextcloud-offers-caldav-synchronizer-for-outlook-users/) 
+Neue Zusammenarbeit mit Nextcloud, siehe [https://nextcloud.com/blog/nextcloud-offers-caldav-synchronizer-for-outlook-users/](https://nextcloud.com/blog/nextcloud-offers-caldav-synchronizer-for-outlook-users/).
 
-For possible enterprise support, please contact us [here](https://caldavsynchronizer.org/enterprise/contact/)!
+Für eine mögliche Unternehmensunterstützung (Enterprise-Kunden) kontaktieren Sie uns bitte [hier](https://caldavsynchronizer.org/enterprise/contact/)!
 
 ### Recommended Android DAV client ###
 
