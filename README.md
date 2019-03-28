@@ -108,23 +108,22 @@ Wir arbeiten eng zusammen und testen die Interopabilität mit DAVx⁵ für Andro
 
 ### Installationsanweisungen ###
 
-**WARNING**: Beginning with release 3.0.0 .NET framework 4.6.1 is the minimal requirement.
+**WARNUNG**: Ab Release 3.0.0 ist .NET Framework 4.6.1 die Mindestanforderung.
 
-Download and extract the `OutlookCalDavSynchronizer-<Version>.zip` into any directory and start setup.exe. You can change the default install path, but you need to use a directory on the `C:\` drive.
-If the installer is complaining about the missing Visual Studio 2010 Tools for Office Runtime, install it manually from [Microsoft Download Link](https://www.microsoft.com/en-us/download/details.aspx?id=56961)
-You should also update manually to the latest Visual Studio 2010 Tools for Office Runtime (Version 10.0.60828) if you have an older version installed, since some COMExceptions have been fixed.
+Laden Sie die `OutlookCalDavSynchronizer-<Version>.zip`-Datei herunter, entpacken Sie sie in ein beliebiges Verzeichnis und starten Sie die Datei setup.exe. Sie können den Standardinstallationspfad ändern, aber Sie müssen ein Verzeichnis auf dem `C:\` -Laufwerk verwenden. Wenn sich das Installationsprogramm über die fehlenden Visual Studio 2010-Tools für Office Runtime beschwert, installieren Sie es manuell über [Microsoft Download-Link](https://www.microsoft.com/en-us/download/details.aspx?id=56961).
+Sie sollten auch manuell auf die neuesten Visual Studio 2010 Tools für Office Runtime (Version 10.0.60828) aktualisieren, wenn Sie eine ältere Version installiert haben, da einige COMExceptions behoben wurden.
 
-Beginning with version 2.9.0 the default install location is `ProgramFilesDir\CalDavSynchronizer\` and the installer remembers the chosen directory for the next updates. Also the install option to install for Everyone instead of the current user is working now for Outlook 2010 and higher, if you want to install the addin for all users on the current machine. For Outlook 2007 you can only install the addin for the current user.
+Ab Version 2.9.0 ist das Standardinstallationsverzeichnis `ProgramFilesDir\CalDavSynchronizer\` und das Installationsprogramm speichert das Verzeichnis für die nächsten Updates. Die Installationsoption für die Installation von Jeder anstelle des aktuellen Benutzers funktioniert jetzt für Outlook 2010 und höher, wenn Sie das Add-In für alle Benutzer auf dem aktuellen Computer installieren möchten. Für Outlook 2007 können Sie das Add-In nur für den aktuellen Benutzer installieren.
 
-We recommend updating to the latest .Net Framework but the minimal required version is .NET 4.6.1, which is not supported on Windows XP. If you need Outlook CalDav Synchronizer for Windows XP you can download a backport to .Net 4.0 from a forked project [here](https://sourceforge.net/projects/outlookcaldavsynchronizerxp/), thanks to [Salvatore Isaja](https://sourceforge.net/u/salvois/profile/) for the awesome work!
+Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal erforderliche Version ist .NET 4.6.1, die unter Windows XP nicht unterstützt wird. Wenn Sie Outlook CalDav Synchronizer für Windows XP benötigen, können Sie von [hier](https://sourceforge.net/projects/outlookcaldavsynchronizerxp/) einen Backport auf .Net 4.0 herunterladen, danke, [Salvatore Isaja](https://sourceforge.net/u/salvois/profile/) für die großartige Arbeit!
 
-### Changelog ###
+### Änderungsprotokoll ###
 
 #### 3.5.0 ####
-- Released 2019/02/26
-- New features
-	- Add profile type for EGroupware.
-	- Add profile type for FastMail.
+- Erschienen am 26.02.02
+- Neue Features
+	- Fügen Sie den Profiltyp für EGroupware hinzu.
+	- Fügen Sie einen Profiltyp für FastMail hinzu.
 	- Map formatted description from Google calendar.
 	- Execute server access for Contact sync in Background.
 	- Remove general option 'Fix invalid settings'.
