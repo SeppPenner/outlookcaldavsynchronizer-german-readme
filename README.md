@@ -120,116 +120,115 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 ### Änderungsprotokoll ###
 
 #### 3.5.0 ####
-- Erschienen am 26.02.02
+- Erschienen am 26.02.2019
 - Neue Features
-	- Fügen Sie den Profiltyp für EGroupware hinzu.
-	- Fügen Sie einen Profiltyp für FastMail hinzu.
-	- Map formatted description from Google calendar.
-	- Execute server access for Contact sync in Background.
-	- Remove general option 'Fix invalid settings'.
-- Bug fixes
-	- Improve GetOwner and check also for organizer property if owner property not found (Workaround for OpenX-change).
-	- Improve SOGo profile and add VLIST distribution list mapping to default profile settings.
-	- Improve bulk profile creation and set correct synchronization mode and update server email and scheduling settings.
-	- Use same value type and tzid for RECURRENCE-ID as for DTSTART to be compliant with RFC 5545.
-	- Fix generation of originalOutlookDatesWithExceptions. Always use target timezone.
+	- Hinzufügen des Profiltyps für EGroupware.
+	- Hinzufügen des Profiltyps für FastMail.
+	- Mapping der formatierten Beschreibung aus dem Google Kalender.
+	- Ausführen des Serverzugriffs für die Kontaktsynchronisierung im Hintergrund.
+	- Entfernen der allgemeinen Option "Ungültige Einstellungen korrigieren".
+- Fehlerbehebungen
+	- Verbesserung der GetOwner und überprüfen der Organiser-Eigenschaft, wenn die Besitzereigenschaft nicht gefunden wurde (Workaround für OpenX-change).
+	- Verbessertes SOGo-Profil und Hinzufügen von VLIST-Verteilerlisten zu den Standardprofileinstellungen.
+	- Verbesserte Massenprofilerstellung und Einstellung des korrekten Synchronisationsmodus sowie Aktualisierung der E-Mail- und Planungseinstellungen des Servers.
+	- Für RECURRENCE-ID wurde derselbe Werttyp und die gleiche Tzid wie für DTSTART verwendet, um mit RFC 5545 kompatibel zu sein.
+	- Die Erzeugung von originalOutlookDatesWithExceptions wurde korrigiert. Verwendet immer die Zielzeitzone.
 
 #### 3.4.0 ####
-- Released 2019/01/13
-- New features
-	- Add calendar-proxy support for autodiscovery (calendar-proxy-read-for, calendar-proxy-write-for), feature request 103.
-	- Show access rights in autodiscovery resource selection.
-	- Add option to set organizer on behalf of server identity.
-	- Add discovery of server email address and set act on behalf of server identity as default for shared writable calendars.
-	- Improve tooltips in SelectResourceForm and show resource URI and color values as tooltip.
-	- Update Swisscom profile setup.
-	- Add contact mapping configuration option to map anniversary dates for contacts. Supports ANNIVERSARY, X-ANNIVERSARY and X-MS-ANNIVERSARY properties and writes ANNIVERSARY.
-	- Add option to map task reminders as absolute DATE-TIME value, needed for IOS, feature request 105.
-	- Add Brazilian portuguese translations. Thanks to Flávio Zarur Lucarelli!
-- Bug fixes
-	- Ignore empty PHOTO properties in vCards.
-	- Fall back to short-term ENTRYID if long-term is not available in QueryOutlookFolderByGetTableStrategy to avoid ArgumentException in row.BinaryToString().
-	- Log errors during entity deletion.
-	- Fix GetCurrentUserPrincipalUrl. Select only href node.
-	- Fix task reminders relative to DUE date.
-	- Fix UI typos and translations.
+- Erschienen am 13.01.2019
+- Neue Features
+	- Unterstützung für Kalender-Proxy für automatische Erkennung (Kalender-Proxy-Lesezugriff, Kalender-Proxy-Schreibzugriff), Feature-Request 103 hinzugefügt.
+	- Zugriffsrechte in der Auswahlauswahl für die automatische Erkennung anzeigen.
+	- Option hinzugefügt, um den Organiser für die Serveridentität festzulegen.
+	- Erkennung der Server-E-Mail-Adresse wurde hinzugefügt und als Standard für freigegebene schreibbare Kalender festgelegt.
+	- Verbesserte Tooltips in SelectResourceForm und Anzeige von Ressourcen-URI und Farbwerten als Tooltip.
+	- Swisscom-Profileinrichtung wurde aktualisiert.
+	- Konfigurationsoption für die Kontaktzuordnung hinzugefügt, um Jubiläumsdaten zu Kontakten zuzuordnen. Unterstützt die Eigenschaften ANNIVERSARY, X-ANNIVERSARY und X-MS-ANNIVERSARY und schreibt ANNIVERSARY.
+	- Option hinzugefügt, um Aufgabenerinnerungen als absoluten DATE-TIME-Wert zuzuordnen, was für IOS erforderlich ist, Feature-Request 105.
+	- Brasilianisches Portugiesisch-Übersetzungen hinzugefügt. Danke an Flávio Zarur Lucarelli!
+- Fehlerbehebungen
+	- Leere PHOTO-Eigenschaften in vCards ignorieren.
+	- Wenn in QueryOutlookFolderByGetTableStrategy keine Langzeit-Wert verfügbar ist, greife auf die kurzfristige ENTRYID zurück, um ArgumentException in row.BinaryToString() zu vermeiden.
+	- Fehler beim Löschen von Entitäten protokollieren.
+	- Fehler in GetCurrentUserPrincipalUrl behoben. Wählt nur den Href-Knoten aus.
+	- Fehler in den Aufgabenerinnerungen relativ zum DUE-Datum behoben.
+	- Fehler in der Benutzeroberfläche und Übersetzungen behoben.
 
 #### 3.3.0 ####
-- Released 2018/12/09
-- New features
-	- Add Open-Xchange profile type.
-	- Add iCloud Calendar profile type.
-- Bug fixes
-	- Ignore alarms with ACTION different to DISPLAY to not sync email alarms as Outlook reminders, ticket #978.
-	- Force organizer of exception to be the same as event organizer to avoid SameOrganizerForAllComponentsException. Github issues 240,244.
-	- Move using block inside try/catch in Create to avoid issues with SaveAndReload of new empty AppointmentItems.
-	- Improve deserialization of SOGo VLISTs.
-	- Limit CalDav-resourcenames to 255 chars.
+- Erschienen am 09.12.2018
+- Neue Features
+	- Open-Xchange-Profiltyp hinzugefügt.
+	- ICloud Calendar-Profiltyp hinzugefügt.
+- Fehlerbehebungen
+	- Ignorieren von Alarmen, bei denen sich ACTION von DISPLAY unterscheidet, um E-Mail-Alarme nicht als Outlook-Erinnerungen zu synchronisieren, Ticket # 978.
+	- Erzwingen, dass der Organiser der Ausnahme mit dem Ereignisorganisator identisch ist, um SameOrganizerForAllComponentsException zu vermeiden. Github-Issues 240 und 244.
+	- Using-Block in try/catch verschoben, um Fehler mit SaveAndReload von leeren AppointmentItems zu vermeiden.
+	- Verbesserte Deserialisierung von SOGo-VLISTs.
+	- Begrenzung der CalDav-Ressourcen auf 255 Zeichen.
 
 #### 3.2.1 ####
-- Released 2018/09/11
-- Bug fixes
-	- Set Default BusyStatus to Free for AllDay events without TRANSP set, ticket #951.
-	- Set WebResourceName comparison to case sensitive, avoid problems with DavMail URIs.
-	- Fix Unit Tests.
-	- Improve Integration Tests.
-	- Check Internet connection async to avoid blocking in case of DNS issues, ticket #968.
+- Erschienen am 2018/09/11
+- Fehlerbehebungen
+	- Setzen des Default BusyStatus auf Free für AllDay-Ereignisse, ohne dass TRANSP gesetzt ist, Ticket #951.
+	- Setzen des Vergleichs von WebResourceName auf Case-Sensitiv, vermeiden von Problemen mit DavMail-URIs.
+	- Fehler in Unit Tests behoben.
+	- Verbesserte Integrationstests.
+	- Überprüfung der Internetverbindung asynchron, um das Blockieren bei DNS-Problemen zu vermeiden, Ticket #968.
 
 #### 3.2.0 ####
-- Released 2018/05/17
-- New features
-	- Add French and Italian translations.
-	- Update NuGet packages.
-- Bug fixes
-	- Remove duplicate categories (Ticket #881).
-	- Catch not only COMExceptions in OutlookUtility functions, gh issue 229.
-	- Fix typo in german translation.
+- Erschienen am 2018/05/17
+- Neue Features
+	- Französische und italienische Übersetzungen hinzugefügt.
+	- NuGet-Pakete wurden aktualisiert.
+- Fehlerbehebungen
+	- Doppelte Kategorien wurden entfernt (Ticket #881).
+	- Nicht nur COMExceptions in OutlookUtility-Funktionen abfangen, siehe Issue 229.
+	- Tippfehler in deutscher Übersetzung behoben.
 
 #### 3.1.1 ####
-- Released 2018/05/02
-- Bug fixes
-	- Remove Email from Recipient CN. Should avoid attendees with Name (Email) <Email>.
-	- Escape Backslash, DDay.iCal workaround. ticket #810, gh issue 226.
+- Erschienen am 2018/05/02
+- Fehlerbehebungen
+	- E-Mail aus Empfänger CN entfernt. Sollte Teilnehmer mit Name (E-Mail) <E-Mail> vermeiden.
+	- Escapen des Backslashes, DDay.iCal workaround. Ticket #810, Issue 226.
 
 #### 3.1.0 ####
-- Released 2018/03/25
-- New features
-	- Map tentative to TRANSP:OPAQUE instead of TRANSPARENT, feature request 94.
-	- Add event mapping configuration to map Outlook public events to default visibility instead of public, feature request 98. Set this option as default for google profiles.
-- Bug fixes
-	- Fix translation for OL2007 toolbar, ticket #821.
-	- Update some Russian and German translations.
-	- Fix integration tests.
-	- Fix selection of reports in Listview.
-	- Fix report name parsing for large sequence numbers.
-	- Ticket 842: read all pages from google task service.
-	- Retry without sync-token if sync-token is invalid.
-	- Fix mapping of weekday recurrence rule with FREQ=DAILY;BYDAY=MO,TU,WE,TH,FR
-ticket #847.
+- Erschienen am 2018/03/25
+- Neue Features
+	- Zuordnung von tentative zu TRANSP: OPAQUE statt TRANSPARENT, Feature-Request 94.
+	- Ereigniszuordnungskonfiguration hinzugefügt, um öffentliche Outlook-Ereignisse der Standardsichtbarkeit statt der öffentlichen zuzuordnen, Feature-Request 98. Festlegen dieser Option als Standard für Google-Profile.
+- Fehlerbehebungen
+	- Korrektur der Übersetzung für die OL2007-Symbolleiste, Ticket #821.
+	- Einige russische und deutsche Übersetzungen wurden aktualisiert.
+	- Fehler in Integrationstests behoben.
+	- Die Auswahl von Berichten in der Listenansicht wurde korrigiert.
+	- Fehler beim Parsen von Berichtsnamen für große Sequenznummern behoben.
+	- Ticket 842: Alle Seiten des Google Task Service lesen.
+	- Wiederholen ohne Sync-Token, wenn Sync-Token ungültig ist.
+	- Die Zuordnung der Wochentags-Wiederholungsregel mit FREQ=DAILY;BYDAY=MO,TU,WE,TH,FR wurde korrigiert, Ticket #847.
 
 #### 3.0.0 ####
-- Released 2018/02/10
-- **WARNING**: This release is a major upgrade and needs .NET framework 4.6.1 as minimal requirement. Automatic upgrade won't work if you still have only .NET framework 4.5 installed. Install and upgrade manually in that case!
+- Erschienen am 2018/02/10
+- **WARNUNG**: Diese Version ist ein bedeutendes Upgrade und erfordert .NET Framework 4.6.1 als Mindestanforderung. Das automatische Upgrade funktioniert nicht, wenn Sie nur noch .NET Framework 4.5 installiert haben. Installieren und aktualisieren Sie in diesem Fall manuell!
 
-- New features
-	- Use .NET framework 4.6.1.
-	- Added localization support.
-	- Added German and Russian translations (more to come and help wanted, contact us!)
-	- Added general option to switch UI language (needs restart of Outlook to take effect).
-	- UI redesign for general options with WPF TabControl.
-	- Improve accessibility by adding keytips to ribbon.
-	- Added ProfileType for Swisscom.
-	- Update of Google API and other NuGet packages.
-	- Sort sync reports.
-- Bug fixes
-	- Fixed many typos.
-	- Fixed some UI inconsistencies and content fit to screen issues.
-	- Improve logging.
-	- Improve Profile Status.
-	- Improve IntegrationTests.
+- Neue Features
+	- Upgrade auf .NET Framework 4.6.1.
+	- Lokalisierungsunterstützung hinzugefügt.
+	- Deutsche und russische Übersetzungen hinzugefügt (Weitere folgen und Hilfe erwünscht, kontaktiere uns!)
+	- Allgemeine Option zum Umschalten der Sprache der Benutzeroberfläche hinzugefügt (zum Neustart von Outlook ist ein Effekt erforderlich).
+	- UI-Neugestaltung für allgemeine Optionen mit WPF TabControl.
+	- Verbesserte Erreichbarkeit durch Hinzufügen von Schlüsselwörtern zum Menüband.
+	- Profiltyp für Swisscom hinzugefügt.
+	- Google API und andere NuGet-Pakete wurden aktualisiert.
+	- Sortierung von Synchronisierungsberichten.
+- Fehlerbehebungen
+	- Viele Tippfehler behoben.
+	- Einige Inkonsistenzen der Benutzeroberfläche und der Inhalt, der an Bildschirmprobleme angepasst wurde, wurden behoben.
+	- Verbesserte Log-Protokollierung.
+	- Verbesserter Profilstatus.
+	- Verbesserte Integrationstests.
 
 #### 2.27.0 ####
-- Released 2017/12/23
+- Erschienen am 2017/12/23
 - New features
 	- Add Kolab profile, credits to Achim Leitner.
 	- Improve default Button behavior.
@@ -245,7 +244,7 @@ ticket #847.
 	- Fix Integration tests.
 
 #### 2.26.0 ####
-- Released 2017/11/15
+- Erschienen am 2017/11/15
 - New features
 	- New Logo and Application Icon, thanks to Michael C. Krieter!
 	- Add support for absolute alarms and alarms relative to the end and map them to Outlook reminders if the alarm is before the appointment start (otherwhise not supported in Outlook), feature request  82.
@@ -258,7 +257,7 @@ ticket #847.
 	- Set PercentCompleted after setting the task status in TaskMapper to avoid that the value gets lost if status in not in progress.
 	
 #### 2.25.0 ####
-- Released 2017/10/07
+- Erschienen am 2017/10/07
 - New features
 	- Add optional WebDAV Collection Sync (RFC 6578) for calendar and addressbook collections, which speeds up the detection of server changes dramatically but excludes the possibility to use the time range filter.
 	- Improve EventColor-Category mapping and use existing categories if color matches.
@@ -271,7 +270,7 @@ ticket #847.
 	- Catch not only COMExceptions when responding to meeting invites, ticket #721.
 
 #### 2.24.0 ####
-- Released 2017/09/12
+- Erschienen am 2017/09/12
 - New features
 	- Add support for RFC7986 per-event color handling, mapping of Outlook category color to COLOR attribute, feature request #76.
 	- Add ProfileType for mail.de.
@@ -286,7 +285,7 @@ ticket #847.
 	-  Some code cleanup and refactoring.
 
 #### 2.23.0 ####
-- Released 2017/08/13
+- Erschienen am 2017/08/13
 - New features
 	- Add ProfileType for SmarterMail.
 	- Update REV property for vcards, gh issue 204.
@@ -295,7 +294,7 @@ ticket #847.
 	- Avoid IndexOutOfRangeException when parsing IMAddress, ticket #652.
 
 #### 2.22.2 ####
-- Released 2017/07/12
+- Erschienen am 2017/07/12
 - Bug fixes
 	- Make Outlook-TimeZone-Ids case insensitive and prevent ArgumentException, tickets #640,#649.
 	- Delete leftover entities, if creation in outlook fails.
@@ -303,13 +302,13 @@ ticket #847.
 	- Enable chunked synchronization be default.
 	
 #### 2.22.1 ####
-- Released 2017/06/22
+- Erschienen am 2017/06/22
 - Bug fixes
 	- Fix InitialMatching for GoogleContacts and GoogleTasks if there are more new OutlookItems than ChunkSize and avoid InvalidOperationException (Cannot access a disposed object!), ticket #632.
 	- Fix #611 CALDAV hangs Outlook , #613 CalDav locking up Outlook, remove DoEvents call in sync progress bar.
 
 #### 2.22.0 ####
-- Released 2017/06/21
+- Erschienen am 2017/06/21
 - New features
 	- Add contact mapping configuration to choose default IM protocol when writing IM addresses, ticket #543.
 	- Add contact mapping configuration to write IM addresses as IMPP attribute instead of X-PROTOCOL e.g. X-AIM, ticket #543.
@@ -321,7 +320,7 @@ ticket #847.
 	- Improve Logging. 
 
 #### 2.21.0 ####
-- Released 2017/05/30
+- Erschienen am 2017/05/30
 - New features
 	- Update NodaTime to version 2 to improve timezone calculations.
 	- Update Google APIs NuGet packages.
@@ -329,7 +328,7 @@ ticket #847.
 	- Don't enable chunked synchronization by default.
 
 #### 2.20.0 ####
-- Released 2017/05/29
+- Erschienen am 2017/05/29
 - New features
 	- Full support for chunked synchronization
 - Bug fixes
@@ -338,7 +337,7 @@ ticket #847.
 	- Fix reading vcard KEY attribute if encoding is not set explicitely to base64, gh issue 195.
 
 #### 2.19.2 ####
-- Released 2017/05/13
+- Erschienen am 2017/05/13
 - Bug fixes
 	- Honor chunk size also for Google Contact API read calls, ticket #586.
 	- Switch mapping of email addresses and map HOME to email1 and WORK to email2 to be more consistent, gh ticket 193.
@@ -348,13 +347,13 @@ ticket #847.
 	- Improve IntegrationTests.
 
 #### 2.19.1 ####
-- Released 2017/04/18
+- Erschienen am 2017/04/18
 - Bug fixes
 	- Fix toolbar not accessable within Outlook2007, ticket #570.
 	- Improve IntegrationTests.
 
 #### 2.19.0 ####
-- Released 2017/04/16
+- Erschienen am 2017/04/16
 - New features
 	- Abort and postpone synchronization when server reports HTTP 429.
 	- Abort synchronization on network related exceptions and consider them as warnings the first two times they occur. This should help avoid errors on laptop startup after hibernation or if VPN is not ready yet, GH issues #104,#181.
@@ -365,7 +364,7 @@ ticket #847.
 	- Fix mapping of google home-only email address to Outlook Email1Address, ticket #561.
 	
 #### 2.18.0 ####
-- Released 2017/03/26
+- Erschienen am 2017/03/26
 - New features
 	- Add mapping of distribution lists to contact groups with KIND:group
 	- Add profile type for Easy Project / Easy Redmine with special setup wizard
@@ -377,7 +376,7 @@ ticket #847.
 	- Update NuGet packages.
 
 #### 2.17.0 ####
-- Released 2017/02/26
+- Erschienen am 2017/02/26
 - New features
 	- Add general option to show/hide sync progress bar and make threshold for its display configurable.
 	- Add App.config setting for SoftwareOnly WPF Rendering to avoid issues with graphics card drivers and hardware acceleration, ticket #480.
@@ -386,7 +385,7 @@ ticket #847.
 	- Follow redirect also for 303 in WebDabClient, ticket #516.
 
 #### 2.16.0 ####
-- Released 2017/02/14
+- Erschienen am 2017/02/14
 - New features
 	- Add warning if one-way synchronization mode would lead to deletion of the existing non empty outlook folder or replication of an empty folder to the server.
 	- Add possibility to use chunked execution also for Google contacts.
@@ -397,13 +396,13 @@ ticket #847.
 	- Assume that a HTTP-404 denotes an empty addressbook only, if the addressbook resource exists.
 
 #### 2.15.1 ####
-- Released 2017/01/31
+- Erschienen am 2017/01/31
 - Bug fixes
 	- Avoid Exception in QueryAppointmentFolder when GlobalAppointmentID can't be accessed or is null, ticket #491.
 	- Make GeneralOptions window resizable and add scrollbar, avoids issues on low resolution devices.
 
 #### 2.15.0 ####
-- Released 2017/01/29
+- Erschienen am 2017/01/29
 - New features
 	- Huge performance improvements accessing Outlook folder data when nothing changed and avoid fetching all items, add general option to configure the folder query option.
 	- Many UI improvements, add link to show/hide advanced settings and general option to set default
@@ -421,12 +420,12 @@ ticket #847.
 	- Workaround for reading wrong encoded vcard PHOTO attributes from SOGo global addressbooks mapped from LDAP/AD avatar pictures.
 	
 #### 2.14.1 ####
-- Released 2017/01/17
+- Erschienen am 2017/01/17
 - Bug fixes
 	- Update installer to fix dependency for Thought.vCards.
 
 #### 2.14.0 ####
-- Released 2017/01/16
+- Erschienen am 2017/01/16
 - New features
 	- Initial support for syncing contact groups/Distribution Lists (only supports SOGos own VLIST format right now).
 	- Include own version of Thought.vCards from [https://github.com/aluxnimm/Thought.vCards](https://github.com/aluxnimm/Thought.vCards) instead of NuGet package and remove vCardImprovedWriter.
@@ -439,7 +438,7 @@ ticket #847.
 	- Update project urls in about dialog.
 
 #### 2.13.0 ####
-- Released 2017/01/03
+- Erschienen am 2017/01/03
 - Upgrade instructions
 	- Outlook and Google and some other CalDAV servers calculate the intersection with the time-range differently for recurring events which can cause doubled or deleted events, so it is recommended to select a time-range which is larger than the largest interval of your recurring events (e.g. 1 year for birthdays). The default timerange for new profiles is changed from 180 days to 365 days in the future, for existing sync profiles you need to change it manually if affected!
 - New features
