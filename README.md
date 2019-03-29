@@ -167,7 +167,7 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 	- Begrenzung der CalDav-Ressourcen auf 255 Zeichen.
 
 #### 3.2.1 ####
-- Erschienen am 2018/09/11
+- Erschienen am 11.09.2018
 - Fehlerbehebungen
 	- Setzen des Default BusyStatus auf Free für AllDay-Ereignisse, ohne dass TRANSP gesetzt ist, Ticket #951.
 	- Setzen des Vergleichs von WebResourceName auf Case-Sensitiv, vermeiden von Problemen mit DavMail-URIs.
@@ -176,7 +176,7 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 	- Überprüfung der Internetverbindung asynchron, um das Blockieren bei DNS-Problemen zu vermeiden, Ticket #968.
 
 #### 3.2.0 ####
-- Erschienen am 2018/05/17
+- Erschienen am 17.05.2018
 - Neue Features
 	- Französische und italienische Übersetzungen hinzugefügt.
 	- NuGet-Pakete wurden aktualisiert.
@@ -186,13 +186,13 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 	- Tippfehler in deutscher Übersetzung behoben.
 
 #### 3.1.1 ####
-- Erschienen am 2018/05/02
+- Erschienen am 02.05.2018
 - Fehlerbehebungen
 	- E-Mail aus Empfänger CN entfernt. Sollte Teilnehmer mit Name (E-Mail) <E-Mail> vermeiden.
 	- Escapen des Backslashes, DDay.iCal workaround. Ticket #810, Issue 226.
 
 #### 3.1.0 ####
-- Erschienen am 2018/03/25
+- Erschienen am 25.03.2018
 - Neue Features
 	- Zuordnung von tentative zu TRANSP: OPAQUE statt TRANSPARENT, Feature-Request 94.
 	- Ereigniszuordnungskonfiguration hinzugefügt, um öffentliche Outlook-Ereignisse der Standardsichtbarkeit statt der öffentlichen zuzuordnen, Feature-Request 98. Festlegen dieser Option als Standard für Google-Profile.
@@ -207,7 +207,7 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 	- Die Zuordnung der Wochentags-Wiederholungsregel mit FREQ=DAILY;BYDAY=MO,TU,WE,TH,FR wurde korrigiert, Ticket #847.
 
 #### 3.0.0 ####
-- Erschienen am 2018/02/10
+- Erschienen am 10.02.2018
 - **WARNUNG**: Diese Version ist ein bedeutendes Upgrade und erfordert .NET Framework 4.6.1 als Mindestanforderung. Das automatische Upgrade funktioniert nicht, wenn Sie nur noch .NET Framework 4.5 installiert haben. Installieren und aktualisieren Sie in diesem Fall manuell!
 
 - Neue Features
@@ -228,40 +228,40 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 	- Verbesserte Integrationstests.
 
 #### 2.27.0 ####
-- Erschienen am 2017/12/23
-- New features
-	- Add Kolab profile, credits to Achim Leitner.
-	- Improve default Button behavior.
-	- Add mapping of Outlook OfficeLocation to work ExtendedAddress attribute.
-	- Refactoring and Restructuring of ProfileTypes.
-- Bug fixes
-	- Unescape also COLON in vCardStandardReader do avoid problems with some servers wrongly encoding vCard NOTES, ticket #741.
-	- Disable "Map Organizer and Attendees" for Google by default.
-	- Cache sync run results, so that TransientProfileStatusesViewModel is not empty when opened, gh issue 217.
-	- Fix handling of vCard ORG property for mapping of organization and department to Outlook CompanyName and Department properties.
-	- Fix exception when reconstructing master event, ticket #777.
-	- Improve Logging.
-	- Fix Integration tests.
+- Erschienen am 23.12.2017
+- Neue Features
+	- Kolab-Profil hinzugefügt, Dank an Achim Leitner.
+	- Verbessertes Standardverhalten von Schaltflächen.
+	- Zuordnung von Outlook OfficeLocation zum ExtendedAddress-Attribut hinzugefügt.
+	- Refactoring und Restrukturierung von Profiltypen.
+- Fehlerbehebungen
+	- Entfernung des Escapings in vCardStandardReader, um Probleme mit einigen Servern zu vermeiden, die vCard NOTES falsch enkodieren, siehe Ticket #741.
+	- "Google Maps Organizer und Teilnehmer" ist nun standardmäßig für Google deaktiviert.
+	- Zwischenspeichern der Synchronisierungslaufergebnisse, damit ViewModelTransientProfileStatuses beim Öffnen nicht leer ist, siehe Issue 217.
+	- Die Behandlung der vCard-ORG-Eigenschaft für die Zuordnung von Organisation und Abteilung zu Outlook-Firmennamen und Abteilungseigenschaften wurde korrigiert.
+	- Ausnahme beim Rekonstruieren eines Hauptereignisses behoben, Ticket #777.
+	- Verbesserte Log-Protokollierung.
+	- Fehler in Integrationstests behoben.
 
 #### 2.26.0 ####
-- Erschienen am 2017/11/15
-- New features
-	- New Logo and Application Icon, thanks to Michael C. Krieter!
-	- Add support for absolute alarms and alarms relative to the end and map them to Outlook reminders if the alarm is before the appointment start (otherwhise not supported in Outlook), feature request  82.
-- Bug fixes
-	- Improve Color and ShortcutKey mapping.
-	- Disable IsCategoryFilterSticky also for Events by default.
-	- Improve profile separation.
-	- Create Outlook items with default ItemType of the folder if includeCustomMessageClasses is enabled, feature request 80.
-	- Improve IntegrationTests.
-	- Set PercentCompleted after setting the task status in TaskMapper to avoid that the value gets lost if status in not in progress.
+- Erschienen am 15.11.2017
+- Neue Features
+	- Neues Logo und Anwendungssymbol, Dank an Michael C. Krieter!
+	- Unterstützung für absolute Alarme und Alarme in Bezug auf das Ende hinzugefügt und Outlook-Erinnerungen zugeordnet, wenn der Alarm vor dem Beginn des Termins ist (andere werden in Outlook nicht unterstützt), Feature-Request 82.
+- Fehlerbehebungen
+	- Verbesserte Farb- und ShortcutKey-Zuordnung.
+	- Deaktivierung von IsCategoryFilterSticky standardmäßig auch für Ereignisse.
+	- Verbesserte Profiltrennung.
+	- Erstellt Outlook-Elemente mit dem Standard-ItemType des Ordners, wenn includeCustomMessageClasses aktiviert ist, Feature-Request 80.
+	- Fehler in Integrationstests behoben.
+	- Festlegen von PercentCompleted, nachdem der Taskstatus in TaskMapper festgelegt wurde, um zu verhindern, dass der Wert verloren geht, wenn der Status nicht in Bearbeitung ist.
 	
 #### 2.25.0 ####
-- Erschienen am 2017/10/07
-- New features
+- Erschienen am 07.10.2017
+- Neue Features
 	- Add optional WebDAV Collection Sync (RFC 6578) for calendar and addressbook collections, which speeds up the detection of server changes dramatically but excludes the possibility to use the time range filter.
 	- Improve EventColor-Category mapping and use existing categories if color matches.
-- Bug fixes
+- Fehlerbehebungen
 	- Use official certificate for click once code signing.
 	- Prevent InvalidCastExceptions in QueryOutlookFolderByGetTableStrategy.
 	- Do not keep the Status window alive if it is invisible.
@@ -270,75 +270,75 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 	- Catch not only COMExceptions when responding to meeting invites, ticket #721.
 
 #### 2.24.0 ####
-- Erschienen am 2017/09/12
-- New features
+- Erschienen am 12.09.2017
+- Neue Features
 	- Add support for RFC7986 per-event color handling, mapping of Outlook category color to COLOR attribute, feature request #76.
 	- Add ProfileType for mail.de.
 	- Add ProfileType for iCloud contacts.
 	- Add support for mapping Distribution Lists to iCloud contact groups.
 	- Use Credentials and Proxy from profile for Weblclient to download photo URL, fixes syncing of contact photos for iCloud and others, feature request #71.
 	- Add general option to a) Log all entity synchroniaztion reports and b) to include entity names in entity synchronization reports.
--  Bug fixes
+-  Fehlerbehebungen
 	-  Avoid ArgumentNullException in Nodatime timezone conversions, ticket #674,#677
 	-  Ignore redundant entities in GetTransformedEntities.
 	-  Fix invalid DTSTART in VTIMEZONE, gh issue #210.
 	-  Some code cleanup and refactoring.
 
 #### 2.23.0 ####
-- Erschienen am 2017/08/13
-- New features
+- Erschienen am 13.08.2017
+- Neue Features
 	- Add ProfileType for SmarterMail.
 	- Update REV property for vcards, gh issue 204.
 	- Update NuGet packages for Google API to 1.28.0 and NodaTime to 2.2.0.
-- Bug fixes
+- Fehlerbehebungen
 	- Avoid IndexOutOfRangeException when parsing IMAddress, ticket #652.
 
 #### 2.22.2 ####
-- Erschienen am 2017/07/12
-- Bug fixes
+- Erschienen am 12.07.2017
+- Fehlerbehebungen
 	- Make Outlook-TimeZone-Ids case insensitive and prevent ArgumentException, tickets #640,#649.
 	- Delete leftover entities, if creation in outlook fails.
 	- Avoid InvalidOperationException in vCardStandardReader for unknown IM ServiceTypes, ticket #645.
 	- Enable chunked synchronization be default.
 	
 #### 2.22.1 ####
-- Erschienen am 2017/06/22
-- Bug fixes
+- Erschienen am 22.06.2017
+- Fehlerbehebungen
 	- Fix InitialMatching for GoogleContacts and GoogleTasks if there are more new OutlookItems than ChunkSize and avoid InvalidOperationException (Cannot access a disposed object!), ticket #632.
 	- Fix #611 CALDAV hangs Outlook , #613 CalDav locking up Outlook, remove DoEvents call in sync progress bar.
 
 #### 2.22.0 ####
-- Erschienen am 2017/06/21
-- New features
+- Erschienen am 21.06.2017
+- Neue Features
 	- Add contact mapping configuration to choose default IM protocol when writing IM addresses, ticket #543.
 	- Add contact mapping configuration to write IM addresses as IMPP attribute instead of X-PROTOCOL e.g. X-AIM, ticket #543.
 	- Add SIP IMServiceType and support X-SIP in vCardStandardReader.
 	- Add sync profile for web.de.
 	- Improve EntityMatching for very large Calendars (>5000 Entries), by using EventServerEntityMatchData instead of iCalendar for matching.
-- Bug fixes
+- Fehlerbehebungen
 	- Fix google Oauth2 authentication "Access denied" error on Windows7/8.1 without admin privileges.
 	- Improve Logging. 
 
 #### 2.21.0 ####
-- Erschienen am 2017/05/30
-- New features
+- Erschienen am 30.05.2017
+- Neue Features
 	- Update NodaTime to version 2 to improve timezone calculations.
 	- Update Google APIs NuGet packages.
-- Bug fixes
+- Fehlerbehebungen
 	- Don't enable chunked synchronization by default.
 
 #### 2.20.0 ####
-- Erschienen am 2017/05/29
-- New features
+- Erschienen am 29.05.2017
+- Neue Features
 	- Full support for chunked synchronization
-- Bug fixes
+- Fehlerbehebungen
 	- Avoid Nullreference exception when TYPE is empty in X-SOCIALPROFILE property in vCardStandardReader, ticket #599.
 	- Make mapping of Outlook EmailAddress1 configurable (if it should be mapped to HOME or WORK), gh ticket 193.
 	- Fix reading vcard KEY attribute if encoding is not set explicitely to base64, gh issue 195.
 
 #### 2.19.2 ####
-- Erschienen am 2017/05/13
-- Bug fixes
+- Erschienen am 13.05.2017
+- Fehlerbehebungen
 	- Honor chunk size also for Google Contact API read calls, ticket #586.
 	- Switch mapping of email addresses and map HOME to email1 and WORK to email2 to be more consistent, gh ticket 193.
 	- Provide Login-Hint for Google-Authorization.
@@ -347,69 +347,69 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 	- Improve IntegrationTests.
 
 #### 2.19.1 ####
-- Erschienen am 2017/04/18
-- Bug fixes
+- Erschienen am 18.04.2017
+- Fehlerbehebungen
 	- Fix toolbar not accessable within Outlook2007, ticket #570.
 	- Improve IntegrationTests.
 
 #### 2.19.0 ####
-- Erschienen am 2017/04/16
-- New features
+- Erschienen am 16.04.2017
+- Neue Features
 	- Abort and postpone synchronization when server reports HTTP 429.
 	- Abort synchronization on network related exceptions and consider them as warnings the first two times they occur. This should help avoid errors on laptop startup after hibernation or if VPN is not ready yet, GH issues #104,#181.
 	- Do not block Outlook Startup with component initialization, should avoid issues with Outlook deactivating the addin after slow startup.
 	- Refactoring of IntegrationTests.
-- Bug fixes
+- Fehlerbehebungen
 	- Fix MapDistListMembers2To1 for members not resolved from the addressbook.
 	- Fix mapping of google home-only email address to Outlook Email1Address, ticket #561.
 	
 #### 2.18.0 ####
-- Erschienen am 2017/03/26
-- New features
+- Erschienen am 26.03.2017
+- Neue Features
 	- Add mapping of distribution lists to contact groups with KIND:group
 	- Add profile type for Easy Project / Easy Redmine with special setup wizard
 	- Add profile type for mailbox.org
 	- Switch profile selection to WPF
-- Bug fixes
+- Fehlerbehebungen
 	- Add MessageBox with warning about sensitive data in log file before showing the log.
 	- Add task mapping configuration option to map Outlook start and due date of tasks as floating without timezone information to avoid issues with tasks across timezones, ticket #530.
 	- Update NuGet packages.
 
 #### 2.17.0 ####
-- Erschienen am 2017/02/26
-- New features
+- Erschienen am 26.02.2017
+- Neue Features
 	- Add general option to show/hide sync progress bar and make threshold for its display configurable.
 	- Add App.config setting for SoftwareOnly WPF Rendering to avoid issues with graphics card drivers and hardware acceleration, ticket #480.
-- Bug fixes
+- Fehlerbehebungen
 	- Avoid System.Collections.Generic.KeyNotFoundException for google contact API and consider paging when fetching Google groups, ticket #511.
 	- Follow redirect also for 303 in WebDabClient, ticket #516.
 
 #### 2.16.0 ####
-- Erschienen am 2017/02/14
-- New features
+- Erschienen am 14.02.2017
+- Neue Features
 	- Add warning if one-way synchronization mode would lead to deletion of the existing non empty outlook folder or replication of an empty folder to the server.
 	- Add possibility to use chunked execution also for Google contacts.
 	- Add Option to disable sticky category filter.
 	- Add mapping of ROLE to Outlook Profession for contacts, ticket #505.
-- Bug fixes
+- Fehlerbehebungen
 	- Better handling of SOGo VLIST members as recipients so that the underlying contact is used.
 	- Assume that a HTTP-404 denotes an empty addressbook only, if the addressbook resource exists.
 
 #### 2.15.1 ####
-- Erschienen am 2017/01/31
-- Bug fixes
+- Erschienen am 31.01.2017
+- Fehlerbehebungen
 	- Avoid Exception in QueryAppointmentFolder when GlobalAppointmentID can't be accessed or is null, ticket #491.
 	- Make GeneralOptions window resizable and add scrollbar, avoids issues on low resolution devices.
 
 #### 2.15.0 ####
-- Erschienen am 2017/01/29
-- New features
+- Erschienen am 29.01.2017
+- Neue Features
 	- Huge performance improvements accessing Outlook folder data when nothing changed and avoid fetching all items, add general option to configure the folder query option.
 	- Many UI improvements, add link to show/hide advanced settings and general option to set default
 	- reorder/regroup general options.
 	- Many improvements of vCard reader, add support for various X-properties for IMs, ticket #463.
 	- Save unrecognized properties in vCard OtherProperties.
-- Bug fixes
+- Fehlerbehebungen
 	- Catch DateTimeZoneNotFoundException, ticket #484.
 	- Avoid adding email address twice.
 	- Catch FormatException in vCardStandardReader and log warnings from vcard deserialization.
@@ -420,58 +420,58 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 	- Workaround for reading wrong encoded vcard PHOTO attributes from SOGo global addressbooks mapped from LDAP/AD avatar pictures.
 	
 #### 2.14.1 ####
-- Erschienen am 2017/01/17
-- Bug fixes
+- Erschienen am 17.01.2017
+- Fehlerbehebungen
 	- Update installer to fix dependency for Thought.vCards.
 
 #### 2.14.0 ####
-- Erschienen am 2017/01/16
-- New features
+- Erschienen am 16.01.2017
+- Neue Features
 	- Initial support for syncing contact groups/Distribution Lists (only supports SOGos own VLIST format right now).
 	- Include own version of Thought.vCards from [https://github.com/aluxnimm/Thought.vCards](https://github.com/aluxnimm/Thought.vCards) instead of NuGet package and remove vCardImprovedWriter.
 	- Improve vCardWriter and add support for different IM servicetypes, ticket #463.
 	- Add support for ADR Post Office Box and extended address, feature request 17.
-- Bug fixes
+- Fehlerbehebungen
 	- Unfold lines before further processing in vCardStandardReader, fixes issues with long subproperties like X-ABCROP-RECTANGLE
 	- Set recurring task DTSTART to PatternStartDate to avoid missing DTSTART, ticket #465.
 	- Switch ProgressWindow to Wpf to avoid DPI problems.
 	- Update project urls in about dialog.
 
 #### 2.13.0 ####
-- Erschienen am 2017/01/03
+- Erschienen am 03.01.2017
 - Upgrade instructions
 	- Outlook and Google and some other CalDAV servers calculate the intersection with the time-range differently for recurring events which can cause doubled or deleted events, so it is recommended to select a time-range which is larger than the largest interval of your recurring events (e.g. 1 year for birthdays). The default timerange for new profiles is changed from 180 days to 365 days in the future, for existing sync profiles you need to change it manually if affected!
-- New features
+- Neue Features
 	- Add mapping configuration option to include also appointments/tasks without category to category filter.
-- Bug fixes
+- Fehlerbehebungen
 	- Set time-range default timespan to 365 days in the future and add tooltip and warning for time-range filter, ticket #450.
 	- Fix timezone issues with google tasks, ticket #452.
 	- Don't add X-ALT-DESC if body is empty.
 
 #### 2.12.1 ####
-- New features
+- Neue Features
 	- Update Google API NuGet packages to version 1.20.0.
-- Bug fixes
+- Fehlerbehebungen
 	- prevent NullReferenceExceptions, caused by uninitialized ComponentContainer due to load errors.
 	- improve html<->rtf mapping for appointment bodies
 	- sync removal of task start and due date from server to Outlook, ticket #446.
 	- Add absolute task alarm if start and due dates are not set, ticket #445.
 
 #### 2.12.0 ####
-- New features
+- Neue Features
 	- Add general option to enable client certificate TLS authentication, feature request 55.
 	- Map Outlook formatted RTFBody to html description via X-ALT-DESC attribute.
-- Bug fixes
+- Fehlerbehebungen
 	- Use lowercase for mailto in organizer and attendee uris to avoid problems with some clients, ticket #426.
 
 #### 2.11.0 ####
-- New features
+- Neue Features
 	- Add possibility to add DAV server calendars/addressbooks.
 	- Improve privileges check in connection test.
 	- Map SCHEDULE-STATUS to Outlook FINVITED flag,  which shows if invitation email has been sent, gh issue 162.
 	- Add PostBuildEvent to sign installer files to avoid warning because of untrusted manufacturer during install.
 	- Update Google API NuGet packages to version 1.19.0.
-- Bug fixes
+- Fehlerbehebungen
 	- Set UseGlobalAppointmentID as default for SOGo profiles to avoid doubled appointments when Outlook sends invites.
 	- Fix mapping of vtodo status NEEDS-ACTION to Outlook olTaskNotStarted, ticket #418.
 	- Fallback to local timezone if FindSystemTimeZoneById throws an exception, ticket #421.
@@ -479,11 +479,11 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 	- Do not delete invitations from server identity.
 
 #### 2.10.0 ####
-- New features
+- Neue Features
 	- Add profile type for NextCloud.
 	- Add general option to enable useUnsafeHeaderParsing, needed for Yahoo and cPanel Horde.
 	- Improve Autodiscovery.
-- Bug fixes
+- Fehlerbehebungen
 	- Fix installer for Office 64-bit installation for AllUsers deployment and copy registry keys to correct HKLM location, ticket #410.
 	- Add scrollbar to sync profiles content control, gh issue 176.
 	- Fix autodiscovery for iCloud CardDav, ticket #414.
@@ -493,64 +493,64 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 #### 2.9.1 ####
 - Hotfix
 	- Fix reminder mapping for just upcoming reminders, regression intruduced in 2.9.0, ticket #406.
-- New features
+- Neue Features
 	- Add CheckForNewVersions, StoreAppDatainRoamingFolder and IncludeCustomMessageClasses as app.config keys as well, useful for All Users deployment to change defaults.
-- Bug fixes
+- Fehlerbehebungen
 	- Improve CustomPropertyMapping Validation and check if properties are empty to avoid Nullreference Exceptions.
 	- Update Google Api Nuget packages.
 
 #### 2.9.0 ####
-- New features
+- Neue Features
 	- Add Profile Import/Export.
 	- Improve Installer, remove Manufacturer from DefaultLocation and remember InstallDir in registry for updates.
 	- Use passive install for updates.
 	- Add toolbar buttons to expand and collapse all nodes in synchronization profiles.
 	- Add general option to expand all nodes in synchronization profiles by default.	
-- Bug fixes
+- Fehlerbehebungen
 	- Catch COMException when SyncObjects can't be accessed, github issue 175.
 	- Fix installer for All users deployment.
 	- Fix Map just upcoming reminders for recurring appointments, ticket #398.
 
 #### 2.8.2 ####
-- Bug fixes
+- Fehlerbehebungen
 	- Fix new profile creation for calendar and task profiles and properly initialize customPropertyMapping configuration.
 	- Fix UserDefinedCustomPropertyMappings initialization to avoid Nullreference exceptions.
 	- Fix formatting of errorMessage in profile validation.
 
 #### 2.8.1 ####
-- Bug fixes
+- Fehlerbehebungen
 	- Avoid Nullreference Exceptions when options are not saved after upgrade to 2.8.0, gh issue 174.
 	
 
 #### 2.8.0 ####
-- New features
+- Neue Features
 	- Configurable custom properties mapping for Appointments and Tasks.
 	- Update NuGet packages for Google API and NUnit.
 
 #### 2.7.0 ####
-- New features
+- Neue Features
 	- Map UID to GlobalAppointmentID for new meetings to avoid double events from Mail invites (only possible in Outlook 2013+).
 	- Add option to perform CalDAV/CardDAV sync in chunks with configurable chunk size to avoid OutOfMemoryEceptions, ticket #390.
 	- Add Button which opens profile data directory for debugging.
-- Bug fixes
+- Fehlerbehebungen
 	- Avoid ArgumentNullException if appointments have no GlobalAppointmentID and log warning, ticket #389.
 	- Update icon of profile in options, when OutlookFolderType of profile changes.
 	- Fix for ToolBarButtons in Options.
 
 #### 2.6.1 ####
 - **WARNING**: This version changes the internal cache structure, when downgrading to an older version, the cache gets cleared and a new inital sync is performed!
-- Bug fixes
+- Fehlerbehebungen
 	- Fix cache conversion for tasks.
 	- Ensure synchronization context on every button click
 
 #### 2.6.0 ####
 - **WARNING**: This version changes the internal cache structure, when downgrading to an older version, the cache gets cleared and a new inital sync is performed!
-- New features
+- Neue Features
 	- Better support for meeting invitations.
 	- Improve duplicate event cleaner.
 	- Update Google Apis nuget packages to 1.16.0.
 	- Include GlobalAppointmentId in RelationCache.
-- Bug fixes
+- Fehlerbehebungen
 	- Update accepted meeting invitations instead of deleting and recreating them to avoid wrong cancellation mails from the CalDAV server.
 	- Catch OverflowException for invalid birthdays in contacts, ticket #386.
 	- DuplicateEventCleaner: catch exception if appointment doesn't exist anymore.
@@ -558,9 +558,9 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 	- Check if caldav resource is not empty to avoid ArgumentOutOfRangeException.
 
 #### 2.5.1 ####
-- New features
+- Neue Features
 	- Add account type for Cozy Cloud and set UseIanaTz as default.
-- Bug fixes
+- Fehlerbehebungen
 	- Set BusyStatus to tentative for meeting invites without response.
 	- Follow also 307 redirects in WebDavRequests, fixes autodiscovery for Telstra BigPond.
 	- Ensure that discovered resource uris end with slash.
@@ -570,11 +570,11 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 	- Exclude received meetings from immediate sync to avoid problems with doubled events.
 
 #### 2.5.0 ####
-- New features
+- Neue Features
 	- Add mapping configuration to use IANA timezones instead of Windows timezones.
 	- Make addin startup and EntityMapper async.
 	- Add progressBar and download new version async, github issue 156.
-- Bug fixes
+- Fehlerbehebungen
 	- Add SCHEDULE-AGENT=CLIENT also to attendees, ticket #354.
 	- Avoid empty PARTSTAT and default to NEEDS-ACTION.
 	- Add KeepOutlookFileAs option (defaults to true) for contacts to avoid overwriting existing FileAs with FN attribute.
@@ -584,12 +584,12 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 	- Avoid DDay.ICal UTC calls and use NodaTime instead for conversion, gh issue 159.
 
 #### 2.4.0 ####
-- New features
+- Neue Features
 	- Add Use Account Password also to bulk profile creation and add posibility to get server settings (DAV url, Email, Username) from Outlook IMAP/Pop3 Account.
 	- Add mapping for task alarms with absolute date/time triggers.
 	- Add category filter also for tasks, feature 48.
 	- Download contact photo if provided by url, fixes contact photo mapping for GMX, ticket #358.
-- Bug fixes
+- Fehlerbehebungen
 	- Change SOGo account profile url path to /SOGo/dav/.
 	- Fix mapping of PostalAddress Country in Google Contacts API.
 	- Fix mapping of PostalCode for Google Contacts, ticket #352.
@@ -598,16 +598,16 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 	- Use correct request URI in reports when server uri has different encoding than resource URI, github issue 152.
 
 #### 2.3.1 ####
-- Bug fixes
+- Fehlerbehebungen
 	- Fix OL2007 toolbar positioning and saving, ticket #351.
 	- Use only Start, End and Subject for DuplicateEventCleaner, ticket #330.
 
 #### 2.3.0 ####
-- New features
+- Neue Features
 	- Save Outlook 2007 toolBar position and visibility in Registry, github issue 102.
 	- Implement duplicate event cleanup in Event mapping configuration.
 	- Add CalDavConnectTimeout as general option (feature 46).
-- Bug fixes
+- Fehlerbehebungen
 	- Fix commandbar for OL2007, ticket #339
 	- Some fixes for recurrence exceptions if timezone of appointment is different to Outlook local timezone.
 	- Fix setting organizer name in Outlook from CommonName and Email.
@@ -617,50 +617,50 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 	- validate input in GeneralOptionsForm.
 
 #### 2.2.0 ####
-- New features
+- Neue Features
 	- Add general option to trigger sync after Outlook Send/Receive finishes, github issue 141.
 	- Add event mapping configuration parameter to map CLASS:PUBLIC to Outlook Private flag, feature request 45.
 	- Implement DNS SRV and TXT lookups for autodiscovery from email address.
-- Bug fixes
+- Fehlerbehebungen
 	- Fix autodiscovery when server returns multiple calendar-home-set hrefs, github issue 139.
 
 #### 2.1.3 ####
-- New features
+- Neue Features
 	- Add event mapping configuration to use Outlook GlobalAppointmentID for UID attribute, ticket #318.
-- Bug fixes
+- Fehlerbehebungen
 	- Don't log warning if DTEND is not set for allday events, ticket #316.
 	- Prefix summary of events and not only meetings with status cancelled, since Android uses this instead of exdates for recurrence exceptions, ticket #307.
 
 #### 2.1.2 ####
-- New features
+- Neue Features
 	- Add ProfileType for SOGo.
-- Bug fixes
+- Fehlerbehebungen
 	- Fix detecting deleted appointments from folders in local pst data files when using category filter, ticket #297.
 
 #### 2.1.1 ####
-- New features
+- Neue Features
 	- Add ProfileType for Landmarks.
-- Bug fixes
+- Fehlerbehebungen
 	- Avoid sync loops and delete new events, when they represent an invitation from server identity.
 	- Fix event mapping of TRANSP to Outlook BusyStatus and use
 X-MICROSOFT-CDO-BUSYSTATUS.
 	- Fix Autodiscovery behavior in case of url textbox is empty.
 
 #### 2.1.0 ####
-- New features
+- Neue Features
 	- Implement Bulk profile creation to add multiple profiles at once and choose the folder for each discovered server resource (calendar, addressbook and task).
 	- Query supported-calendar-component-set and filter out VEVENT and VTODO resources for autodisovery.
-- Bug fixes
+- Fehlerbehebungen
 	- add functionality to cope with multiple groups with the same name for Google Contacts API.
 	- Restore old CalendarUrl when Google Autodiscovery has error or was cancelled.
 	- Map ResponseStatus default to NEEDS-ACTION in MapParticipation1To2 to avoid exception.
 
 #### 2.0.2 ####
-- New features
+- Neue Features
 	- Improve event mapping of TRANSP and STATUS to Outlook BusyStatus. (contributed by Florian Saller).
 	- Improve Autodiscovery.
 	- Add ProfileType for Sarenet.
-- Bug fixes
+- Fehlerbehebungen
 	- Ignore invalid-xml-errors in EntityRelationDataAccess unless a new version has been saved.
 	- Fetch all Google Contacts with a single request to avoid 503 errors.
 	- Query just contacts from Default Group from Google Contacts API.
@@ -668,10 +668,10 @@ X-MICROSOFT-CDO-BUSYSTATUS.
 	- Only access AddressEntry if recipient can be resolved and catch possible COMExceptions.
 
 #### 2.0.1 ####
-- New features
+- Neue Features
 	- Initial support for mail.ru
 	- Add option to keep Outlook photo in contact mapping configuration.
-- Bug fixes
+- Fehlerbehebungen
 	- Catch COMException if birthday can't be set in Outlook, ticket #276.
 	- Preserve current mapping configuration, if no folder selected.
 	- Fix own identity handling in event mapping (especially for Exchange accounts).
@@ -683,13 +683,13 @@ X-MICROSOFT-CDO-BUSYSTATUS.
 	- Disable sync now button during synchronization runs.
 
 #### 2.0.0 ####
-- New features
+- Neue Features
 	- Add support for Google Contacts API to sync Outlook contact folders with Google contacts which improves mapping and performance, since the Google CardDAV API has some issues (first official release, beta)
 	- Support for google contact groups, which are synced to Outlook categories.
 	- Sync contact photos, WebPages, Notes, Sensitivity, Hobbies for google contacts.
 	- Added mapping for anniversary, relations (spouse, child, etc.) and IMs for google contacts (Contribution from Florian Saller [https://sourceforge.net/u/floriwan/profile/](https://sourceforge.net/u/floriwan/profile/), thank you!)
 	- Remove legacy synchronization profile settings user interface.
-- Bug fixes
+- Fehlerbehebungen
 	- Add TYPE=JPEG to vcard photo attributes and catch exceptions in MapPhoto2To1.
 	- Catch COM-Exception, when fetching Items from Outlook (ticket #263 Error when deleting contacts with Synchronize changes immediately after changes activated).
 	- Fix possible Nullreference Exception in CardDavDataAccess.
@@ -698,10 +698,10 @@ X-MICROSOFT-CDO-BUSYSTATUS.
 	- Delete contact photo in Outlook if it was deleted on the CardDav server.
 
 #### 1.24.0 ####
-- New features
+- Neue Features
 	- Add general option to ignore invalid characters in server response.
 	- Implement reordering of synchronization profiles in the WPF UI
-- Bug fixes
+- Fehlerbehebungen
 	- Fix VALARM trigger handling if duration is zero, ticket #253.
 	- Fix display issues for reports #259.
 	- Add missing check box in WPF EventMappingConfigurationView (Negate filter and sync all Appointments except this category).
@@ -710,11 +710,11 @@ X-MICROSOFT-CDO-BUSYSTATUS.
 	- Disable ConflictResolution for OneWay synchronization in WPF UI.
 
 #### 1.23.0 ####
-- New features
+- Neue Features
 	- First implementation of a complete redesign of Synchronization Profiles GUI using WPF framework.
 	- General option to switch between modern WPF and standard WinForms GUI.
 	- Improve update handling and download README after installing new version.
-- Bug fixes
+- Fehlerbehebungen
 	- Ignore invalid BYMONTHDAY values in recurrence rules, catch COMException and log it as warning.
 	- Set HasTime for completed of vtodo to avoid VALUE=DATE for GMT timezone to be RFC compliant, ticket #247.
 	- Improve exception Handling.
@@ -722,79 +722,79 @@ X-MICROSOFT-CDO-BUSYSTATUS.
 	- Try to reconstruct master event and properly sync exceptions to Outlook, if server resource consists of recurrence exceptions only.
 
 #### 1.22.0 ####
-- New features
+- Neue Features
 	- Add option to enable/disable mapping of recurring tasks in TaskMappingConfiguration to avoid problems with servers that don't support recurring tasks.
 	- Add option in ContactMappingConfiguration to fix formatting of phone numbers when syncing from server to Outlook, so that Outlook can detect country and area code, feature request 34.
 	- Use email address for vcard FN if fileas, name and company attributes of outlook contact are emtpy.
-- Bug fixes
+- Fehlerbehebungen
 	- Fix VTIMETONE DTSTART generation for timezones with yearly floating DST rules like Jerusalem when syncing to Google, ticket #244. (Workaround for a bug in the DDay.iCal library)
 	- Don't add filter category to Outlook categories if Negate filter is activated, ticket #245.
 
 #### 1.21.0 ####
-- New features
+- Neue Features
 	- Implement option in network and proxy options to force basic authentication, needed for some servers where negotiation or digest auth are not working properly, fixes connection problems with OS X servers.
 	- Add general option to enable/disable tray icon.
 	- Improve debug logging.
-- Bug fixes
+- Fehlerbehebungen
 	- Use NullOutlookAccountPasswordProvider if Outlook profile name is null, ticket #239.
 	- Fix proxy support in Google tasklibrary and oauth requests, ticket #234.
 	- Fix line breaks in vcard notes and street addresses to avoid \r.
 
 #### 1.20.3 ####
-- Bug fixes
+- Fehlerbehebungen
 	- Fix Outlook crash when opening synchronization profiles for Outlook 2007 (ticket #230,#231).
 
 #### 1.20.0 ####
-- New features
+- Neue Features
 	- New implementation of partial sync, which triggers immediately after an item is created, changed or deleted in Outlook (with a 10 seconds delay), works also for contacts and tasks now.
 	- Add option to use IMAP/Pop3 Password from Outlook Account associated with the folder, the password is fetched from the Windows registry entry of the Outlook profile.
 	- Add checkbox to sync all Outlook appointments except a defined category (negates the category filter) in EventMappingConfiguration, feature request 30.
 	- Use ComboBox with all available Outlook categories instead of TextBox to choose category filter.
 	- Add account types for Fruux, Posteo, Yandex and GMX with predefined DAV Urls and add logos to the account select dialog.
-- Bug fixes
+- Fehlerbehebungen
 	- Fix well-known URIs according to RFC, they contain no trailing slash, fixes autodisovery for fruux.
 	- Avoid ArgumentNullException for GoogleTasks if tasklist is empty, ticket #229.
 	- clear contact attributes in Outlook when attributes are removed on server, fixes some update mapping issues from server to outlook for CardDAV.
 
 #### 1.19.0 ####
-- New features
+- Neue Features
 	- Add System TrayIcon with notifications of sync runs with errors and warnings and context menu.
 	- Add Synchronization Status with info about last sync run time and status, accessible from the TrayIcon or the ribbon.
 	- Add TaskMappingConfiguration with possibility to toggle reminder, priority and body mapping.
-- Bug fixes
+- Fehlerbehebungen
 	- Catch COMException when accessing IsInstantSearchEnabled of Outlook store, ticket #223.
 	- Fix Error, when opening legacy profiles without proxy options, ticket #224.
 
 #### 1.18.0 ####
-- New features
+- Neue Features
 	- Deactivate prefix filter for custom message_classes by default and make it configurable as general option, since Windows Search Service was needed and not available in all setups.
 	- Add manual "Check for Update" button in about box.
-- Bug fixes
+- Fehlerbehebungen
 	- proper check for IsInstantSearchEnabled for the store when using prefix filter.
 	- Remove unused DisplayAllProfilesAsGeneric general option.
 	- Remove unneeded enableTaskSynchronization in app.config.
 	- Change mapping errors to warnings for logging.
 
 #### 1.17.0 ####
-- New features
+- Neue Features
 	- Improved formatted view for sync reports with possibility to view Outlook and server entities causing mapping warnings or errors.
 	- Improve UI. Rename Advanced Options to Network and proxy options and move button to server settings. Move Mapping Configuration button from advanced options form to main profile configuration form.
 	- Use prefix comparison in Outlook Repositories to filter also custom message_classes.
-- Bug fixes
+- Fehlerbehebungen
 	- Fix test settings and don't allow an Outlook task folder for google calendar but only for a google tasklist.
 	- Change BackColor of all UI forms and textboxes to SystemColors.Window.
 	- Fix wordrap in changelog textbox of update window and make window resizable, feature request 24.
 	- Use empty password, if decrypting password fails, ticket #165.
 
 #### 1.16.0 ####
-- New features
+- Neue Features
 	- Google task support added. You can sync google tasklists to Outlook task folders via the Google Task Api. Just use a google profile and choose a task folder and do autodiscovery to select the google tasklist.
 	- Improved UpdateChecker, add button to automatically download and extract the new version and start the installer.
 	- Improved Synchronisation reports with formatted view.
 	- Small UI improvements and layout changes.
 	- Add Link to Helppage and Wiki in About Dialog.
 	- Improve Autodiscovery in google profiles and add button to start a new autodiscovery.
-- Bug fixes
+- Fehlerbehebungen
 	- fix workaround for Synology NAS empty collections wrongly returning 404 NotFound, ticket #203.
 	- Perform delete and create new , if an update for a Google-event returns HTTP-error 403, ticket #205.
 	- Fix logging of server resource uri in sync reports.
@@ -803,20 +803,20 @@ X-MICROSOFT-CDO-BUSYSTATUS.
 
 #### 1.15.0 ####
 - WARNING: This version changes the internal cache structure, when downgrading to an older version, the cache gets cleared and a new inital sync is performed!
-- New features
+- Neue Features
 	- Improved handling of Uris, Use custom class WebResourceName instead of System.Uri to identify WebDAV resources. This should fix various issues with filenames with wrongly encoded special chars like slashes or spaces especially for Owncloud, see ticket #193 and discussions.
 	- Add advanced option for preemptive authentication and set it to default for new profiles, feature request from ticket #198.
 	- Make Options-Tabs draggable.
 	- Delete caches if they have a version, other than the required version and implement cache conversion from version 0 to 1. 
 	- Improve InitialTaskEntityMatcher and also compare Start and Due Date if available for matching tasks.
-- Bug fixes
+- Fehlerbehebungen
 	- Set PatternEndDate of Recurrence to PatternStartDate if it is an invalid date before the start in the vevent to avoid COMException, ticket #197.
 	- Don't set task completed in local timezone, COMPLETED of vtodo must be in UTC, fix regression introduced in 1.14.0.
 	- Avoid UTC conversion in InitialEventEntityMatcher and use local timezone to avoid Nullreference Exceptions from Dday.iCal library in some strange timezone cases, ticket #154. Also fix matching of allday events and check if date matches.
 	- Catch COMException when getting AddressEntryUserType of Recipient, ticket 109 from github.
 
 #### 1.14.2 ####
-- Bug fixes
+- Fehlerbehebungen
 	- Fix every workday recurrence and avoid INTERVAL=0 which is wrongly set from Outlook Object Model, fixes problem with certain versions of SabreDAV/OwnCloud, where INTERVAL=0 leads to an internal server error
 	- Catch also possible ArgumentException in  MapRecurrence1To2 when trying to get AppointmentItem of a changed occurence.
 	- Improve handling of DECLINED and cancelled meetings.
@@ -827,10 +827,10 @@ X-MICROSOFT-CDO-BUSYSTATUS.
 	- Refactor IsOnline() check to avoid problems in proxy environments, ticket #189
 
 #### 1.14.0 ####
-- New features
+- Neue Features
 	- Skip sync runs, if network is not available to avoid error reports in that case, add general option to check Internet connection with dns query to www.google.com. If you are in a local network without dns or google.com blocked, disable this option.
 	- Implement EventMappingConfiguration options for syncing private flag to CLASS:CONFIDENTIAL and vice versa, feature request 15.
-- Bug fixes
+- Fehlerbehebungen
 	- Fix mapping outlook task dates to DTSTART and DUE, use local timezone and time 00:00:00 for start, 23:59:59 for due values and remove DURATION to be RFC 5545 compliant, see ticket #170. Use also localtime for COMPLETED instead of UTC to be consistent and fix VTIMEZONE DST rules for tasks.
 	- Fix yearly recurrence with interval=1 for tasks.
 	- Treat not recognized PARTSTAT same way as NEEDS-ACTION according to RFC 5545.
@@ -841,11 +841,11 @@ X-MICROSOFT-CDO-BUSYSTATUS.
 	- Replace year 0001 with 1970 in VTIMEZONE definitions before deserializing icaldata, since DDay.iCal is extremely slow otherwise, needed for emClient, see ticket #150.
 
 #### 1.13.2 ####
-- Bug fixes
+- Fehlerbehebungen
 	- Refactor SetOrganizer and GetMailUrl in EventEntityMapper to avoid Nullreference Exceptions and catch COMExceptions.
 	- Catch COMExceptions when accessing timezone of AppointmentItem and fallback to UTC in that case.
 	- Catch COMException when AppointmentItem of an Exception doesn't exist, ignore that exception then since we can't get the changes. This happens when the recurring event is not in the local Outlook timezone.
-	- Set WordWrap in newFeaturesTextBox for better readability of new features, feature request 24.
+	- Set WordWrap in newFeaturesTextBox for better readability of Neue Features, feature request 24.
 	- Check for invalid DTEND of vevents and catch COMException when trying to set EndTime, use DTSTART in those cases.
 	- Catch COMException in GetEventOrganizer(), fixes issues with OL2007.
 	- Avoid possible NullReferenceExceptions in MapAttendeesandOrganizer2To1.
@@ -853,12 +853,12 @@ X-MICROSOFT-CDO-BUSYSTATUS.
 	- Catch UriFormatException also in Map2To1 when the server sends invalid attendee email adresses, ticket #168.
 
 #### 1.13.0 ####
-- New features
+- Neue Features
 	- Support for GMX calendar, new events need to be created in UTC see section GMX in README.
 	- Implement  Show/Clear Log and log level configuration in General Options (feature 22).
 	- Add also 1 min and 2 min to avaiable Sync Intervals since requested multiple times.
 	- Add option to disable mapping of contact photos in ContactMappingConfiguration, since it is not working properly in OL 2007.
-- Bug fixes
+- Fehlerbehebungen
 	- EnsureSynchronizationContext on callbacks from Outlook, fixes errors when showing synchronization reports when synchronizung items immediately after changes.
 	- Do not perform empty queries to repositories, fixes HTTP 400 errors with GMX.
 	- Use PR_MESSAGE_CLASS to filter only AppointmentItems/TaskItems in OutlookRepositories, should fix casting errors when other items are in the folder.
@@ -869,12 +869,12 @@ X-MICROSOFT-CDO-BUSYSTATUS.
 	- Avoid NullreferenceException when AdressEntry of recipient can't be fetched, ticket #163.
 
 #### 1.12.0 ####
-- New features
+- Neue Features
 	- Match added entities with every sync run, this should avoid duplicates and errors, when same event is added in both server and client e.g. a (autoaccepted) meeting invitation.
 	- Add "Reset Cache" button to delete the sync cache and start a new initial sync with the next sync run.
 	- Delete associated birthday appointment if deleting ContactItem in Outlook, feature #21.
 	- Cleanup outdated synchronization reports with configurable timespan.
-- Bug fixes
+- Fehlerbehebungen
 	- Fix issues which might occur due to load behavior of controls.
 	- Fix exporting of DateCompleted for tasks, according to the RFC it must be a DATE-TIME value, see ticket #156
 	- Convert DateCompleted for tasks from UTC to local date when mapping back to Outlook.
@@ -887,50 +887,50 @@ X-MICROSOFT-CDO-BUSYSTATUS.
 	- Select the new tab in OptionsForm when a new profile is added.
 
 #### 1.11.0 ####
-- New features
+- Neue Features
 	- Advanced Logging and configurable Synchronization Reports after each sync run. You can configure if reports should be generated for each sync run or only if errors or warnings occur and if the reports should be shown immediately after the sync run. You can also delete or zip reports from the Reports window.
 	- Support for Zoho Calendar, patch provided from Suki Hirata <thirata@outlook.com>
-- Bug fixes
+- Fehlerbehebungen
 	- Factor out common mapping functions for events and tasks and map priority 1-9 according to RFC5545 
 
 #### 1.10.0 ####
-- New features
+- Neue Features
 	- Add possibility to set server calendar color to selected category color
 	- Allow to specify shortcut key of category and improve EventMappingConfiguration UI
 	- Add scheduling configuration options to EventMappingConfiguration and set RSVP for attendees. (You can specify if you want to set SCHEDULE-AGENT:CLIENT or X-SOGO-SEND-APPOINTMENT-NOTIFICATIONS:NO for SOGo)
-- bug fixes
+- Fehlerbehebungen
 	- Escape single quotes in category filter string and validate it in EventMappingConfiguration, it must not contain commas or semicolons to avoid exceptions
 	- Use DASL filter instead of JET syntax to fix category filtering for OL 2010(64bit)
 	- Take relative redirects in account. (fixes Autodiscovery for some servers based on cpanel/horde)
 	- Avoid UTC conversion from Dday.iCal library for upcoming reminder check.
 	- Use GlobalAppointmentID for new events instead of random Guid to avoid doubling events from invitations for own attendee.
 #### 1.9.0 ####
-- New features
+- Neue Features
 	- Map CalDAV server colors to Outlook category colors. It is possible to choose the  category color manually or fetch the color from the server and map it to the nearest supported Outlook color.
-- bug fixes
+- Fehlerbehebungen
 	- Don't use environment specific newline, in data sent to the server
 	- Escape Uris, which are inserted into XML documents
 	- Remove unused calDavReadWriteTimeout from config
 
 #### 1.8.0 ####
-- New features
+- Neue Features
 	- Add filtering on outlook side, so that multiple CalDAV-Calendars can be synchronized into one Outlook calendar via an Outlook category
 	- Add mapping configuration options for Contacts (Enable or Disable mapping of Birthdays, feature #12)
 	- Provide entity version (etag) on delete and set If-Match header
 	- Add option to synchronize just upcoming reminders.
 	- Autodiscovery improvemnts: Ignore xml Exceptions during Autodiscovery (needed for some wrong owncloud server paths)  and try hostname without path too if well-known not available, fixes autodiscovery for posteo (https://posteo.de:8443), Display if no resources were found via well-known URLs
-- bug fixes
+- Fehlerbehebungen
 	- Filter out SOGo vlists (contenttype text/x-vlist) since we can't parse them atm, avoids syncing vlists to a empty vcard and destroying the vlist when syncing back to SOGo
 	- Trim category names for events,tasks and contacts when mapping to caldav
 	- Use ENCODING=b instead of BASE64 according to vcard 3.0 spec for binary attributes
 
 #### 1.7.0 ####
-- New features
+- Neue Features
 	- GUI redesign for Google profiles to simplify setup and autodiscovery for google accounts. When creating a new sync profile you can choose between a generic CalDAV/CardDAV and a google profile. For google it is sufficient to enter the Email address and autodiscovery will try to find resources once OAuth is configured.
 	- Improvements in autodisovery logic
 	- Calendar Colors are now shown in Autodiscovery SelectResourceForm, syncing colors to Outlook categories is work in progress.
 	- Add group label to Ribbon and set ScreenTips and SuperTips
-- bug fixes
+- Fehlerbehebungen
 	- Clear ol phonenumbers before updating, fixes doubling of home and work numbers, ticket #142
 	- Change TabIndex ordering, ticket #140
 	- Delete profile cache also when username is changed, helps when google id is changed , ticket #141
@@ -939,11 +939,11 @@ X-MICROSOFT-CDO-BUSYSTATUS.
 	- Add missing quotes to etags on system boundaries.
 
 #### 1.6.0 ####
-- New features:
+- Neue Features:
 	- Provide entity version (etag) on update and set If-Match header
 	- Implement own vCardImprovedWriter to fix serialization problems of vCardStandardWriter and avoid costly Regex workarounds 
 	- Add TYPE=HOME for personal homepages
-- bug fixes:
+- Fehlerbehebungen:
 	- Fix mapping of HomeFaxNumber for vcards, ticket #134
 	- Log Exceptions during ConnectionTests and don't try to list calendars or addressbooks for empty homesets, fixes github issue #82
 	- Fix GetContacts for Yandex, since Yandex returns directory itself even with an etag
@@ -952,13 +952,13 @@ X-MICROSOFT-CDO-BUSYSTATUS.
 	- Ensure that Etag is double quoted when adding in Entity repositories, since some caldav servers like yandex send etags without quotes
 	
 #### 1.5.4 ####
-- New features:
+- Neue Features:
 	- General options in GUI for changing SSL options and other global settings
 	- Add option to store state information in Appdata\Roaming instead of Local, Ticket #125
 	- Add mapping configuration options for Appointments (Enable or Disable mapping of reminders, attendees or the description body)
 	- Add Donate link to About Dialog
 	- Add context menu to options , which allows to open the cache directory
-- bug fixes:
+- Fehlerbehebungen:
 	- Fix mapping of ORG property to CompanyName and Department for vcards, ticket #127
 	- Catch COM Exceptions when trying to add invalid Outlook items in repositories, ticket #130
 	- Fix for unescaping relative urls for entity ids, ticket #129
@@ -972,21 +972,21 @@ X-MICROSOFT-CDO-BUSYSTATUS.
 - Fix for linebreak issues of OpenX-change, merged from pull request #79, thx to bjoernbusch
 
 #### 1.5.1 ####
-- New features:
+- Neue Features:
 	- Support for proxy configuration in GUI to specify manual proxy settings and allow Basic Auth and NTLM proxies
-- bug fixes:
+- Fehlerbehebungen:
 	- Use ContactItemWrapper and reload Items to avoid a second sync with a changed modification time in Outlook, see ticket #111
 	- Avoid sending meeting response if meeting is self organized
 	- Avoid unnecessary connection tests during autodiscovery, fixes Google CardDAV autodiscovery
 
 #### 1.5.0 ####
-- New features:
+- Neue Features:
 	- Autodiscovery for CardDAV addressbooks
 	- Change-triggered partial sync (Synchronize appointment items immediately after change in Outlook)
 	- Support Yandex CalDAV server
 	- Many improvements for CardDAV
 	- Add OAuth Scope for Google CardDAV
-- bug fixes:
+- Fehlerbehebungen:
 	- Fix syncing contact notes with umlauts
 	- Disable TimeRangeFiltering when contact folder is chosen
 	- Ensure that FN of vcard is not empty, since it is a MUST attribute (bug #109)
