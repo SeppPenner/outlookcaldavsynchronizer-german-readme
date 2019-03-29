@@ -310,31 +310,31 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 #### 2.22.0 ####
 - Erschienen am 21.06.2017
 - Neue Features
-	- Add contact mapping configuration to choose default IM protocol when writing IM addresses, ticket #543.
-	- Add contact mapping configuration to write IM addresses as IMPP attribute instead of X-PROTOCOL e.g. X-AIM, ticket #543.
-	- Add SIP IMServiceType and support X-SIP in vCardStandardReader.
-	- Add sync profile for web.de.
-	- Improve EntityMatching for very large Calendars (>5000 Entries), by using EventServerEntityMatchData instead of iCalendar for matching.
+	- Kontaktzuordnungskonfiguration hinzugefügt, um das Standard-IM-Protokoll beim Schreiben von IM-Adressen (Ticket #543) zu wählen.
+	- Kontaktzuordnungskonfiguration hinzugefügt, um IM-Adressen als IMPP-Attribut anstelle von X-PROTOCOL zu schreiben, z. X-AIM, Ticket #543.
+	- SIP IMServiceType hinzugefügt und X-SIP in vCardStandardReader unterstützt.
+	- Synchronisationsprofil für web.de hinzugefügt.
+	- Verbessertes EntityMatching für sehr große Kalender (> 5000 Einträge) durch Verwendung von EventServerEntityMatchData anstelle von iCalendar zum Abgleichen.
 - Fehlerbehebungen
-	- Fix google Oauth2 authentication "Access denied" error on Windows7/8.1 without admin privileges.
-	- Improve Logging. 
+	- Fehler bei der Google Oauth2-Authentifizierung "Zugriff verweigert" unter Windows7 / 8.1 ohne Administratorrechte behoben.
+	- Verbesserte Log-Protokollierung. 
 
 #### 2.21.0 ####
 - Erschienen am 30.05.2017
 - Neue Features
-	- Update NodaTime to version 2 to improve timezone calculations.
-	- Update Google APIs NuGet packages.
+	- NodaTime wurde auf Version 2 aktualisiert, um die Zeitzonenberechnungen zu verbessern.
+	- NuGet-Pakete für Google APIs aktualisiert.
 - Fehlerbehebungen
-	- Don't enable chunked synchronization by default.
+	- Standardmäßig keine Chunk-Synchronisierung aktiviert.
 
 #### 2.20.0 ####
 - Erschienen am 29.05.2017
 - Neue Features
-	- Full support for chunked synchronization
+	- Volle Unterstützung für Chunked-Synchronisation.
 - Fehlerbehebungen
-	- Avoid Nullreference exception when TYPE is empty in X-SOCIALPROFILE property in vCardStandardReader, ticket #599.
-	- Make mapping of Outlook EmailAddress1 configurable (if it should be mapped to HOME or WORK), gh ticket 193.
-	- Fix reading vcard KEY attribute if encoding is not set explicitely to base64, gh issue 195.
+	- Vermeiden Sie eine NullReferenceException, wenn TYPE in der Eigenschaft X-SOCIALPROFILE in vCardStandardReader leer ist, Ticket #599.
+	- Mapping von Outlook EmailAddress1 konfigurierbar gemacht (wenn es HOME oder WORK zugeordnet werden soll), Ticket 193.
+	- Das Lesen des vcard KEY-Attributs wurde korrigiert, wenn das Encoding nicht explizit auf base64 festgelegt ist, Issue 195.
 
 #### 2.19.2 ####
 - Erschienen am 13.05.2017
