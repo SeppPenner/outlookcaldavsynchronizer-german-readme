@@ -259,53 +259,53 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 #### 2.25.0 ####
 - Erschienen am 07.10.2017
 - Neue Features
-	- Add optional WebDAV Collection Sync (RFC 6578) for calendar and addressbook collections, which speeds up the detection of server changes dramatically but excludes the possibility to use the time range filter.
-	- Improve EventColor-Category mapping and use existing categories if color matches.
+	- Optionale WebDAV-Auflistungssynchronisierung (RFC 6578) für Kalender- und Adressbuchauflistungen wurde hinzugefügt. Dies beschleunigt die Erkennung von Serveränderungen erheblich, schließt jedoch die Verwendung des Zeitbereichsfilters aus.
+	- EventColor-Category-Zuordnung verbessert. Vorhandene Kategorien werden verwendet, wenn die Farbe übereinstimmt.
 - Fehlerbehebungen
-	- Use official certificate for click once code signing.
-	- Prevent InvalidCastExceptions in QueryOutlookFolderByGetTableStrategy.
-	- Do not keep the Status window alive if it is invisible.
-	- Disable IsCategoryFilterSticky by default and add warnings for wrong category filter uses.
-	- Do not switch categories automatically, when changing Category filter.
-	- Catch not only COMExceptions when responding to meeting invites, ticket #721.
+	- Verwenden eines offiziellen Zertifikats für die Click-Once-Codesignierung.
+	- Verhindern von InvalidCastExceptions in QueryOutlookFolderByGetTableStrategy.
+	- Das Statusfenster nicht alive halten, wenn es nicht sichtbar ist.
+	- IsCategoryFilterSticky ist standardmäßig deaktiviert und fügt Warnungen hinzu, wenn der Kategoriefilter falsch verwendet wird.
+	- Kategorien nicht automatisch wechseln, wenn sich der Kategoriefilter ändert.
+	- Nicht nur COMExceptions abfangen, wenn auf Besprechungseinladungen geantwortet wird, Ticket #721.
 
 #### 2.24.0 ####
 - Erschienen am 12.09.2017
 - Neue Features
-	- Add support for RFC7986 per-event color handling, mapping of Outlook category color to COLOR attribute, feature request #76.
-	- Add ProfileType for mail.de.
-	- Add ProfileType for iCloud contacts.
-	- Add support for mapping Distribution Lists to iCloud contact groups.
-	- Use Credentials and Proxy from profile for Weblclient to download photo URL, fixes syncing of contact photos for iCloud and others, feature request #71.
-	- Add general option to a) Log all entity synchroniaztion reports and b) to include entity names in entity synchronization reports.
+	- Unterstützung für RFC7986-Farbbehandlung für Ereignisse hinzugefügt, Zuordnung der Farbe der Outlook-Kategorie zum Attribut COLOR, Feature-Request #76.
+	- Profiltyp für mail.de hinzugefügt.
+	- Profiltyp für iCloud-Kontakte hinzugefügt.
+	- Unterstützung für das Zuordnen von Verteilerlisten zu iCloud-Kontaktgruppen wurde hinzugefügt.
+	- Anmeldeinformationen und Proxy aus dem Profil für Weblclient zum Herunterladen von Foto-URLs verwendet, Korrektur der Synchronisierung von Kontaktfotos für iCloud und andere, Feature-Request #71.
+	- Allgemeine Option hinzugefügt, um a) Alle Entitätensynchronisierungsberichte zu protokollieren und b) Entitätsnamen in Entitätssynchronisationsberichte aufzunehmen.
 -  Fehlerbehebungen
-	-  Avoid ArgumentNullException in Nodatime timezone conversions, ticket #674,#677
-	-  Ignore redundant entities in GetTransformedEntities.
-	-  Fix invalid DTSTART in VTIMEZONE, gh issue #210.
-	-  Some code cleanup and refactoring.
+	-  ArgumentNullException in Nodatime-Zeitzonenumwandlungen vermeiden, Ticket #674, #677.
+	-  Ignorieren redundanter Entitäten in GetTransformedEntities.
+	-  Ungültiger DTSTART in VTIMEZONE behoben, Issue #210.
+	-  Einige Code-Bereinigung und Refactoring.
 
 #### 2.23.0 ####
 - Erschienen am 13.08.2017
 - Neue Features
-	- Add ProfileType for SmarterMail.
-	- Update REV property for vcards, gh issue 204.
-	- Update NuGet packages for Google API to 1.28.0 and NodaTime to 2.2.0.
+	- ProfileType für SmarterMail hinzugefügt.
+	- REV-Eigenschaft für Vcards aktualisiert, Issue #204.
+	- Aktualisierte NuGet-Pakete für Google API auf 1.28.0 und NodaTime auf 2.2.0.
 - Fehlerbehebungen
-	- Avoid IndexOutOfRangeException when parsing IMAddress, ticket #652.
+	- Vermeiden von IndexOutOfRangeException beim Analysieren von IMAddress, Ticket #652.
 
 #### 2.22.2 ####
 - Erschienen am 12.07.2017
 - Fehlerbehebungen
-	- Make Outlook-TimeZone-Ids case insensitive and prevent ArgumentException, tickets #640,#649.
-	- Delete leftover entities, if creation in outlook fails.
-	- Avoid InvalidOperationException in vCardStandardReader for unknown IM ServiceTypes, ticket #645.
-	- Enable chunked synchronization be default.
+	- Outlook-TimeZone-Ids case-insensitive gemacht, ArgumentException verhindert, Tickets #640, #649.
+	- Restliche Entitäten gelöscht, wenn die Erstellung in Outlook fehlschlägt.
+	- Vermeiden von InvalidOperationException in vCardStandardReader für unbekannte IM ServiceTypes, Ticket #645.
+	- Die chunked-Synchronisierung ist standardmäßig aktiviert.
 	
 #### 2.22.1 ####
 - Erschienen am 22.06.2017
 - Fehlerbehebungen
-	- Fix InitialMatching for GoogleContacts and GoogleTasks if there are more new OutlookItems than ChunkSize and avoid InvalidOperationException (Cannot access a disposed object!), ticket #632.
-	- Fix #611 CALDAV hangs Outlook , #613 CalDav locking up Outlook, remove DoEvents call in sync progress bar.
+	- InitialMatching für GoogleContacts und GoogleTasks behoben, wenn mehr neue OutlookItems als ChunkSize vorhanden sind. InvalidOperationException vermieden (Kann nicht auf ein gelöschtes Objekt zugreifen!), Ticket #632.
+	- Behoben: # 611CALDAV hängt Outlook, #613 CalDav blockiert Outlook, DoEvents-Aufruf in Synchronisierungsfortschrittsleiste entfernt.
 
 #### 2.22.0 ####
 - Erschienen am 21.06.2017
