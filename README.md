@@ -427,77 +427,77 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 #### 2.14.0 ####
 - Erschienen am 16.01.2017
 - Neue Features
-	- Initial support for syncing contact groups/Distribution Lists (only supports SOGos own VLIST format right now).
-	- Include own version of Thought.vCards from [https://github.com/aluxnimm/Thought.vCards](https://github.com/aluxnimm/Thought.vCards) instead of NuGet package and remove vCardImprovedWriter.
-	- Improve vCardWriter and add support for different IM servicetypes, ticket #463.
-	- Add support for ADR Post Office Box and extended address, feature request 17.
+	- Anfängliche Unterstützung für das Synchronisieren von Kontaktgruppen / Verteilerlisten (unterstützt nur das SOGos-eigene VLIST-Format).
+	- Eigene Version von Thought.vCards von [https://github.com/aluxnimm/Thought.vCards](https://github.com/aluxnimm/Thought.vCards) anstelle von NuGet-Paket verwenden und vCardImprovedWriter entfernt.
+	- VCardWriter verbessert und Unterstützung für verschiedene IM-Servicetypen hinzugefügt, Ticket #463.
+	- Unterstützung für ADR-Postfach und erweiterte Adresse hinzugefügt, Festure-Request 17.
 - Fehlerbehebungen
-	- Unfold lines before further processing in vCardStandardReader, fixes issues with long subproperties like X-ABCROP-RECTANGLE
-	- Set recurring task DTSTART to PatternStartDate to avoid missing DTSTART, ticket #465.
-	- Switch ProgressWindow to Wpf to avoid DPI problems.
-	- Update project urls in about dialog.
+	- Entfaltete Zeilen vor der weiteren Verarbeitung in vCardStandardReader behebt Probleme mit langen Untereigenschaften wie X-ABCROP-RECTANGLE.
+	- Setzt die wiederkehrende Aufgabe DTSTART auf PatternStartDate, um zu vermeiden, dass DTSTART fehlt. Ticket 465.
+	- ProgressWindow auf Wpf umgestellt, um DPI-Probleme zu vermeiden.
+	- Projekt-URLs im Über-Dialog aktualisiert.
 
 #### 2.13.0 ####
 - Erschienen am 03.01.2017
-- Upgrade instructions
-	- Outlook and Google and some other CalDAV servers calculate the intersection with the time-range differently for recurring events which can cause doubled or deleted events, so it is recommended to select a time-range which is larger than the largest interval of your recurring events (e.g. 1 year for birthdays). The default timerange for new profiles is changed from 180 days to 365 days in the future, for existing sync profiles you need to change it manually if affected!
+- Upgrade-Anweisungen
+	- Outlook und Google sowie einige andere CalDAV-Server berechnen die Schnittmenge mit dem Zeitbereich für wiederkehrende Ereignisse unterschiedlich, was zu doppelten oder gelöschten Ereignissen führen kann. Es wird daher empfohlen, einen Zeitbereich auszuwählen, der größer ist als das größte Intervall Ihrer wiederkehrenden Ereignisse (z. B. 1 Jahr für Geburtstage). Der Standard-Zeitbereich für neue Profile wird von 180 Tagen auf 365 Tage in der Zukunft geändert. Für vorhandene Synchronisierungsprofile müssen Sie sie manuell ändern, wenn sie betroffen sind!
 - Neue Features
-	- Add mapping configuration option to include also appointments/tasks without category to category filter.
+	- Zuordnungskonfigurationsoption hinzugefügt, um auch Termine / Aufgaben ohne Kategorie in den Kategorienfilter aufzunehmen.
 - Fehlerbehebungen
 	- Set time-range default timespan to 365 days in the future and add tooltip and warning for time-range filter, ticket #450.
-	- Fix timezone issues with google tasks, ticket #452.
-	- Don't add X-ALT-DESC if body is empty.
+	- Zeitzonenprobleme bei Google-Tasks behoben, Ticket #452.
+	- Kein X-ALT-DESC hinzufügen, wenn body leer ist.
 
 #### 2.12.1 ####
 - Neue Features
-	- Update Google API NuGet packages to version 1.20.0.
+	- Aktualisieren von Google API NuGet-Paketen auf Version 1.20.0.
 - Fehlerbehebungen
-	- prevent NullReferenceExceptions, caused by uninitialized ComponentContainer due to load errors.
-	- improve html<->rtf mapping for appointment bodies
-	- sync removal of task start and due date from server to Outlook, ticket #446.
-	- Add absolute task alarm if start and due dates are not set, ticket #445.
+	- Verhindert NullReferenceExceptions, die durch nicht initialisierten ComponentContainer aufgrund von Ladefehlern verursacht werden.
+	- Verbesserte html <-> rtf-Zuordnung für Termine.
+	- Synchronisierung des Starts und des Fälligkeitsdatums der Aufgabe vom Server zu Outlook, Ticket #446.
+	- Absoluter Taskalarm hinzugefügt, wenn Start- und Fälligkeitsdatum nicht festgelegt sind, Ticket #445.
 
 #### 2.12.0 ####
 - Neue Features
 	- Add general option to enable client certificate TLS authentication, feature request 55.
-	- Map Outlook formatted RTFBody to html description via X-ALT-DESC attribute.
+	- Zugeordnete Outlook-formatierte RTFBody-HTML-Beschreibung über das Attribut X-ALT-DESC.
 - Fehlerbehebungen
-	- Use lowercase for mailto in organizer and attendee uris to avoid problems with some clients, ticket #426.
+	- Verwenden von Kleinbuchstaben für mailto im Organisator und in den Teilnehmer-URLs, um Probleme mit einigen Clients zu vermeiden, Ticket #426.
 
 #### 2.11.0 ####
 - Neue Features
-	- Add possibility to add DAV server calendars/addressbooks.
-	- Improve privileges check in connection test.
-	- Map SCHEDULE-STATUS to Outlook FINVITED flag,  which shows if invitation email has been sent, gh issue 162.
-	- Add PostBuildEvent to sign installer files to avoid warning because of untrusted manufacturer during install.
-	- Update Google API NuGet packages to version 1.19.0.
+	- Möglichkeit hinzugefügt, DAV-Serverkalender / -Adressbücher hinzuzufügen.
+	- Verbesserte Berechtigungsprüfung beim Verbindungstest.
+	- Zuordnung des SCHEDULE-STATUS zum Flag Outlook FINVITED, das anzeigt, ob die Einladungs-E-Mail gesendet wurde. Issue 162.
+	- PostBuildEvent wurde hinzugefügt, um Installationsdateien zu signieren, um eine Warnung wegen eines nicht vertrauenswürdigen Herstellers während der Installation zu vermeiden.
+	- Aktualisierung der Google API NuGet-Pakete auf Version 1.19.0.
 - Fehlerbehebungen
-	- Set UseGlobalAppointmentID as default for SOGo profiles to avoid doubled appointments when Outlook sends invites.
-	- Fix mapping of vtodo status NEEDS-ACTION to Outlook olTaskNotStarted, ticket #418.
-	- Fallback to local timezone if FindSystemTimeZoneById throws an exception, ticket #421.
-	- Fix logging for alarms and remove warning for multiple alarms from sync report.
-	- Do not delete invitations from server identity.
+	- Legen Sie User GlobalAppointmentID als Standard für SOGo-Profile fest, um doppelte Termine zu vermeiden, wenn Outlook Einladungen sendet.
+	- Die Zuordnung des vtodo-Status NEEDS-ACTION zu Outlook olTaskNotStarted wurde korrigiert. Ticket #418.
+	- Rückfall in die lokale Zeitzone, wenn FindSystemTimeZoneById eine Ausnahme auslöst, Ticket #421.
+	- Protokollierung für Alarme behoben und Warnung für mehrere Alarme aus dem Synchronisierungsbericht entfernt.
+	- Keine Einladungen von der Serveridentität löschen.
 
 #### 2.10.0 ####
 - Neue Features
-	- Add profile type for NextCloud.
-	- Add general option to enable useUnsafeHeaderParsing, needed for Yahoo and cPanel Horde.
-	- Improve Autodiscovery.
+	- Profiltyp für NextCloud hinzugefügt.
+	- Allgemeine Option zum Aktivieren von useUnsafeHeaderParsing hinzugefügt, die für Yahoo und cPanel Horde erforderlich ist.
+	- Verbessertes Autodiscovery.
 - Fehlerbehebungen
-	- Fix installer for Office 64-bit installation for AllUsers deployment and copy registry keys to correct HKLM location, ticket #410.
-	- Add scrollbar to sync profiles content control, gh issue 176.
-	- Fix autodiscovery for iCloud CardDav, ticket #414.
-	- Trigger sync also on Outlook startup when TriggerSyncAfterSendReceive is enabled in general options, ticket #415.
-	- Catch COMException when Outlook item can't be found in sync reports.
+	- Das Installationsprogramm für die 64-Bit-Installation von Office für die AllUsers-Bereitstellung wurde korrigiert und der Registrierungsschlüssel wird in den richtigen HKLM-Speicherort kopiert. Ticket 410.
+	- Bildlaufleiste hinzugefügt, um die Inhaltskontrolle von Profilen zu synchronisieren. Issue 176.
+	- Die automatische Erkennung von iCloud CardDav wurde korrigiert. Ticket 414.
+	- Trigger-Synchronisierung auch beim Start von Outlook, wenn TriggerSyncAfterSendReceive in den allgemeinen Optionen aktiviert ist. Ticket 415.
+	- COMException abfangen, wenn Outlook-Element in Synchronisierungsberichten nicht gefunden wird.
 
 #### 2.9.1 ####
 - Hotfix
-	- Fix reminder mapping for just upcoming reminders, regression intruduced in 2.9.0, ticket #406.
+	- Das Erinnerungsmapping für gerade anstehende Erinnerungen wurde korrigiert. Regression wurde in 2.9.0 eingeführt. Ticket #406.
 - Neue Features
-	- Add CheckForNewVersions, StoreAppDatainRoamingFolder and IncludeCustomMessageClasses as app.config keys as well, useful for All Users deployment to change defaults.
+	- CheckForNewVersions, StoreAppDatainRoamingFolder und IncludeCustomMessageClasses als app.config-Schlüssel hinzugefügt. Dies ist nützlich für die Bereitstellung von All Users, um die Standardeinstellungen zu ändern.
 - Fehlerbehebungen
-	- Improve CustomPropertyMapping Validation and check if properties are empty to avoid Nullreference Exceptions.
-	- Update Google Api Nuget packages.
+	- Verbesserte CustomPropertyMapping-Überprüfung und überprüft, ob Eigenschaften leer sind, um Nullreferenzausnahmen zu vermeiden.
+	- Aktualisierte Google Api-Nuget-Pakete.
 
 #### 2.9.0 ####
 - Neue Features
