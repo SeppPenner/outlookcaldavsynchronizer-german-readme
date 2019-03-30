@@ -459,7 +459,7 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 #### 2.12.0 ####
 - Neue Features
-	- Add general option to enable client certificate TLS authentication, feature request 55.
+	- Allgemeine Option zum Aktivieren der TLS-Authentifizierung für Clientzertifikate hinzugefügt, Feature-Request 55.
 	- Zugeordnete Outlook-formatierte RTFBody-HTML-Beschreibung über das Attribut X-ALT-DESC.
 - Fehlerbehebungen
 	- Verwenden von Kleinbuchstaben für mailto im Organisator und in den Teilnehmer-URLs, um Probleme mit einigen Clients zu vermeiden, Ticket #426.
@@ -501,106 +501,105 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 #### 2.9.0 ####
 - Neue Features
-	- Add Profile Import/Export.
-	- Improve Installer, remove Manufacturer from DefaultLocation and remember InstallDir in registry for updates.
-	- Use passive install for updates.
-	- Add toolbar buttons to expand and collapse all nodes in synchronization profiles.
-	- Add general option to expand all nodes in synchronization profiles by default.	
+	- Profil Import / Export hinzugefügt.
+	- Installer wurde verbessert, Hersteller von DefaultLocation entfernt und InstallDir in der Registrierung für Updates gespeichert.
+	- Passive Installation für Updates verwendet.
+	- Symbolleistenschaltflächen hinzugefügt, um alle Knoten in Synchronisationsprofilen zu erweitern und zu reduzieren.
+	- Allgemeine Option hinzugefügt, um standardmäßig alle Knoten in Synchronisationsprofilen zu erweitern.	
 - Fehlerbehebungen
-	- Catch COMException when SyncObjects can't be accessed, github issue 175.
-	- Fix installer for All users deployment.
-	- Fix Map just upcoming reminders for recurring appointments, ticket #398.
+	- COMException abgefangen, wenn auf SyncObjects nicht zugegriffen werden kann, Github-Issue 175.
+	- Das Installationsprogramm für die Bereitstellung aller Benutzer wurde korrigiert.
+	- Korrigierte Map nur anstehende Erinnerungen für wiederkehrende Termine, Ticket #398.
 
 #### 2.8.2 ####
 - Fehlerbehebungen
-	- Fix new profile creation for calendar and task profiles and properly initialize customPropertyMapping configuration.
-	- Fix UserDefinedCustomPropertyMappings initialization to avoid Nullreference exceptions.
-	- Fix formatting of errorMessage in profile validation.
+	- Die Erstellung neuer Profile für Kalender- und Aufgabenprofile wurde korrigiert und die customPropertyMapping-Konfiguration ordnungsgemäß initialisiert.
+	- Die Initialisierung von UserDefinedCustomPropertyMappings wurde korrigiert, um Nullreferenzausnahmen zu vermeiden.
+	- Formatierung von errorMessage bei der Profilvalidierung korrigiert.
 
 #### 2.8.1 ####
 - Fehlerbehebungen
-	- Avoid Nullreference Exceptions when options are not saved after upgrade to 2.8.0, gh issue 174.
-	
+	- Vermeidet Nullreferenz Ausnahmen, wenn Optionen nach dem Upgrade auf 2.8.0 nicht gespeichert werden. Issue 174.
 
 #### 2.8.0 ####
 - Neue Features
-	- Configurable custom properties mapping for Appointments and Tasks.
-	- Update NuGet packages for Google API and NUnit.
+	- Konfigurierbare benutzerdefinierte Eigenschaftszuordnung für Termine und Aufgaben.
+	- Aktualisierte NuGet-Pakete für Google API und NUnit.
 
 #### 2.7.0 ####
 - Neue Features
-	- Map UID to GlobalAppointmentID for new meetings to avoid double events from Mail invites (only possible in Outlook 2013+).
-	- Add option to perform CalDAV/CardDAV sync in chunks with configurable chunk size to avoid OutOfMemoryEceptions, ticket #390.
-	- Add Button which opens profile data directory for debugging.
+	- Zuordnen von UID zu GlobalAppointmentID für neue Besprechungen, um Doppelereignisse von E-Mail-Einladungen zu vermeiden (nur in Outlook 2013+ möglich).
+	- Option hinzugefügt, um CalDAV- / CardDAV-Synchronisierung in Abschnitten mit konfigurierbarer Abschnittsgröße durchzuführen, um OutOfMemoryEceptions zu vermeiden. Ticket 390.
+	- Schaltfläche hinzugefügt, die das Profildatenverzeichnis zum Debuggen öffnet.
 - Fehlerbehebungen
-	- Avoid ArgumentNullException if appointments have no GlobalAppointmentID and log warning, ticket #389.
-	- Update icon of profile in options, when OutlookFolderType of profile changes.
-	- Fix for ToolBarButtons in Options.
+	- Vermeidet die ArgumentNullException, wenn Termine keine GlobalAppointmentID und Protokollwarnung haben, Ticket #389.
+	- Profilsymbol in Optionen aktualisiert, wenn sich der OutlookFolderType des Profils ändert.
+	- Fix für ToolBarButtons in Optionen.
 
 #### 2.6.1 ####
-- **WARNING**: This version changes the internal cache structure, when downgrading to an older version, the cache gets cleared and a new inital sync is performed!
+- **WARNUNG**: Diese Version ändert die interne Cache-Struktur. Beim Downgrade auf eine ältere Version wird der Cache gelöscht und eine neue Anfangssynchronisierung durchgeführt!
 - Fehlerbehebungen
-	- Fix cache conversion for tasks.
-	- Ensure synchronization context on every button click
+	- Cache-Konvertierung für Aufgaben behoben.
+	- Stellen Sie den Synchronisierungskontext bei jedem Klicken der Schaltfläche sicher.
 
 #### 2.6.0 ####
-- **WARNING**: This version changes the internal cache structure, when downgrading to an older version, the cache gets cleared and a new inital sync is performed!
+- **WARNUNG**: Diese Version ändert die interne Cache-Struktur. Beim Downgrade auf eine ältere Version wird der Cache gelöscht und eine neue Anfangssynchronisierung durchgeführt!
 - Neue Features
-	- Better support for meeting invitations.
-	- Improve duplicate event cleaner.
-	- Update Google Apis nuget packages to 1.16.0.
-	- Include GlobalAppointmentId in RelationCache.
+	- Bessere Unterstützung für Besprechungseinladungen.
+	- Verbesserter doppelter Ereignisreiniger.
+	- Aktualisierte Google Apis-Nuget-Pakete auf 1.16.0.
+	- GlobalAppointmentId in RelationCache eingefügt.
 - Fehlerbehebungen
-	- Update accepted meeting invitations instead of deleting and recreating them to avoid wrong cancellation mails from the CalDAV server.
-	- Catch OverflowException for invalid birthdays in contacts, ticket #386.
-	- DuplicateEventCleaner: catch exception if appointment doesn't exist anymore.
-	- Avoid Nullreference Exception and don't add server resource when it doesn't contain any valid VEVENT or VTODO, gh issue 167.
-	- Check if caldav resource is not empty to avoid ArgumentOutOfRangeException.
+	- Akzeptierte Besprechungseinladungen wurden aktualisiert, anstatt sie zu löschen und neu zu erstellen, um falsche Stornierungsmails vom CalDAV-Server zu vermeiden.
+	- OverflowException für ungültige Geburtstage in Kontakten abfangen, Ticket #386.
+	- DuplicateEventCleaner: Ausnahme abfangen, wenn kein Termin mehr vorhanden ist.
+	- Vermeiden Sie eine Nullreferenz-Ausnahme und fügen Sie keine Serverressource hinzu, wenn diese keine gültigen VEVENT- oder VTODO-Probleme enthält. Issue 167.
+	- Es wird geprüft, ob die Caldav-Ressource nicht leer ist, um ArgumentOutOfRangeExceptions zu vermeiden.
 
 #### 2.5.1 ####
 - Neue Features
-	- Add account type for Cozy Cloud and set UseIanaTz as default.
+	- Kontotyp für Cosy Cloud hinzugefügt und UseIanaTz als Standard festgelegt.
 - Fehlerbehebungen
-	- Set BusyStatus to tentative for meeting invites without response.
-	- Follow also 307 redirects in WebDavRequests, fixes autodiscovery for Telstra BigPond.
-	- Ensure that discovered resource uris end with slash.
-	- Fix linebreak issues for Open-Xchange vcards, ticket #290.
-	- Add TYPE=WORK to first Outlook Email Address and TYPE=HOME to second for CardDAV profiles and map work email to first Outlook Email Address and home email to second for CardDAV and google contact profiles.
-	- Add default mapping of cell,work and home phone number if PhoneTypes are missing when syncing from CardDAV server to avoid loss of telephone numbers.
-	- Exclude received meetings from immediate sync to avoid problems with doubled events.
+	- Setzen Sie BusyStatus auf "Tentativ" für Besprechungseinladungen ohne Antwort.
+	- Die 307-Weiterleitungen in WebDavRequests eingeführt, Autodiscovery für Telstra BigPond korrigiert.
+	- Stellen Sie sicher, dass die erkannten Ressourcenuris mit einem Schrägstrich enden.
+	- Linebreak-Probleme für Open-Xchange-Vcards behoben, Ticket #290.
+	- TYPE=WORK wurde der ersten Outlook-E-Mail-Adresse und TYPE=HOME für die zweite für CardDAV-Profile und Mapping der Arbeits-E-Mail zur ersten Outlook-E-Mail-Adresse und der Home-E-Mail für die CardDAV- und Google-Kontaktprofile hinzugefügt.
+	- Standard-Zuordnung von Mobilfunk-, Arbeits- und Privattelefonnummern hinzugefügt, wenn diese beim Synchronisieren mit dem CardDAV-Server PhoneTypes fehlen, um den Verlust von Telefonnummern zu vermeiden.
+	- Erhaltene Besprechungen von der sofortigen Synchronisierung ausgeschlossen, um Probleme mit verdoppelten Ereignissen zu vermeiden.
 
 #### 2.5.0 ####
 - Neue Features
-	- Add mapping configuration to use IANA timezones instead of Windows timezones.
-	- Make addin startup and EntityMapper async.
-	- Add progressBar and download new version async, github issue 156.
+	- Zuordnungskonfiguration hinzugefügt, um IANA-Zeitzonen anstelle von Windows-Zeitzonen zu verwenden.
+	- Add-In-Start und EntityMapper asynchron gemacht.
+	- ProgressBar hinzugefügt und neue Version async heruntergeladen. Github-Issue 156.
 - Fehlerbehebungen
-	- Add SCHEDULE-AGENT=CLIENT also to attendees, ticket #354.
-	- Avoid empty PARTSTAT and default to NEEDS-ACTION.
-	- Add KeepOutlookFileAs option (defaults to true) for contacts to avoid overwriting existing FileAs with FN attribute.
-	- Set Outlook contact FullName to FN as fallback if N is missing in vcard.
-	- Set Outlook task status to Completed when complete date exists and percentComplete is 100 also when VTODO status is missing, gh issue 154.
-	- Fix mapping organizer if CN and email are identical, gh issue 157.
-	- Avoid DDay.ICal UTC calls and use NodaTime instead for conversion, gh issue 159.
+	- SCHEDULE-AGENT = CLIENT wurde auch für die Teilnehmer hinzugefügt, Ticket #354.
+	- Leeres PARTSTAT vermieden und standardmäßig auf NEEDS-ACTION gesetzt.
+	- Die KeepOutlookFileAs-Option (Standardeinstellung true) für Kontakte wurde hinzugefügt, um das Überschreiben vorhandener FileAs mit dem FN-Attribut zu vermeiden.
+	- Setzen des Outlook-Kontakt FullName auf FN als Fallback, wenn N in vcard fehlt.
+	- Setzen des Status der Outlook-Aufgabe auf Abgeschlossen, wenn das vollständige Datum vorhanden ist und percentComplete den Wert 100 hat, auch wenn der VTODO-Status fehlt. Github-Issue 154.
+	- Korrigierter Mapping-Organizer, wenn CN und E-Mail identisch sind, Github-Issue 157.
+	- DDay.ICal-UTC-Aufrufe wurden vermieden und stattdessen NodaTime für die Konvertierung verwendet, Github-Issue 159.
 
 #### 2.4.0 ####
 - Neue Features
-	- Add Use Account Password also to bulk profile creation and add posibility to get server settings (DAV url, Email, Username) from Outlook IMAP/Pop3 Account.
-	- Add mapping for task alarms with absolute date/time triggers.
-	- Add category filter also for tasks, feature 48.
-	- Download contact photo if provided by url, fixes contact photo mapping for GMX, ticket #358.
+	- Das Kontokennwort wurde auch für die Massenprofilerstellung hinzugefügt. Außerdem können die Servereinstellungen (DAV-URL, E-Mail, Benutzername) vom Outlook-IMAP / Pop3-Konto abgerufen werden.
+	- Mapping für Aufgabenalarme mit absoluten Datums- / Zeitauslösern hinzugefügt.
+	- Kategoriefilter auch für Aufgaben hinzugefügt, Feature 48.
+	- Das Kontaktfoto wird heruntergeladen, wenn es von der URL bereitgestellt wird, und korrigiert das Photo-Mapping für GMX, Ticket #358.
 - Fehlerbehebungen
-	- Change SOGo account profile url path to /SOGo/dav/.
-	- Fix mapping of PostalAddress Country in Google Contacts API.
-	- Fix mapping of PostalCode for Google Contacts, ticket #352.
-	- Update NuGet packages for used external libraries.
-	- Log warning and avoid COM Exception for recurring events and tasks when RRULE BYMONTH is invalid, ticket #334.
-	- Use correct request URI in reports when server uri has different encoding than resource URI, github issue 152.
+	- Der Pfad des SOGo-Kontoprofils wurde in /SOGo/dav/ geändert.
+	- Die Zuordnung von PostalAddress Country in der Google Contacts API wurde korrigiert.
+	- Die Zuordnung von PostalCode für Google Contacts wurde korrigiert. Ticket #352.
+	- Aktualisierte NuGet-Pakete für verwendete externe Bibliotheken.
+	- Protokollierte Warnung und Vermeidung einer COM-Ausnahme für wiederkehrende Ereignisse und Aufgaben, wenn RRULE BYMONTH ungültig ist, Ticket #334.
+	- Verwendet den richtigen Anforderungs-URI in Berichten, wenn der Server-URI eine andere Codierung als der Ressourcen-URI aufweist. Github-Issue 152.
 
 #### 2.3.1 ####
 - Fehlerbehebungen
-	- Fix OL2007 toolbar positioning and saving, ticket #351.
-	- Use only Start, End and Subject for DuplicateEventCleaner, ticket #330.
+	- Problem beim Positionieren und Speichern der OL2007-Symbolleiste behoben, Ticket #351.
+	- Verwendet nur Start, Ende und Betreff für DuplicateEventCleaner, Ticket #330.
 
 #### 2.3.0 ####
 - Neue Features
