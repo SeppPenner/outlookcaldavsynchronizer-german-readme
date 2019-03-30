@@ -339,90 +339,90 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 #### 2.19.2 ####
 - Erschienen am 13.05.2017
 - Fehlerbehebungen
-	- Honor chunk size also for Google Contact API read calls, ticket #586.
-	- Switch mapping of email addresses and map HOME to email1 and WORK to email2 to be more consistent, gh ticket 193.
-	- Provide Login-Hint for Google-Authorization.
-	- Add larger sync intervals, feature request #70.
-	- Fix layout for ok and cancel button in GeneralOptionsForm.
-	- Improve IntegrationTests.
+	- Berücksichtigung der Chunk-Größe auch für Google Contact API-Leseaufrufe, Ticket #586.
+	- Umstellung der Zuordnung von E-Mail-Adressen und Zuordnung von HOME zu email1 und WORK zu email2, um konsistenter zu sein, Ticket 193.
+	- Login-Hinweis für die Google-Autorisierung bereitgestellt.
+	- Größere Synchronisationsintervalle hinzugefügt, Feature-Request 70.
+	- Das Layout für die OK- und Abbrechen-Schaltfläche in GeneralOptionsForm wurde korrigiert.
+	- Verbesserte Integrationstests.
 
 #### 2.19.1 ####
 - Erschienen am 18.04.2017
 - Fehlerbehebungen
-	- Fix toolbar not accessable within Outlook2007, ticket #570.
-	- Improve IntegrationTests.
+	- Problem behoben, dass die Symbolleiste in Outlook 2007 nicht zugreifbar war, behoben. Ticket #570.
+	- Verbesserte Integrationstests.
 
 #### 2.19.0 ####
 - Erschienen am 16.04.2017
 - Neue Features
-	- Abort and postpone synchronization when server reports HTTP 429.
-	- Abort synchronization on network related exceptions and consider them as warnings the first two times they occur. This should help avoid errors on laptop startup after hibernation or if VPN is not ready yet, GH issues #104,#181.
-	- Do not block Outlook Startup with component initialization, should avoid issues with Outlook deactivating the addin after slow startup.
-	- Refactoring of IntegrationTests.
+	- Abbrechen und Verschieben der Synchronisierung, wenn der Server HTTP 429 meldet.
+	- Bricht die Synchronisierung bei netzwerkbezogenen Ausnahmen ab und betrachtet sie als Warnung, wenn sie die ersten 2 mal auftreten. Dies sollte helfen, Fehler beim Starten des Laptops nach dem Ruhezustand zu vermeiden oder wenn VPN noch nicht bereit ist. Issues #104, #181.
+	- Blockieret nicht den Outlook-Start mit der Komponenteninitialisierung. Vermeidet das Problem, dass Outlook das Add-In nach einem langsamen Start deaktiviert.
+	- Refactoring von Integrationstests.
 - Fehlerbehebungen
-	- Fix MapDistListMembers2To1 for members not resolved from the addressbook.
-	- Fix mapping of google home-only email address to Outlook Email1Address, ticket #561.
+	- Problem mit MapDistListMembers2To1 für Mitglieder behoben, die nicht aus dem Adressbuch aufgelöst wurden.
+	- Die Zuordnung der E-Mail-Adresse für Google Home-Adressen zu Outlook Email1Adresse, wurde behoben. Ticket 561.
 	
 #### 2.18.0 ####
 - Erschienen am 26.03.2017
 - Neue Features
-	- Add mapping of distribution lists to contact groups with KIND:group
-	- Add profile type for Easy Project / Easy Redmine with special setup wizard
-	- Add profile type for mailbox.org
-	- Switch profile selection to WPF
+	- Zuordnung von Verteilerlisten zu Kontaktgruppen mit KIND: group hinzugefügt.
+	- Profiltyp für Easy Project / Easy Redmine mit speziellem Einrichtungsassistenten hinzugefügt.
+	- Profiltyp für Mailbox.org hinzugefügt.
+	- Profilauswahl auf WPF umgestellt.
 - Fehlerbehebungen
-	- Add MessageBox with warning about sensitive data in log file before showing the log.
-	- Add task mapping configuration option to map Outlook start and due date of tasks as floating without timezone information to avoid issues with tasks across timezones, ticket #530.
-	- Update NuGet packages.
+	- MessageBox mit Warnung vor vertraulichen Daten in der Protokolldatei hinzugefügt, bevor das Protokoll angezeigt wird.
+	- Konfigurationsoption für die Aufgabenzuordnung hinzugefügt, um Outlook-Start und Fälligkeitsdatum von Aufgaben als Floating ohne Zeitzoneninformationen zuzuordnen, um Probleme mit Aufgaben über Zeitzonen hinweg zu vermeiden, Ticket #530.
+	- NuGet-Pakete wurden aktualisiert.
 
 #### 2.17.0 ####
 - Erschienen am 26.02.2017
 - Neue Features
-	- Add general option to show/hide sync progress bar and make threshold for its display configurable.
-	- Add App.config setting for SoftwareOnly WPF Rendering to avoid issues with graphics card drivers and hardware acceleration, ticket #480.
+	- Eine allgemeine Option wurde hinzugefügt, um die Synchronisierungsfortschrittsleiste anzuzeigen / auszublenden und den Schwellenwert für die Anzeige konfigurierbar zu machen.
+	- App.config-Einstellung für SoftwareOnly WPF-Rendering hinzugefügt, um Probleme mit Grafikkartentreibern und Hardwarebeschleunigung zu vermeiden. Ticket #480.
 - Fehlerbehebungen
-	- Avoid System.Collections.Generic.KeyNotFoundException for google contact API and consider paging when fetching Google groups, ticket #511.
-	- Follow redirect also for 303 in WebDabClient, ticket #516.
+	- Vermeiden von System.Collections.Generic.KeyNotFoundException für die Google-Kontakt-API. Das Paging beim Abrufen von Google-Gruppen beachten. Ticket #511.
+	- Geführte Weiterleitung auch für 303 in WebDavClient, Ticket #516.
 
 #### 2.16.0 ####
 - Erschienen am 14.02.2017
 - Neue Features
-	- Add warning if one-way synchronization mode would lead to deletion of the existing non empty outlook folder or replication of an empty folder to the server.
-	- Add possibility to use chunked execution also for Google contacts.
-	- Add Option to disable sticky category filter.
-	- Add mapping of ROLE to Outlook Profession for contacts, ticket #505.
+	- Es wurde eine Warnung hinzugefügt, wenn der Einweg-Synchronisationsmodus zum Löschen des vorhandenen nicht leeren Outlook-Ordners oder zur Replizierung eines leeren Ordners auf dem Server führen würde.
+	- Möglichkeit hinzugefügt, die Chunked-Ausführung auch für Google-Kontakte zu verwenden.
+	- Option zum Deaktivieren des Sticky-Kategoriefilters hinzugefügt.
+	- Zuordnung von ROLE zu Outlook Profession für Kontakte hinzugefügt. Kategoriefilter-Ticket #505.sticky.
 - Fehlerbehebungen
-	- Better handling of SOGo VLIST members as recipients so that the underlying contact is used.
-	- Assume that a HTTP-404 denotes an empty addressbook only, if the addressbook resource exists.
+	- Besserer Umgang mit SOGo VLIST-Mitgliedern als Empfänger, damit der zugrunde liegende Kontakt verwendet wird.
+	- Nimmt an, dass ein HTTP-404 nur ein leeres Adressbuch bezeichnet , wenn die Adressbuchressource vorhanden ist.
 
 #### 2.15.1 ####
 - Erschienen am 31.01.2017
 - Fehlerbehebungen
-	- Avoid Exception in QueryAppointmentFolder when GlobalAppointmentID can't be accessed or is null, ticket #491.
-	- Make GeneralOptions window resizable and add scrollbar, avoids issues on low resolution devices.
+	- Ausnahmebedingung in QueryAppointmentFolder wurde vermieden, wenn nicht auf GlobalAppointmentID zugegriffen werden kann oder null ist, Ticket #491.
+	- Die Fenstergröße des GeneralOptions-Fensters wurde vergrößert und die Bildlaufleiste hinzugefügt. Dadurch werden Probleme bei Geräten mit niedriger Auflösung vermieden.
 
 #### 2.15.0 ####
 - Erschienen am 29.01.2017
 - Neue Features
-	- Huge performance improvements accessing Outlook folder data when nothing changed and avoid fetching all items, add general option to configure the folder query option.
-	- Many UI improvements, add link to show/hide advanced settings and general option to set default
-	- reorder/regroup general options.
-	- Many improvements of vCard reader, add support for various X-properties for IMs, ticket #463.
-	- Save unrecognized properties in vCard OtherProperties.
+	- Große Leistungsverbesserungen beim Zugriff auf Outlook-Ordnerdaten, wenn sich nichts geändert hat. Das Abrufen aller Elemente vermeiden. Eine allgemeine Option hinzugefügt, um die Ordnerabfrageoption zu konfigurieren.
+	- Viele Verbesserungen der Benutzeroberfläche, ein Link zum Anzeigen / Ausblenden erweiterter Einstellungen und allgemeine Option zum Festlegen der Standardeinstellungen wurde hinzugefügt.
+	- Allgemeine Optionen neu geordnet / gruppiert.
+	- Viele Verbesserungen des vCard-Readers, Unterstützung für verschiedene X-Eigenschaften für IMs, Ticket #463.
+	- Nicht erkannte Eigenschaften in vCard OtherProperties gespeichert.
 - Fehlerbehebungen
-	- Catch DateTimeZoneNotFoundException, ticket #484.
-	- Avoid adding email address twice.
-	- Catch FormatException in vCardStandardReader and log warnings from vcard deserialization.
-	- Warn if RRULE COUNT=0 and avoid COM exceptions when setting invalid RecurrencePattern Occurrences or PatternEndDate values.
+	- Try/catch um DateTimeZoneNotFoundException, Ticket # 484.
+	- Das doppelte Hinzufügen der E-Mail-Adresse wurde vermieden.
+	- FormatException in vCardStandardReader abfangen und Warnungen von vcard-Deserialisierung protokollieren.
+	- Warnen, wenn RRULE COUNT=0 ist, und COM-Ausnahmen vermeiden, wenn ungültige Werte für RecurrencePattern Occurrences oder PatternEndDate festgelegt werden.
 	- Don't set RRULE COUNT if Occurrences is an invalid number.
-	- Avoid NullReferenceException when a SOGo VLIST has a member card without FN and avoid empty members.
-	- Catch possible COMException when responding to a meeting invite.
-	- Workaround for reading wrong encoded vcard PHOTO attributes from SOGo global addressbooks mapped from LDAP/AD avatar pictures.
+	- NullReferenceException vermieden, wenn eine SOGo-VLIST eine Mitgliedskarte ohne FN hat. Leere Mitglieder vermieden.
+	- Catchen einer möglichen COMException, wenn auf eine Besprechungseinladung geantwortet wird.
+	- Problemumgehung für das Lesen falsch codierter Vcard-PHOTO-Attribute aus globalen SOGo-Adressbüchern, die aus LDAP / AD-Avatar-Bildern zugeordnet werden.
 	
 #### 2.14.1 ####
 - Erschienen am 17.01.2017
 - Fehlerbehebungen
-	- Update installer to fix dependency for Thought.vCards.
+	- Das Installationsprogramm wurde aktualisiert, um die Abhängigkeit von Thought.vCards zu beheben.
 
 #### 2.14.0 ####
 - Erschienen am 16.01.2017
