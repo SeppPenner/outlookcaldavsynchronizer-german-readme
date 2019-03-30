@@ -603,83 +603,82 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 #### 2.3.0 ####
 - Neue Features
-	- Save Outlook 2007 toolBar position and visibility in Registry, github issue 102.
-	- Implement duplicate event cleanup in Event mapping configuration.
-	- Add CalDavConnectTimeout as general option (feature 46).
+	- Outlook 2007 toolBar-Position und Sichtbarkeit in Registry gespeichert, Github-Issue 102.
+	- Doppelte Ereignisbereinigung in der Konfiguration der Ereigniszuordnung implementiert.
+	- CalDavConnectTimeout als allgemeine Option hinzugefügt. Feature 46.
 - Fehlerbehebungen
-	- Fix commandbar for OL2007, ticket #339
-	- Some fixes for recurrence exceptions if timezone of appointment is different to Outlook local timezone.
-	- Fix setting organizer name in Outlook from CommonName and Email.
-	- Use general option to show reports for warnings and/or errors also for systray notifications, github issue 143.
-	- Map also default events to private when mapping option is activated, ticket #329.
-	- Do not steal focus when showing ProgressForm (#328 Window steal focus when initiating sync).
-	- validate input in GeneralOptionsForm.
+	- Befehlsleiste für OL2007 behoben. Ticket #339.
+	- Einige Korrekturen für Wiederholungsausnahmen, wenn die Zeitzone des Termins von der lokalen Outlook-Zeitzone abweicht.
+	- Das Einstellen des Organisatornamens in Outlook von CommonName und Email wurde korrigiert.
+	- Allgemeine Option zum Anzeigen von Berichten zu Warnungen und / oder Fehlern auch für Systray-Benachrichtigungen. Github-Issue 143.
+	- Ordnen Sie auch Standardereignisse privaten zu, wenn die Zuordnungsoption aktiviert ist. Ticket #329.
+	- Stiehlt den Fokus nicht, wenn ProgressForm angezeigt wird (#328 Window steal focus, wenn die Synchronisierung gestartet wird).
+	- Validierung für die Eingabe in GeneralOptionsForm hinzugefügt.
 
 #### 2.2.0 ####
 - Neue Features
-	- Add general option to trigger sync after Outlook Send/Receive finishes, github issue 141.
-	- Add event mapping configuration parameter to map CLASS:PUBLIC to Outlook Private flag, feature request 45.
-	- Implement DNS SRV and TXT lookups for autodiscovery from email address.
+	- Allgemeine Option hinzugefügt, um die Synchronisierung auszulösen, nachdem Outlook Senden / Empfangen abgeschlossen ist. Github-Issue 141.
+	- Konfigurationsparameter für die Ereigniszuordnung hinzugefügt, um die Markierung CLASS: PUBLIC to Outlook Private zuzuordnen. Feature-Request 45.
+	- Implementierung von DNS SRV- und TXT-Suchvorgängen für die automatische Erkennung von E-Mail-Adressen.
 - Fehlerbehebungen
-	- Fix autodiscovery when server returns multiple calendar-home-set hrefs, github issue 139.
+	- Die automatische Erkennung wurde behoben, wenn der Server mehrere Hrefs mit calendar-home-set zurückgibt. Github-Issue 139.
 
 #### 2.1.3 ####
 - Neue Features
-	- Add event mapping configuration to use Outlook GlobalAppointmentID for UID attribute, ticket #318.
+	- Event Mapping-Konfiguration hinzugefügt, um Outlook GlobalAppointmentID für das UID-Attribut zu verwenden. Ticket #318.
 - Fehlerbehebungen
-	- Don't log warning if DTEND is not set for allday events, ticket #316.
-	- Prefix summary of events and not only meetings with status cancelled, since Android uses this instead of exdates for recurrence exceptions, ticket #307.
+	- Keine Warnung protokollieren, wenn DTEND nicht für alltägliche Ereignisse eingestellt ist. Ticket #316.
+	- Präfixzusammenfassung von Ereignissen und nicht nur Besprechungen mit dem Status "Abgebrochen", da Android dies anstelle von Exatdaten für Wiederholungsausnahmen verwendet, Ticket #307.
 
 #### 2.1.2 ####
 - Neue Features
-	- Add ProfileType for SOGo.
+	- ProfileType für SOGo hinzugefügt.
 - Fehlerbehebungen
-	- Fix detecting deleted appointments from folders in local pst data files when using category filter, ticket #297.
+	- Das Erkennen von gelöschten Terminen aus Ordnern in lokalen PST-Datendateien wurde behoben, wenn der Kategoriefilter verwendet wurde. Ticket #297.
 
 #### 2.1.1 ####
 - Neue Features
-	- Add ProfileType for Landmarks.
+	- ProfileType für Orientierungspunkte hinzugefügt.
 - Fehlerbehebungen
-	- Avoid sync loops and delete new events, when they represent an invitation from server identity.
-	- Fix event mapping of TRANSP to Outlook BusyStatus and use
-X-MICROSOFT-CDO-BUSYSTATUS.
-	- Fix Autodiscovery behavior in case of url textbox is empty.
+	- Vermeiden von Synchronisationsschleifen und löschen neuer Ereignisse, wenn sie eine Einladung von der Serveridentität darstellen.
+	- Die Zuordnung von Ereignissen von TRANSP zu Outlook BusyStatus wurde korrigiert auf X-MICROSOFT-CDO-BUSYSTATUS.
+	- Behoben: Autodiscovery bei leerem URL-Textfeld.
 
 #### 2.1.0 ####
 - Neue Features
-	- Implement Bulk profile creation to add multiple profiles at once and choose the folder for each discovered server resource (calendar, addressbook and task).
-	- Query supported-calendar-component-set and filter out VEVENT and VTODO resources for autodisovery.
+	- Massenprofilerstellung implementiert, um mehrere Profile gleichzeitig hinzuzufügen und den Ordner für jede erkannte Serverressource (Kalender, Adressbuch und Aufgabe) auszuwählen.
+	- Abfragen unterstützter Kalender-Komponentensätze und Filtern von VEVENT- und VTODO-Ressourcen für die automatische Erkennung.
 - Fehlerbehebungen
-	- add functionality to cope with multiple groups with the same name for Google Contacts API.
-	- Restore old CalendarUrl when Google Autodiscovery has error or was cancelled.
-	- Map ResponseStatus default to NEEDS-ACTION in MapParticipation1To2 to avoid exception.
+	- Funktionalität hinzugefügt, um mit mehreren Gruppen mit demselben Namen für die Google Contacts API umgehen zu können.
+	- Die alte CalendarUrl wurde wiederhergestellt, wenn bei der Google AutoErmittlung ein Fehler aufgetreten ist oder der Vorgang abgebrochen wurde.
+	- Der default ResponseStatus-Standardwert ist NEEDS-ACTION in MapParticipation1To2, um eine Ausnahme zu vermeiden.
 
 #### 2.0.2 ####
 - Neue Features
-	- Improve event mapping of TRANSP and STATUS to Outlook BusyStatus. (contributed by Florian Saller).
-	- Improve Autodiscovery.
-	- Add ProfileType for Sarenet.
+	- Verbesserte Ereigniszuordnung von TRANSP und STATUS zu Outlook BusyStatus. (Contribution von Florian Saller).
+	- Verbessertes Autodiscovery.
+	- ProfileType für Sarenet hinzugefügt.
 - Fehlerbehebungen
-	- Ignore invalid-xml-errors in EntityRelationDataAccess unless a new version has been saved.
-	- Fetch all Google Contacts with a single request to avoid 503 errors.
-	- Query just contacts from Default Group from Google Contacts API.
-	- Do not log an error if delete or update fails because of concurrency effects.
-	- Only access AddressEntry if recipient can be resolved and catch possible COMExceptions.
+	- Ungültige-XML-Fehler in EntityRelationDataAccess werden ignoriert, sofern keine neue Version gespeichert wurde.
+	- Alle Google-Kontakte wurden mit einer einzigen Anforderung abgerufen, um 503 Fehler zu vermeiden.
+	- Nur Kontakte aus der Default Group aus der Google Contacts API abfragen.
+	- Keinen Fehler melden, wenn das Löschen oder Aktualisieren aufgrund von Parallelitätseffekten fehlschlägt.
+	- Greifen Sie auf AddressEntry nur zu, wenn der Empfänger aufgelöst werden kann und mögliche COMExceptions abgefangen werden.
 
 #### 2.0.1 ####
 - Neue Features
-	- Initial support for mail.ru
-	- Add option to keep Outlook photo in contact mapping configuration.
+	- Anfängliche Unterstützung für mail.ru.
+	- Option hinzugefügt, um das Outlook-Foto in der Kontaktzuordnungskonfiguration zu halten.
 - Fehlerbehebungen
-	- Catch COMException if birthday can't be set in Outlook, ticket #276.
-	- Preserve current mapping configuration, if no folder selected.
-	- Fix own identity handling in event mapping (especially for Exchange accounts).
-	- Fix possible Nullreference Exception in CardDavDataAccess.GetEntities.
-	- Check if key exists before adding to targetExceptionDatesByDate in MapRecurrence1To2, ticket #270.
-	- Skip directoryresource, if returned from calendar-query, since mail.ru returns directory itself even with an etag.
-	- Disable other checkboxes in schedule settings when Map Attendees is unchecked.
-	- Remove X-ABCROP-RECTANGLE from vcard photo attributes since the deserializer can't parse the base64 value, ticket #274.
-	- Disable sync now button during synchronization runs.
+	- COMException abgefangen, wenn in Outlook kein Ticket eingestellt werden kann, Ticket #276.
+	- Die aktuelle Mapping-Konfiguration bleibt erhalten, wenn kein Ordner ausgewählt ist.
+	- Eigene Identitätsbehandlung in der Ereigniszuordnung (insbesondere für Exchange-Konten) behoben.
+	- Mögliche Nullreferenzausnahme in CardDavDataAccess.GetEntities behoben.
+	- Es wird geprüft, ob der Schlüssel vorhanden ist, bevor er zu targetExceptionDatesByDate in MapRecurrence1To2 hinzugefügt wird. Ticket #270.
+	- Überspringen von directoryresource, wenn von der Kalenderabfrage zurückgegeben, da mail.ru selbst mit einem etag das Verzeichnis selbst zurückgibt.
+	- Andere Kontrollkästchen in den Zeitplaneinstellungen wurden deaktiviert, wenn die Option "Map-Teilnehmer" deaktiviert ist.
+	- X-ABCROP-RECTANGLE aus den Vcard-Fotoattributen entfernt, da der Deserializer den base64-Wert nicht parsen kann. Ticket #274.
+	- Schaltfläche "Jetzt synchronisieren" während Synchronisierungsläufen deaktiviert.
 
 #### 2.0.0 ####
 - Neue Features
