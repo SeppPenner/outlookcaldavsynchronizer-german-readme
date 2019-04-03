@@ -682,42 +682,42 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 #### 2.0.0 ####
 - Neue Features
-	- Add support for Google Contacts API to sync Outlook contact folders with Google contacts which improves mapping and performance, since the Google CardDAV API has some issues (first official release, beta)
-	- Support for google contact groups, which are synced to Outlook categories.
-	- Sync contact photos, WebPages, Notes, Sensitivity, Hobbies for google contacts.
-	- Added mapping for anniversary, relations (spouse, child, etc.) and IMs for google contacts (Contribution from Florian Saller [https://sourceforge.net/u/floriwan/profile/](https://sourceforge.net/u/floriwan/profile/), thank you!)
-	- Remove legacy synchronization profile settings user interface.
+	- Unterstützung für die Google Contacts API zur Synchronisierung von Outlook-Kontaktordnern mit Google-Kontakten wurde hinzugefügt. Dies verbessert die Zuordnung und die Leistung, da die Google CardDAV-API einige Probleme aufweist (erste offizielle Veröffentlichung, Beta).
+	- Unterstützung für Google-Kontaktgruppen, die mit Outlook-Kategorien synchronisiert werden.
+	- Synchronisieren von Kontaktfotos, Webseiten, Notizen, Empfindlichkeit, Hobbies für Google-Kontakte.
+	- Mapping für Jubiläum, Beziehungen (Ehepartner, Kind usw.) und IMs für Google-Kontakte hinzugefügt. (Beitrag von Florian Saller [https://sourceforge.net/u/floriwan/profile/](https://sourceforge.net/u/floriwan/profile/), vielen Dank!)
+	- Benutzeroberfläche für Einstellungen für ältere Synchronisationsprofileinstellungen entfernt.
 - Fehlerbehebungen
-	- Add TYPE=JPEG to vcard photo attributes and catch exceptions in MapPhoto2To1.
-	- Catch COM-Exception, when fetching Items from Outlook (ticket #263 Error when deleting contacts with Synchronize changes immediately after changes activated).
-	- Fix possible Nullreference Exception in CardDavDataAccess.
-	- Fix ForceBasicAuthentication checkbox in WPF UI.
-	- Fix and simplify connection testing.
-	- Delete contact photo in Outlook if it was deleted on the CardDav server.
+	- TYPE = JPEG wurde zu vcard-Fotoattributen hinzugefügt und Ausnahmen in MapPhoto2To1 erfasst.
+	- COM-Exception beim Abrufen von Elementen aus Outlook abgefangen (Ticket #263 Fehler beim Löschen von Kontakten mit Änderungen synchronisieren sofort nach Aktivierung der Änderungen).
+	- Mögliche Nullreferenzausnahme in CardDavDataAccess behoben.
+	- Das Kontrollkästchen "ForceBasicAuthentication" in der WPF-Benutzeroberfläche wurde behoben.
+	- Feste und vereinfachte Verbindungstests.
+	- Das Kontaktfoto in Outlook wird gelöscht, wenn es auf dem CardDav-Server gelöscht wurde.
 
 #### 1.24.0 ####
 - Neue Features
-	- Add general option to ignore invalid characters in server response.
-	- Implement reordering of synchronization profiles in the WPF UI
+	- Allgemeine Option hinzugefügt, um ungültige Zeichen in der Serverantwort zu ignorieren.
+	- Neuanordnung der Synchronisationsprofile in der WPF-Benutzeroberfläche implementiert
 - Fehlerbehebungen
-	- Fix VALARM trigger handling if duration is zero, ticket #253.
-	- Fix display issues for reports #259.
-	- Add missing check box in WPF EventMappingConfigurationView (Negate filter and sync all Appointments except this category).
-	- Hide TimeRangeView for all folder types except Appointments and Tasks.
-	- Fix proxy settings in new WPF UI.
-	- Disable ConflictResolution for OneWay synchronization in WPF UI.
+	- Problem mit VALARM-Trigger-Behandlung behoben, wenn die Dauer null ist, Ticket #253.
+	- Anzeigeprobleme für Berichte #259 behoben.
+	- Fehlendes Kontrollkästchen in WPF EventMappingConfigurationView hinzugefügt (Filter negieren und alle Termine außer dieser Kategorie synchronisieren).
+	- TimeRangeView für alle Ordnertypen mit Ausnahme von Terminen und Aufgaben ausblenden.
+	- Proxy-Einstellungen in der neuen WPF-Benutzeroberfläche korrigiert.
+	- Deaktivieren der ConflictResolution für die OneWay-Synchronisierung in der WPF-Benutzeroberfläche.
 
 #### 1.23.0 ####
 - Neue Features
-	- First implementation of a complete redesign of Synchronization Profiles GUI using WPF framework.
-	- General option to switch between modern WPF and standard WinForms GUI.
-	- Improve update handling and download README after installing new version.
+	- Erste Implementierung eines kompletten Redesigns der GUI für Synchronisationsprofile mithilfe des WPF-Frameworks.
+	- Allgemeine Option zum Wechseln zwischen moderner WPF- und Standard-WinForms-Benutzeroberfläche.
+	- Verbessertes Update-Handling und Herunterladen vom README nach der Installation einer neuen Version.
 - Fehlerbehebungen
-	- Ignore invalid BYMONTHDAY values in recurrence rules, catch COMException and log it as warning.
-	- Set HasTime for completed of vtodo to avoid VALUE=DATE for GMT timezone to be RFC compliant, ticket #247.
-	- Improve exception Handling.
-	- Ensure SynchronizationContext BEFORE invoking async methods, wrap all invocations of async methods with a try-catch, ticket #248.
-	- Try to reconstruct master event and properly sync exceptions to Outlook, if server resource consists of recurrence exceptions only.
+	- Ungültige BYMONTHDAY-Werte in Wiederholungsregeln ignoriert, COMException abfangen und als Warnung protokollieren.
+	- HasTime als abgeschlossen von vtodo setzen, um zu vermeiden, dass VALUE = DATE für GMT-Zeitzone RFC-kompatibel ist, Ticket #247.
+	- Verbesserte Ausnahmebehandlung.
+	- Sicherstellen, dass SynchronizationContext VOR dem Aufruf von async-Methoden alle Aufrufe von async-Methoden mit einem try-catch umfasst. Ticket #248.
+	- Versuch, das Masterereignis zu rekonstruieren und Ausnahmen ordnungsgemäß mit Outlook zu synchronisieren, wenn die Serverressource nur aus Wiederholungsausnahmen besteht.
 
 #### 1.22.0 ####
 - Neue Features
