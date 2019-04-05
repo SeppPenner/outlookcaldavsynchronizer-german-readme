@@ -721,47 +721,47 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 #### 1.22.0 ####
 - Neue Features
-	- Add option to enable/disable mapping of recurring tasks in TaskMappingConfiguration to avoid problems with servers that don't support recurring tasks.
-	- Add option in ContactMappingConfiguration to fix formatting of phone numbers when syncing from server to Outlook, so that Outlook can detect country and area code, feature request 34.
-	- Use email address for vcard FN if fileas, name and company attributes of outlook contact are emtpy.
+	- Option hinzugefügt, um die Zuordnung von wiederkehrenden Aufgaben in TaskMappingConfiguration zu aktivieren / deaktivieren, um Probleme mit Servern zu vermeiden, die keine wiederkehrenden Aufgaben unterstützen.
+	- In der Kontaktzuordnungskonfiguration wurde eine Option hinzugefügt, um die Formatierung von Telefonnummern beim Synchronisieren vom Server mit Outlook zu korrigieren, sodass Outlook die Länder- und Ortsvorwahl erkennen kann, Feature-Request 34.
+	- Verwenden der E-Mail-Adresse für vcard FN, wenn Datei, Name und Unternehmensattribute von Outlook-Kontakten leer sind.
 - Fehlerbehebungen
-	- Fix VTIMETONE DTSTART generation for timezones with yearly floating DST rules like Jerusalem when syncing to Google, ticket #244. (Workaround for a bug in the DDay.iCal library)
-	- Don't add filter category to Outlook categories if Negate filter is activated, ticket #245.
+	- Die VTIMETONE DTSTART-Generierung für Zeitzonen mit jährlichen Floating DST-Regeln wie Jerusalem bei der Synchronisierung mit Google wurde behoben. Ticket #244. (Workaround für einen Fehler in der Bibliothek DDay.iCal)
+	- Keine Filterkategorie zu Outlook-Kategorien hinzufügen, wenn der Negate-Filter aktiviert ist, Ticket #245.
 
 #### 1.21.0 ####
 - Neue Features
-	- Implement option in network and proxy options to force basic authentication, needed for some servers where negotiation or digest auth are not working properly, fixes connection problems with OS X servers.
-	- Add general option to enable/disable tray icon.
-	- Improve debug logging.
+	- Durch die Implementierung einer Option in Netzwerk- und Proxy-Optionen zum Erzwingen der Basisauthentifizierung, die für einige Server erforderlich ist, auf denen die Aushandlung oder die Digest-Authentifizierung nicht ordnungsgemäß funktionieren, werden Verbindungsprobleme mit OS X-Servern behoben.
+	- Allgemeine Option zum Aktivieren / Deaktivieren des Taskleistensymbols hinzugefügt.
+	- Verbesserte Debug-Protokollierung.
 - Fehlerbehebungen
-	- Use NullOutlookAccountPasswordProvider if Outlook profile name is null, ticket #239.
-	- Fix proxy support in Google tasklibrary and oauth requests, ticket #234.
-	- Fix line breaks in vcard notes and street addresses to avoid \r.
+	- Verwendet NullOutlookAccountPasswordProvider, wenn der Name des Outlook-Profils null ist, Ticket #239.
+	- Proxy-Unterstützung in Google Tasklibrary- und Oauth-Anfragen behoben, Ticket #234.
+	- Zeilenumbrüche in Vcard-Notizen und Straßenadressen wurden korrigiert, um \r zu vermeiden.
 
 #### 1.20.3 ####
 - Fehlerbehebungen
-	- Fix Outlook crash when opening synchronization profiles for Outlook 2007 (ticket #230,#231).
+	- Outlook-Absturz beim Öffnen von Synchronisationsprofilen für Outlook 2007 (Ticket #230, #231) behoben.
 
 #### 1.20.0 ####
 - Neue Features
-	- New implementation of partial sync, which triggers immediately after an item is created, changed or deleted in Outlook (with a 10 seconds delay), works also for contacts and tasks now.
-	- Add option to use IMAP/Pop3 Password from Outlook Account associated with the folder, the password is fetched from the Windows registry entry of the Outlook profile.
-	- Add checkbox to sync all Outlook appointments except a defined category (negates the category filter) in EventMappingConfiguration, feature request 30.
-	- Use ComboBox with all available Outlook categories instead of TextBox to choose category filter.
-	- Add account types for Fruux, Posteo, Yandex and GMX with predefined DAV Urls and add logos to the account select dialog.
+	- Die neue Implementierung der Teilsynchronisierung, die unmittelbar nach dem Erstellen, Ändern oder Löschen eines Elements in Outlook (mit einer Verzögerung von 10 Sekunden) ausgelöst wird, funktioniert jetzt auch für Kontakte und Aufgaben.
+	- Option hinzugefügt, um das IMAP / Pop3-Kennwort aus dem mit dem Ordner verknüpften Outlook-Konto zu verwenden. Das Kennwort wird aus dem Windows-Registrierungseintrag des Outlook-Profils abgerufen.
+	- Kontrollkästchen hinzugefügt, um alle Outlook-Termine mit Ausnahme einer definierten Kategorie (negiert den Kategoriefilter) in EventMappingConfiguration zu synchronisieren. Feature-Request 30.
+	- Verwenden der ComboBox mit allen verfügbaren Outlook-Kategorien anstelle von TextBox, um den Kategoriefilter auszuwählen.
+	- Kontotypen für Fruux, Posteo, Yandex und GMX mit vordefinierten DAV-URLs hinzugefügt und Logos zum Kontoauswahldialog hinzugefügt.
 - Fehlerbehebungen
-	- Fix well-known URIs according to RFC, they contain no trailing slash, fixes autodisovery for fruux.
-	- Avoid ArgumentNullException for GoogleTasks if tasklist is empty, ticket #229.
-	- clear contact attributes in Outlook when attributes are removed on server, fixes some update mapping issues from server to outlook for CardDAV.
+	- Bekannte URIs nach RFC behoben, sie enthalten keinen abschließenden Schrägstrich, behebt die automatische Erkennung von fruux.
+	- ArgumentNullException für GoogleTasks vermeiden, wenn die Jobliste leer ist, Ticket #229.
+	- Durch das Löschen von Kontaktattributen in Outlook, wenn Attribute auf dem Server entfernt werden, werden einige Probleme bei der Aktualisierung der Zuordnung von Server zu Outlook für CardDAV behoben.
 
 #### 1.19.0 ####
 - Neue Features
-	- Add System TrayIcon with notifications of sync runs with errors and warnings and context menu.
-	- Add Synchronization Status with info about last sync run time and status, accessible from the TrayIcon or the ribbon.
-	- Add TaskMappingConfiguration with possibility to toggle reminder, priority and body mapping.
+	- System-Statussymbol mit Benachrichtigungen zu Synchronisierungsläufen mit Fehlern und Warnungen sowie Kontextmenü hinzugefügt.
+	- Synchronisationsstatus mit Informationen über die letzte Synchronisationslaufzeit und den Status hinzugefügt, auf die über Statussymbol oder das Menüband zugegriffen werden kann.
+	- TaskMappingConfiguration hinzugefügt mit der Möglichkeit, Erinnerung, Priorität und Körperzuordnung umzuschalten.
 - Fehlerbehebungen
-	- Catch COMException when accessing IsInstantSearchEnabled of Outlook store, ticket #223.
-	- Fix Error, when opening legacy profiles without proxy options, ticket #224.
+	- COMException beim Zugriff auf IsInstantSearchEnabled des Outlook-Speichers abgefangen, Ticket #223.
+	- Behobener Fehler beim Öffnen älterer Profile ohne Proxy-Optionen, Ticket #224.
 
 #### 1.18.0 ####
 - Neue Features
