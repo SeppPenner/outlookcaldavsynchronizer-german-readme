@@ -1471,38 +1471,38 @@ Weitere Informationen finden Sie unter [https://msdn.microsoft.com/en-us/library
 Im Dialogfeld "Allgemeine Optionen" können Sie Einstellungen ändern, die für alle Synchronisationsprofile verwendet werden.
 
 - *Allgemeine Einstellungen*
-	- **Automatically check for newer versions** set to false to disable checking for updates.
-	- **Check Internet connection before sync run** checks if an interface is up and try DNS query to dns.msftncsi.com first and if that fails try to download http://www.msftncsi.com/ncsi.txt with the configured proxy before each sync run to avoid error reports if network is unavailable after hibernate for example. Disable this option if you are in a local network where DNS and that URL is blocked.
-	- **Include custom message classes in Outlook filter** Disabled by default, enable only if you have custom forms with message_classes other than the default IPM.Appointment/Contact/Task. For better performance, Windows Search Service shouldn't be deactivated if this option is enabled.
-	- **Use fast queries for Outlook folders** Enabled by default, uses fast GetTable queries when accessing Outlook folders. Disable only if you get errors in GetVersions, when disabled every item needs to be requested which causes a performance penalty!
-	- **Trigger sync after Outlook Send/Receive and on Startup** If checked a manual sync is triggered after the Outlook Send/Receive finishes and on Outlook startup.
-	- **Store data in roaming folder** set to true if you need to store state and profile data in the AppData\Roaming\ directory for roaming profiles in a AD domain for example. When changing this option, a restart of Outlook is required.
-- *UI Settings*
-	- **Show advanced settings as default** Show the advanced settings in synchronization profiles as default if enabled.
-	- **Expand all nodes in Synchronization profiles** Enabled by default, expands all nodes in the synchronization profiles to see the suboptions for network settings and mapping configuration.
-	- **Enable Tray Icon** Enabled by default, you can disable the tray icon in the Windows Taskbar if you don't need it.
-	- **Show Sync Progress Bar** and **Sync Progress Bar Threshold (Items)** Enabled by default, show a progress bar if more than the treshold of items need to be loaded during a synchronization run. If disabled, no progress bar is shown but be aware that for larger changes Outlook can freeze, since some operations need to be performed in the Outlook main thread.
-	- **Language** Select UI language. When changing this option, a restart of Outlook is required.
-- *Server Settings*
-	- **Accept invalid chars in server response** If checked invalid characters in XML server responses are allowed. A typical invalid char, sent by some servers is Form feed (0x0C).
-	- ** Enable useUnsafeHeaderParsing** Enable, if the server sends invalid http headers, see common network errors. Needed for Yahoo and cPanel Horde servers for example. The general option overrides the setting in the app.config file.
-	- **CalDav Connection Timeout (secs)** For slow server connections you can increaste the timeout value (default 90 secs).
-- *SSL/TLS Settings*
-	- If you have problems with SSL/TLS and self-signed certificates, you can change the following settings at your own risk. The recommended way would be to add the self signed cert to the Local Computer Trusted Root Certification Authorities. You can import the cert by running the MMC as Administrator.
-	- **Disable Certificate Validation** set to true to disable SSL/TLS certificate validation, major security risk, use with caution!
-	- **Enable Client Certificates** If enabled, the available client certificates from the Windows user certificate store will automatically be provided.
-	- **Enable Tls12** set to false to disable TLS12, not recommended 
-	- **Enable Ssl3** set to true to enable deprecated SSLv3, major security risk, use with caution!
-- *Synchronization Reports*
-	- See **Reports of sync runs** below. 
-- *General Logging*
-	- In the **General Logging** section you can show or clear the log file and define the log level. Possible log levels are `INFO` and  `DEBUG`.
+	- **Automatisch nach neueren Versionen suchen** Auf false setzen, um die Suche nach Updates zu deaktivieren.
+	- **Überprüfen Sie die Internetverbindung vor dem Synchronisierungslauf** Prüft, ob eine Schnittstelle aktiv ist, und probiert zuerst die DNS-Abfrage an dns.msftncsi.com. Wenn dies fehlschlägt, versuchen Sie, vor jedem Synchronisierungslauf http://www.msftncsi.com/ncsi.txt mit dem konfigurierten Proxy herunterzuladen, um Fehlerberichte zu vermeiden, wenn das Netzwerk beispielsweise nach dem Ruhezustand nicht verfügbar ist. Deaktivieren Sie diese Option, wenn Sie sich in einem lokalen Netzwerk befinden, in dem DNS und diese URL blockiert sind.
+	- **Fügen Sie benutzerdefinierte Nachrichtenklassen in den Outlook-Filter ein** Diese Option ist standardmäßig deaktiviert, wenn Sie über benutzerdefinierte Formulare mit anderen Nachrichtenklassen als dem Standard-IPM.Appointment/Contact/Task verfügen. Für eine bessere Leistung sollte der Windows-Suchdienst nicht deaktiviert werden, wenn diese Option aktiviert ist.
+	- **Verwenden Sie schnelle Abfragen für Outlook-Ordner** Standardmäßig aktiviert, es werden beim Zugriff auf Outlook-Ordner schnelle GetTable-Abfragen verwendet. Deaktivieren Sie nur, wenn Sie Fehler in GetVersions erhalten. Wenn diese Option deaktiviert ist, muss jedes Element angefordert werden, was zu einer Leistungsverschlechterung führt!
+	- **Synchronisation nach Outlook Senden/Empfangen und beim Start auslösen** Wenn diese Option aktiviert ist, wird eine manuelle Synchronisierung ausgelöst, nachdem das Senden/Empfangen von Outlook und der Start von Outlook abgeschlossen sind.
+	- **Speichern Sie die Daten im Roaming-Ordner** Setzen Sie den Wert auf true, wenn Sie Status- und Profildaten im Verzeichnis AppData\Roaming\ für servergespeicherte Profile in einer AD-Domäne speichern müssen. Beim Ändern dieser Option ist ein Neustart von Outlook erforderlich.
+- *UI-Einstellungen*
+	- **Erweiterte Einstellungen als Standard anzeigen** Zeigt die erweiterten Einstellungen standardmäßig in Synchronisationsprofilen an, sofern aktiviert.
+	- **Erweitern Sie alle Knoten in Synchronisationsprofilen** Diese Option ist standardmäßig aktiviert und erweitert alle Knoten in den Synchronisationsprofilen, um die Unteroptionen für die Netzwerkeinstellungen und die Mapping-Konfiguration anzuzeigen.
+	- **Taskleistensymbol aktivieren** Standardmäßig aktiviert, Sie können das Taskleistensymbol in der Windows-Taskleiste deaktivieren, wenn Sie es nicht benötigen.
+	- **Sync-Fortschrittsbalken anzeigen** und **Schwellenwert für die Sync-Fortschrittsleiste (Elemente)** Standardmäßig aktiviert, zeigen Sie eine Fortschrittsleiste an, wenn während eines Synchronisierungslaufs mehr als der Schwellenwert von Elementen geladen werden muss. Wenn diese Option deaktiviert ist, wird keine Fortschrittsleiste angezeigt. Beachten Sie jedoch, dass Outlook bei größeren Änderungen einfrieren kann, da einige Vorgänge im Outlook-Hauptthread ausgeführt werden müssen.
+	- **Sprache** Wählen Sie die Sprache der Benutzeroberfläche. Beim Ändern dieser Option ist ein Neustart von Outlook erforderlich.
+- *Server-Einstellungen*
+	- **Akzeptieren Sie ungültige Zeichen in der Serverantwort** Wenn aktiviert, sind ungültige Zeichen in XML-Serverantworten zulässig. Ein typisches ungültiges Zeichen, das von einigen Servern gesendet wird, ist der Formfeed (0x0C).
+	- **Aktivieren Sie useUnsafeHeaderParsing** Aktivieren Sie diese Option, wenn der Server ungültige http-Header sendet. Weitere Informationen finden Sie unter Häufige Netzwerkfehler. Wird beispielsweise für Yahoo- und cPanel-Horde-Server benötigt. Die allgemeine Option überschreibt die Einstellung in der Datei app.config.
+	- **CalDav-Verbindungszeitlimit (secs)** Bei langsamen Serververbindungen können Sie den Timeout-Wert erhöhen (Standardeinstellung 90 Sekunden).
+- *SSL/TLS-Einstellungen*
+	- Wenn Sie Probleme mit SSL-/TLS und selbstsignierten Zertifikaten haben, können Sie die folgenden Einstellungen auf eigene Gefahr ändern. Die empfohlene Methode wäre, das selbst signierte Zertifikat den vertrauenswürdigen Stammzertifizierungsstellen des lokalen Computers hinzuzufügen. Sie können das Zertifikat importieren, indem Sie die MMC als Administrator ausführen.
+	- **Zertifikatsüberprüfung deaktivieren** Setzen Sie diese Option auf "true", um die Validierung von SSL-/ ´TLS-Zertifikaten zu deaktivieren. Große Sicherheitsrisiken. Vorsicht!
+	- **Aktiviere Client-Zertifikate** Wenn aktiviert, werden die verfügbaren Clientzertifikate aus dem Windows-Benutzerzertifikatspeicher automatisch bereitgestellt.
+	- **Aktiviere Tls12** Auf false setzen, um TLS12 zu deaktivieren, nicht empfohlen .
+	- **Aktiviere Ssl3** Setzen Sie diese Option auf true, um veraltetes SSLv3 zu aktivieren, ein großes Sicherheitsrisiko, mit Vorsicht verwenden!
+- *Synchronisationsberichte*
+	- Siehe **Berichte über Synchronisierungsläufe** unten. 
+- *Allgemeine Protokollierung*
+	- In der **Allgemeine Protokollierung**-Sektion können Sie die Protokolldatei anzeigen oder löschen und die Protokollebene festlegen. Mögliche Loglevel sind `INFO` und `DEBUG`.
 
-### Profile Import/Export ###
+### Profil-Import/Export ###
 
-In the toolbar of the synchronization profiles you can export all profiles to a file and import profiles from an earlier exported file. When exporting, you can choose a filename, the extension is *.cdsp and all options are saved in an xml format into this file. When importing the file, existing profiles are merged with the imported ones. If the selected Outlook folder for the profile doesn't exist during import, you need to manually select a folder before you can save the options, they are not automatically created. You need also be aware of the fact, that saved profile passwords won't work on other accounts or machines, since the encryption is dependant on the current user. But you can use the account password from the IMAP/POP3 account if available. General options are not saved in that file, but in the registry in `HKEY_CURRENT_USER\Software\CalDavSynchronizer`.
+In der Symbolleiste der Synchronisationsprofile können Sie alle Profile in eine Datei exportieren und Profile aus einer zuvor exportierten Datei importieren. Beim Exportieren können Sie einen Dateinamen auswählen, die Erweiterung ist *.cdsp und alle Optionen werden im XML-Format in dieser Datei gespeichert. Beim Importieren der Datei werden vorhandene Profile mit den importierten zusammengeführt. Wenn der ausgewählte Outlook-Ordner für das Profil während des Imports nicht vorhanden ist, müssen Sie einen Ordner manuell auswählen, bevor Sie die Optionen speichern können. Diese Optionen werden nicht automatisch erstellt. Sie müssen auch wissen, dass gespeicherte Profilkennwörter auf anderen Konten oder Computern nicht funktionieren, da die Verschlüsselung vom aktuellen Benutzer abhängt. Sie können jedoch das Kontokennwort aus dem IMAP-/POP3-Konto verwenden, sofern verfügbar. Allgemeine Optionen werden nicht in dieser Datei gespeichert, sondern in der Registry unter `HKEY_CURRENT_USER\Software\CalDavSynchronizer`.
 
-### Reports of sync runs ###
+### Berichte über Synchronisierungsläufe ###
 
 You can also configure Synchronization reports for all profiles, this can be configured via general Options:
 
