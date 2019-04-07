@@ -1391,90 +1391,86 @@ Wenn Sie bei unzureichendem Zugriff einen Fehler erhalten, müssen Sie das Token
 
 ### GMX-Kalendereinstellungen ###
 
-For GMX calendar use the GMX Calendar account type, which sets the autodiscovery DAV Url `https://caldav.gmx.net`
-Since GMX doesn't allow to create events with the Windows Timezone IDs, for the GMX account type the `Create events on server with downloaded IANA Timezones` checkbox in Mapping Configuration is checked by default to avoid errors when creating events and syncing from Outlook to GMX.
+Für GMX-Kalender verwenden Sie den GMX-Kalender-Kontotyp, der die automatische Ermittlungs-DAV-URL `https://caldav.gmx.net` festlegt. Da GMX das Erstellen von Ereignissen mit den Windows-Zeitzonen-IDs nicht zulässt, ist für das GMX-Konto das Kontrollkästchen `Ereignisse auf Server mit heruntergeladenen IANA-Zeitzonen erstellen` in Zuordnungskonfiguration standardmäßig aktiviert, um Fehler beim Erstellen von Ereignissen und beim Synchronisieren von Outlook nach GMX zu vermeiden.
 
-For GMX addressbook use the DAV Url `https://carddav.gmx.net`
+Verwenden Sie für das GMX-Adressbuch die DAV-URL `https://carddav.gmx.net`
 
-### Synology NAS settings ###
+### Synology-NAS-Einstellungen ###
 
-When test settings for your synology NAS profile, you can ignore the warning "The specified Url does not support calendar queries. Some features like time range filter may not work!".
-But a user reported, that "Disable directory browsing" setting **must not** be enabled for the calendar folder for proper syncing.
+Bei den Testeinstellungen für Ihr Synology NAS-Profil können Sie die Warnung ignorieren "Die angegebene URL unterstützt keine Kalenderabfragen. Einige Funktionen wie der Zeitbereichsfilter funktionieren möglicherweise nicht!".Ein Benutzer meldete jedoch, dass die Einstellung "Verzeichnis durchsuchen deaktivieren" **für den Kalenderordner nicht aktiviert werden darf**, damit der Kalenderordner ordnungsgemäß synchronisiert werden kann.
 
-For Synology NAS with SSL support use port 5006 and the following settings in your NAS:
-In Synology DSM Navigate to control panel > Terminal & SNMP
-Select Enable SSH 
-Then enter Advanced Settings and set it to High
-Now it will work on port 5006 with https.
+Für Synology NAS mit SSL-Support nutzen Sie Port 5006 und die folgenden Einstellungen auf ihrem NAS:
+In Synology DSM Navigieren Sie zu Systemsteuerung > Terminal & SNMP
+Wählen Sie SSH aktivieren
+Gehen Sie zu Erweiterte Einstellungen und setzen Sie es auf Hoch.
+Nun wird es auf Port 5006 mit https funktionieren.
 
-### iCloud settings ###
+### iCloud-Einstellungen ###
 
-Apple changed their security policy recently (June 2017). You need to enable Two-Factor-Authentication and an app-specific password for CalDavSynchronizer, see
-[https://support.apple.com/en-us/HT204397](https://support.apple.com/en-us/HT204397)
+Apple hat kürzlich (Juni 2017) seine Sicherheitsrichtlinie geändert. Sie müssen die Zwei-Faktor-Authentifizierung und ein app-spezifisches Kennwort für CalDavSynchronizer aktivieren, siehe [https://support.apple.com/en-us/HT204397](https://support.apple.com/en-us/HT204397).
 
-For syncing iCloud Calendar select the preconfigured iCloud Calendar profile type, which uses     the following CalDAV URL
+Wählen Sie zum Synchronisieren von iCloud Calendar den vorkonfigurierten Profiltyp des iCloud Calendar aus, der die folgende CalDAV-URL verwendet
 
     https://caldav.icloud.com
 
-Only as a fallback if the autodiscovery fails you can use the following procedur
-To find the correct DAV url for iCloud you need some information from the MacOS, where you are connected with your calendar.
+Nur als Fallback, wenn die automatische Erkennung fehlschlägt, können Sie das folgende Verfahren verwenden.
+Um die richtige DAV-URL für iCloud zu finden, benötigen Sie einige Informationen von MacOS, mit dem Sie mit Ihrem Kalender verbunden sind.
 
-Open with Textedit: `~/Library/Calendars/*.caldav/Info.plist` 
-(Its in the hidden User-Library)
+Mit Textedit öffnen: `~/Library/Calendars/*.caldav/Info.plist` 
+(Es befindet sich in der verborgenen Benutzerbibliothek)
 
-Check iCloud Path: PrincipalURL 
+Überprüfen Sie den iCloud-Pfad: PrincipalURL 
     `<string>https://p**-caldav.icloud.com/*********/principal/</string>`
 
-Check: DefaultCalendarPath 
+Prüfen Sie: DefaultCalendarPath 
     `<string>/*********/calendars/********-****-****-****-************</string>`
 
-Then you get the DAV url of the calendar:
+Dann erhalten Sie die DAV-URL des Kalenders:
     `https://p**-caldav.icloud.com/*********/calendars/********-****-****-****-************/`
 
-For syncing iCloud contacts select the preconfigured iCloud contacts profile type, which uses the following CardDAV URL
+Wählen Sie zum Synchronisieren von iCloud-Kontakten den vorkonfigurierten Profiltyp für iCloud-Kontakte aus, der die folgende CardDAV-URL verwendet
 
     https://contacts.icloud.com
-and press '*Test or discover settings*' for autodiscovery, the final URL should look like
+und drücken Sie '*Testen oder entdecken Sie die Einstellungen*' für die automatische Erkennung. Die endgültige URL sollte folgendermaßen aussehen
     
     https://contacts.icloud.com:443/<YOUR UNIQUE Apple USER_ID>/carddavhome/card/
 
-There are PHP files available to determine your Apple USER_ID, see
+Es gibt PHP-Dateien, die Ihre Apple-USER_ID ermitteln, siehe
 
     https://icloud.niftyside.com/
 
     https://github.com/muhlba91/icloud
 
-### One.com settings ###
+### One.com-Einstellungen ###
 
-The one.com caldav server has problems with escaping, so if your calendar url looks something like
+Der caldav-Server von one.com hat Probleme mit der Escape-Funktion. Wenn also Ihre Kalender-URL in etwa so aussieht
 
     https://caldav.one.com/calendars/users/USERNAME@DOMAIN.COM/calendar/
-use the url
+Verwenden Sie die URL
 
     https://caldav.one.com/calendars/users/USERNAME%40DOMAIN.COM/calendar/
 
 ### Autodiscovery ###
 
-When you are using an IMAP/POP3 Account with the same server settings (Username, Email address) you can press *Get IMAP/POP3 account settings* to discover those settings. The DAV url is discovered via DNS lookup from the account email address or the IMAP/POP3/SMTP server url if that fails. Together with the *Use IMAP/POP3 account password* checkbox activated you can fully autoconfigure the server settings from your existing account.
+Wenn Sie ein IMAP-/POP3-Konto mit denselben Servereinstellungen (Benutzername, E-Mail-Adresse) verwenden, können Sie *IMAP-/ POP3-Kontoeinstellungen abrufen* aufrufen, um diese Einstellungen zu ermitteln. Die DAV-URL wird über die DNS-Suche von der E-Mail-Adresse des Kontos oder der IMAP-/ POP3-/SMTP-Server-URL ermittelt, falls dies fehlschlägt. Zusammen mit dem Kontrollkästchen *IMAP-/POP3-Kontokennwort verwenden* können Sie die Servereinstellungen von Ihrem vorhandenen Konto aus vollständig automatisch konfigurieren.
 
-Instead of using the exact calendar/addressbook URL you can use the server address or the principal url and use the 'Test or discover settings' button in the option dialog to try to autodiscover available calendars and addressbooks on the server. 
+Anstatt die genaue Kalender-/Adressbuch-URL zu verwenden, können Sie die Serveradresse oder die URL des Prinzipals verwenden und die Schaltfläche "Einstellungen testen oder ermitteln" im Optionsdialogfeld verwenden, um zu versuchen, verfügbare Kalender und Adressbücher auf dem Server automatisch zu erkennen. 
 
-If the server has calendar-proxy support (calendar-proxy-read-for, calendar-proxy-write-for), see [https://github.com/apple/ccs-calendarserver/blob/master/doc/Extensions/caldav-proxy.txt](https://github.com/apple/ccs-calendarserver/blob/master/doc/Extensions/caldav-proxy.txt) shared calendars can also be discovered. You can then choose one of the found calendars or addressbooks in the new window.
+Wenn der Server Kalender-Proxy-Unterstützung bietet (Calendar-Proxy-Read-For, Calendar-Proxy-Write-For), siehe [https://github.com/apple/ccs-calendarserver/blob/master/doc/Extensions/caldav-proxy.txt](https://github.com/apple/ccs-calendarserver/blob/master/doc/Extensions/caldav-proxy.txt), kann der freigegebene Kalender auch entdeckt werden. Sie können dann im neuen Fenster einen der gefundenen Kalender oder Adressbücher auswählen.
 
-If your server has redirections for well-known Urls (`./well-known/caldav/` and `./well-known/carddav/` ) you need to enter the server name only (without path). If your domain configured DNS SRV and/or TXT lookups it is also possible leave the DAV url empty and discover it from the entered Email Address or Username via DNS lookups, for example:
+Wenn Ihr Server über Weiterleitungen für bekannte URLs verfügt (`./well-known/caldav/` und `./well-known/carddav/`), müssen Sie nur den Servernamen eingeben (ohne Pfad). Wenn Ihre Domäne DNS SRV- und/oder TXT-Suchvorgänge konfiguriert hat, können Sie die DAV-URL auch leer lassen und anhand der eingegebenen E-Mail-Adresse oder des Benutzernamens über DNS-Suchvorgänge ermitteln. Beispiel:
 
     _carddavs._tcp 86400 IN SRV 10 20 443 dav.example.org.
     _caldavs._tcp 86400 IN SRV 10 20 443 dav.example.org.
 
-### Proxy Settings ###
-You can now set manual proxy settings in the *Network and proxy options* dialog in each profile. To override the default proxy settings from Windows Internet Explorer you can also specify settings in the app config file, see config options below.
-More information can be found at
-[https://msdn.microsoft.com/en-us/library/sa91de1e%28v=vs.110%29.aspx](https://msdn.microsoft.com/en-us/library/sa91de1e%28v=vs.110%29.aspx)
+### Proxy-Einstellungen ###
+Sie können jetzt manuelle Proxy-Einstellungen im Dialogfeld *Netzwerk- und Proxy-Optionen* in jedem Profil festlegen. Um die Standard-Proxy-Einstellungen von Windows Internet Explorer zu überschreiben, können Sie auch Einstellungen in der App-Konfigurationsdatei angeben. Weitere Informationen finden Sie unter Konfigurationsoptionen.
+Weitere Informationen finden Sie unter [https://msdn.microsoft.com/en-us/library/sa91de1e%28v=vs.110%29.aspx](https://msdn.microsoft.com/en-us/library/sa91de1e%28v=vs.110%29.aspx)
 
-### General Options and SSL settings ###
-In the General Options Dialog you can change settings which are used for all synchronization profiles.
+### Allgemeine Optionen und SSL-Einstellungen ###
+Im Dialogfeld "Allgemeine Optionen" können Sie Einstellungen ändern, die für alle Synchronisationsprofile verwendet werden.
 
-- *Generel Settings*
+- *Allgemeine Einstellungen*
 	- **Automatically check for newer versions** set to false to disable checking for updates.
 	- **Check Internet connection before sync run** checks if an interface is up and try DNS query to dns.msftncsi.com first and if that fails try to download http://www.msftncsi.com/ncsi.txt with the configured proxy before each sync run to avoid error reports if network is unavailable after hibernate for example. Disable this option if you are in a local network where DNS and that URL is blocked.
 	- **Include custom message classes in Outlook filter** Disabled by default, enable only if you have custom forms with message_classes other than the default IPM.Appointment/Contact/Task. For better performance, Windows Search Service shouldn't be deactivated if this option is enabled.
