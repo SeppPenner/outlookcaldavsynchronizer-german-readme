@@ -852,44 +852,44 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 #### 1.13.0 ####
 - Neue Features
-	- Support for GMX calendar, new events need to be created in UTC see section GMX in README.
-	- Implement  Show/Clear Log and log level configuration in General Options (feature 22).
-	- Add also 1 min and 2 min to avaiable Sync Intervals since requested multiple times.
-	- Add option to disable mapping of contact photos in ContactMappingConfiguration, since it is not working properly in OL 2007.
+	- Unterstützung für GMX-Kalender wurde hinzugefügt. In UTC müssen neue Ereignisse erstellt werden. Siehe Abschnitt GMX in README.
+	- Konfiguration der Protokoll- und Protokollebene unter "Allgemeine Optionen" anzeigen / löschen. (Feature 22)
+	- Hinzufügen von zusätzlich "1 Minute" und "2 Minuten" zu den verfügbaren Synchronisierungsintervallen nach mehrfacher Anforderung.
+	- Option zum Deaktivieren der Zuordnung von Kontaktfotos in ContactMappingConfiguration hinzugefügt, da es in OL 2007 nicht ordnungsgemäß funktioniert.
 - Fehlerbehebungen
-	- EnsureSynchronizationContext on callbacks from Outlook, fixes errors when showing synchronization reports when synchronizung items immediately after changes.
-	- Do not perform empty queries to repositories, fixes HTTP 400 errors with GMX.
-	- Use PR_MESSAGE_CLASS to filter only AppointmentItems/TaskItems in OutlookRepositories, should fix casting errors when other items are in the folder.
-	- Fix button layout in MappingConfiguration and OptionsDisplay.
-	- Add EventMappingConfiguration to create events in UTC, needed for GMX for example, since local Windows Timezone leads to HTTP 403 error, ticket #162.
-	- Catch System.UnauthorizedAccessExceptions in ContactEntityMapper.
-	- Execute startup code just once, should fix error in ticket #161.
-	- Avoid NullreferenceException when AdressEntry of recipient can't be fetched, ticket #163.
+	- EnsureSynchronizationContext bei Rückrufen von Outlook behebt Fehler beim Anzeigen von Synchronisationsberichten, wenn Elemente sofort nach Änderungen synchronisiert werden.
+	- Keine leeren Abfragen an Repositorys durchführen, behebt HTTP 400-Fehler mit GMX.
+	- Die Verwendung von PR_MESSAGE_CLASS zum Filtern von AppointmentItems / TaskItems in OutlookRepositories sollte Casting-Fehler beheben, wenn sich andere Elemente im Ordner befinden.
+	- Das Layout der Tasten in MappingConfiguration und OptionsDisplay wurde korrigiert.
+	- EventMappingConfiguration wurde hinzugefügt, um Ereignisse in UTC zu erstellen, die beispielsweise für GMX erforderlich sind, da die lokale Windows-Zeitzone zum HTTP 403-Fehler führt. Ticket #162.
+	- System.UnauthorizedAccessExceptions in ContactEntityMapper abfangen.
+	- Startcode nur einmal ausgeführt, sollte Fehler in Ticket #161 beheben.
+	- Vermeidet die NullreferenceException, wenn AdressEntry des Empfängers nicht abgerufen werden kann, Ticket #163.
 
 #### 1.12.0 ####
 - Neue Features
-	- Match added entities with every sync run, this should avoid duplicates and errors, when same event is added in both server and client e.g. a (autoaccepted) meeting invitation.
-	- Add "Reset Cache" button to delete the sync cache and start a new initial sync with the next sync run.
-	- Delete associated birthday appointment if deleting ContactItem in Outlook, feature #21.
-	- Cleanup outdated synchronization reports with configurable timespan.
+	- Übereinstimmende hinzugefügte Entitäten bei jedem Synchronisierungslauf sollten Verdoppelungen und Fehler vermeiden, wenn dasselbe Ereignis in Server und Client hinzugefügt wird, z. eine (automatisch akzeptierte) Einladung zum Meeting.
+	- Schaltfläche "Cache zurücksetzen" hinzugefügt, um den Synchronisierungscache zu löschen und eine neue anfängliche Synchronisierung mit dem nächsten Synchronisierungslauf zu starten.
+	- Der zugehörige Geburtstagstermin wird gelöscht, wenn ContactItem in Outlook gelöscht wird. Feature #21.
+	- Bereinigt veraltete Synchronisationsberichte mit konfigurierbarer Zeitspanne.
 - Fehlerbehebungen
-	- Fix issues which might occur due to load behavior of controls.
-	- Fix exporting of DateCompleted for tasks, according to the RFC it must be a DATE-TIME value, see ticket #156
-	- Convert DateCompleted for tasks from UTC to local date when mapping back to Outlook.
-	- Add Reports to ToolBar Buttons for OL2007.
-	- Update Meeting Response only if MapAttendees is set in MappingConfiguration.
-	- Fix yearly recurrence with interval=1, patch provided by Jonathan Westerholt, ticket #159
-	- Revert "Use GlobalAppointmentID for new events instead of random Guid to avoid doubling events from invitations for own attendee". This caused problems with Google when recreating deleted events with same UID.
-	- Cleanup outdated synchronization reports.
-	- Add context menu which allows to open the cache directory also to Google profile type.
-	- Select the new tab in OptionsForm when a new profile is added.
+	- Probleme behoben, die aufgrund des Ladeverhaltens von Steuerelementen auftreten konnten.
+	- Das Exportieren von DateCompleted für Tasks wurde korrigiert, laut RFC muss es sich um einen DATE-TIME-Wert handeln, siehe Ticket #156.
+	- Datum wurde für Aufgaben von UTC in lokales Datum konvertiert, wenn eine Zuordnung zu Outlook vorgenommen wurde.
+	- Hinzufügen von Berichten zu ToolBar-Schaltflächen für OL2007.
+	- Meeting-Antwort nur aktualisiert, wenn MapAttendees in MappingConfiguration festgelegt ist.
+	- Feste jährliche Wiederholung mit Intervall = 1, von Jonathan Westerholt zur Verfügung gestellter Patch, Ticket #159.
+	- Zurücksetzen von "Verwenden von GlobalAppointmentID für neue Ereignisse anstelle einer zufälligen Guid, um das Verdoppeln von Ereignissen aus Einladungen für den eigenen Teilnehmer zu vermeiden". Dies führte zu Problemen mit Google, wenn gelöschte Ereignisse mit derselben UID wiederhergestellt wurden.
+	- Bereinigt veraltete Synchronisationsberichte.
+	- Kontextmenü hinzugefügt, mit dem das Cache-Verzeichnis auch für den Google-Profiltyp geöffnet werden kann.
+	- Die neue Registerkarte in OptionsForm ausgewählt, wenn ein neues Profil hinzugefügt wird.
 
 #### 1.11.0 ####
 - Neue Features
-	- Advanced Logging and configurable Synchronization Reports after each sync run. You can configure if reports should be generated for each sync run or only if errors or warnings occur and if the reports should be shown immediately after the sync run. You can also delete or zip reports from the Reports window.
-	- Support for Zoho Calendar, patch provided from Suki Hirata <thirata@outlook.com>
+	- Erweiterte Protokollierung und konfigurierbare Synchronisationsberichte nach jedem Synchronisierungslauf. Sie können konfigurieren, ob Berichte für jeden Synchronisierungslauf erstellt werden sollen oder nur, wenn Fehler oder Warnungen auftreten und ob die Berichte sofort nach dem Synchronisierungslauf angezeigt werden sollen. Sie können Berichte auch im Berichtsfenster löschen oder komprimieren.
+	- Unterstützung für Zoho Calendar, Patch von Suki Hirata <thirata@outlook.com>
 - Fehlerbehebungen
-	- Factor out common mapping functions for events and tasks and map priority 1-9 according to RFC5545 
+	- Übliche Mapping-Funktionen für Ereignisse und Aufgaben werden herausgefiltert und die Priorität 1-9 gemäß RFC5545 zugeordnet 
 
 #### 1.10.0 ####
 - Neue Features
