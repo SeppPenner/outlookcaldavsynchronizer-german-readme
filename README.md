@@ -1207,54 +1207,54 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 ## Benutzerdokumentation ##
 
-After installing the plugin, a new ribbon called 'Caldav Synchronizer' is added in Outlook with 6 menu items. 
-- Synchronize now
-- Synchronization Profiles
-- General Options
-- About
-- Reports
+Nach der Installation des Plugins wird in Outlook ein neues Menüband mit dem Namen 'Caldav Synchronizer' mit 6 Menüelementen hinzugefügt.
+- Jetzt synchronisieren
+- Synchronisationsprofile
+- Allgemeine Optionen
+- Über
+- Berichte
 - Status
 
-For better accessibility the ribbon also supports keytips, accessible via ALT key followed by CDS and SN,SP,GO,AB,RE,ST respectively for the 6 items.
+Zur Erleichterung der Zugänglichkeit unterstützt das Menüband auch Tastentipps, die über die ALT-Taste gefolgt von CDS und SN, SP, GO, AB, RE bzw. ST für die 6 Elemente verfügbar sind.
 
-Use the Synchronization Profiles dialog to configure different synchronization profiles. Each profile is responsible for synchronizing one Outlook calendar/task or contact folder with a remote folder of a CalDAV/CardDAV server.
+Verwenden Sie das Dialogfeld "Synchronisationsprofile", um verschiedene Synchronisationsprofile zu konfigurieren. Jedes Profil ist für die Synchronisierung eines Outlook-Kalender-/Aufgaben- oder Kontaktordners mit einem Remoteordner eines CalDAV-/CardDAV-Servers verantwortlich.
 
-Beginning with version 2.15.0 advanced configuration settings are hidden by default and you can enable them by clicking on *Show advanced settings* and disable them again by clicking on *Hide advanced settings*. The default behaviour can also be configured as a general option, see below.
+Ab Version 2.15.0 sind die erweiterten Konfigurationseinstellungen standardmäßig ausgeblendet. Sie können sie aktivieren, indem Sie auf *Erweiterte Einstellungen anzeigen* klicken, und sie wieder deaktivieren, indem Sie auf *Erweiterte Einstellungen ausblenden* klicken. Das Standardverhalten kann auch als allgemeine Option konfiguriert werden, siehe unten.
 
-The toolbar on the left upper part provides the following options: 
+Die Symbolleiste im linken oberen Teil bietet die folgenden Optionen:
 
-- **Add new profile** adds a new empty profile
-- **Add multiple profiles** bulk profile creation to add multiple profiles at once and choose the folder for each discovered server resource (calendar, addressbook and task)
-- **Delete selected profile** deletes the current profile
-- **Copy selected profile** copies the current profile to a new one
-- **Move selected profile up** change ordering in the tree view *(only in advanced settings)*
-- **Move selected profile down** change ordering in the tree view *(only in advanced settings)*
-- **Open data directory of selected profile** Show directory with cached relations file in explorer for debugging *(only in advanced settings)*
-- **Clear cache** delete the sync cache and start a new initial sync with the next sync run.
-- **Expand all nodes** expand all nodes in the tree view, enabled by default but can be changed in general options *(only in advanced settings)*
-- **Collapse all nodes** collapse all nodes in the tree view *(only in advanced settings)*
-- **Export Profiles to File** and 
-- **Import Profiles from File** See Profile Import/Export
+- **Neues Profil hinzufügen** fügt ein neues leeres Profil hinzu
+- **Mehrere Profile hinzufügen** Massenprofilerstellung, um mehrere Profile gleichzeitig hinzuzufügen und den Ordner für jede erkannte Serverressource (Kalender, Adressbuch und Aufgabe) auszuwählen.
+- **Ausgewähltes Profil löschen** löscht das aktuelle Profil
+- **Ausgewähltes Profil kopieren** kopiert das aktuelle Profil in ein neues
+- **Ausgewähltes Profil nach oben verschieben** Reihenfolge in der Baumansicht ändern *(nur in den erweiterten Einstellungen)*
+- **Ausgewähltes Profil nach unten verschieben** Reihenfolge in der Baumansicht ändern *(nur in den erweiterten Einstellungen)*
+- **Datenverzeichnis des ausgewählten Profils öffnen** Verzeichnis mit zwischengespeicherter Beziehungsdatei zum Debuggen im Explorer anzeigen *(nur in den erweiterten Einstellungen)*
+- **Cache löschen** Den Sync-Cache löschen und mit dem nächsten Sync-Lauf eine neue Anfangssynchronisierung starten.
+- **Alle Knoten erweitern** Alle Knoten in der Strukturansicht erweitern, standardmäßig aktiviert, können aber in den allgemeinen Optionen *geändert werden (nur in den erweiterten Einstellungen)*
+- **Alle Knoten ausblenden** Alle Knoten in der Baumansicht *ausblenden (nur in den erweiterten Einstellungen)*
+- **Profile in Datei exportieren** und
+- **Profile aus Datei importieren** Siehe Profilimport / -export
 
-When adding a new profile you can choose between a generic CalDAV/CardDAV, a google profile to simplify the google profile creation and predefined CalDAV/CardDAV profiles for iCloud Calendar and Contacts, SOGo, Fruux, Posteo, Yandex, GMX, Sarenet, Landmarks, Cozy Cloud, Nextcloud, mailbox.org, Open-Xchange, EasyProject, Web.de, SmarterMail, Mail.de, Kolab, Swisscom Addressbooks, EGroupware and FastMail where the DAV Url for autodiscovery is already entered. 
+Beim Hinzufügen eines neuen Profils können Sie zwischen einem generischen CalDAV-/ CardDAV-, einem Google-Profil zur Vereinfachung der Google-Profilerstellung und vordefinierten CalDAV-/CardDAV-Profilen für iCloud Calendar und Kontakte, SOGo, Fruux, Posteo, Yandex, GMX, Sarenet, Sehenswürdigkeiten, Cosy Cloud, Nextcloud, mailbox.org, Open-Xchange, EasyProject, Web.de, SmarterMail, Mail.de, Kolab, Swisscom-Adressbücher, EGroupware und FastMail auwählen, bei denen bereits die DAV-URL für die automatische Erkennung eingetragen ist.
 
-The following properties need to be set for a new generic profile:
+Die folgenden Eigenschaften müssen für ein neues generisches Profil festgelegt werden:
 
-- *Profile name*: An arbitrary name for the profile, which will be displayed in the tree view.
-- *Outlook settings*:
-	- **Outlook Folder:** Outlook folder that should be used for synchronization. You can choose a calendar, contact or task folder. Depending on the folder type, the matching server resource type in the server settings must be used.
-	- **Synchronize items immediately after change** Trigger a partial synchronization run immediately after an item is created, changed or deleted in Outlook (with a 10 seconds delay).
-- *Server settings*:
-	- **DAV Url:** URL of the remote CalDAV or CardDAV server. You should use a HTTPS connection here for security reason! The Url must end with a **/** e.g. **https://myserver.com/** 
-	- If you only have a self signed certificate, add the self signed cert to the Local Computer Trusted Root Certification Authorities. You can import the cert by running the MMC as Administrator. If that fails, see section *'Advanced options'*
-	- **Username:** Username to connect to the CalDAV server
-	- **Password:** Password used for the connection. The password will be saved encrypted in the option config file.
-	- ** Use IMAP/POP3 Account Password** Instead of entering the password you can use the IMAP/Pop3 Password from the Outlook Account associated with the folder, the password is fetched from the Windows registry entry of the Outlook profile. *(only in advanced settings)*
-	- ** Use WebDAV collection sync** WebDAV-Sync is a protocol extension that is defined in RFC 6578 and not supported by all servers. Test or discover settings will check if this is supported. This option can speed up the detection of server changes dramatically but excludes the possibility to use the time range filter. *(only in advanced settings)*
-	- **Email address:** email address of the calendar owner used as remote identity for the CalDAV server, necessary to identify the real organizer of meetings and used as organizer instead of the Outlook identity if scheduling option *Act on behalf of server identity* is enabled. If available, the email address is auto-detected during *Test or discover settings*.  If the DAV Url is empty, the email address can also be used for autodiscovery via DNS lookups, see section Autodiscovery.
-	- **Create DAV resource** You can add server DAV resources (calendars or addressbooks). You can configure the resource displayname and if the url should be created with a random string or the displayname. For calendars you can also change the server calendar color. *(only in advanced settings)*
+- *Profilname*: Ein beliebiger Name für das Profil, der in der Baumansicht angezeigt wird.
+- *Outlook-Einstellungen*:
+- **Outlook-Ordner:** Outlook-Ordner, der für die Synchronisierung verwendet werden soll. Sie können einen Kalender, einen Kontakt oder einen Aufgabenordner auswählen. Je nach Ordnertyp muss der entsprechende Serverressourcentyp in den Servereinstellungen verwendet werden.
+- **Elemente sofort nach Änderung synchronisieren** Einen Teil-Synchronisationslauf sofort nach dem Erstellen, Ändern oder Löschen eines Elements in Outlook auslösen (mit einer Verzögerung von 10 Sekunden).
+- *Server Einstellungen*:
+- **DAV-URL:** URL des entfernten CalDAV- oder CardDAV-Servers. Sie sollten hier aus Sicherheitsgründen eine HTTPS-Verbindung verwenden! Die URL muss mit einem **/** enden, z. **https://myserver.com/**
+- Wenn Sie nur über ein selbstsigniertes Zertifikat verfügen, fügen Sie das selbstsignierte Zertifikat den vertrauenswürdigen Stammzertifizierungsstellen des lokalen Computers hinzu. Sie können das Zertifikat importieren, indem Sie die MMC als Administrator ausführen. Wenn dies fehlschlägt, siehe Abschnitt *'Erweiterte Optionen'*
+- **Benutzername:** Benutzername, um eine Verbindung zum CalDAV-Server herzustellen
+- **Passwort:** Passwort für die Verbindung. Das Passwort wird verschlüsselt in der Konfigurationsdatei der Option gespeichert.
+- **IMAP / POP3-Kontokennwort verwenden** Anstelle des Kennworts können Sie das IMAP / Pop3-Kennwort aus dem Outlook-Konto verwenden, das dem Ordner zugeordnet ist. Das Kennwort wird aus dem Windows-Registrierungseintrag des Outlook-Profils abgerufen. *(nur in erweiterten Einstellungen)*
+- **WebDAV-Synchronisierung verwenden** WebDAV-Sync ist eine Protokollerweiterung, die in RFC 6578 definiert ist und nicht von allen Servern unterstützt wird. Test- oder Discovery-Einstellungen prüfen, ob dies unterstützt wird. Diese Option kann die Erkennung von Serveränderungen erheblich beschleunigen, schließt jedoch die Verwendung des Zeitbereichsfilters aus. *(nur in erweiterten Einstellungen)*
+- **E-Mail-Adresse:** E-Mail-Adresse des Kalenderbesitzers, die als Remote-Identität für den CalDAV-Server verwendet wird, zur Identifizierung des tatsächlichen Organisators von Meetings und als Organisator anstelle der Outlook-Identität, wenn die Planungsoption *Für Serveridentität handelt* aktiviert ist. Falls verfügbar, wird die E-Mail-Adresse während der *Test- oder Erkennungseinstellungen* automatisch erkannt. Wenn die DAV-URL leer ist, kann die E-Mail-Adresse auch für die automatische Erkennung über DNS-Lookups verwendet werden, siehe Abschnitt Automatische Erkennung.
+- **DAV-Ressource erstellen** Sie können Server-DAV-Ressourcen (Kalender oder Adressbücher) hinzufügen. Sie können den Anzeigenamen der Ressource konfigurieren und festlegen, ob die URL mit einer zufälligen Zeichenfolge oder dem Anzeigenamen erstellt werden soll. Bei Kalendern können Sie auch die Serverkalenderfarbe ändern. *(nur in erweiterten Einstellungen)*
 
-- *Sync settings*:
+- *Sync-Einstellungen*:
 	- Synchronization settings
 		- **Outlook -> Server (Replicate):** syncronize everything from Outlook to the server (one way)
 		- **Outlook <- Server (Replicate):** synchronize everything from the server to Outlook (one way)
