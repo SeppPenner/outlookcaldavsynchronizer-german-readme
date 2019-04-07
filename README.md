@@ -1036,19 +1036,19 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 - Implementiert EmailAddress Mapping für Exchange-Kontakte (Typ "EX").
 
 #### 1.4.0 ####
-- Initial CardDAV support to sync contacts (alpha)
-- Refactoring of Autodiscovery
-- Fix options and about buttons for Outlook 2007
+- Anfängliche CardDAV-Unterstützung zum Synchronisieren von Kontakten (Alpha).
+- Refactoring des Autodiscovery.
+- Korrigiert Optionen und Schaltflächen für Outlook 2007.
 
 #### 1.3.4 ####
-- Add support for Outlook 2007, credits to PierreMarieBaty (pull request #67)
-- Refactoring of Autodiscovery
-- Refactoring of url validation and test settings
-- Added option to automatically fix synchronization settings.
-- Avoid ArgumentOutOfRangeException in attendee email substring
+- Fügt Unterstützung für Outlook 2007 hinzu, Credits an PierreMarieBaty (Pull-Request #67).
+- Refactoring des Autodiscovery.
+- Refactoring von URL-Validierung und Testeinstellungen
+- Option hinzugefügt, um Synchronisierungseinstellungen automatisch zu korrigieren.
+- Verhindert ArgumentOutOfRangeException in der E-Mail-Teilzeichenfolge des Teilnehmers
 
 #### 1.3.3 ####
-- Fix reminder timespan value
+- Behebt den Erinnerungszeitwert.
 
 #### 1.3.2 ####
 - Fix reminders for google
