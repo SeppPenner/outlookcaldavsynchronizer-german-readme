@@ -1328,7 +1328,7 @@ Wenn Sie Einladungen vom CalDAV-Server und per E-Mail in Ihrer INBOX empfangen, 
 
 Um Doppelbesprechungen zu vermeiden, wird die Option *Bereinigen doppelter Ereignisse nach jedem Synchronisierungslauf* in der Ereigniszuordnungskonfiguration empfohlen.
 
-### Free/busy lookups ###
+### Frei-/Gebucht-Lookups ###
 
 Sie können Frei-/Gebucht-Lookups global in den Outlook-Optionen konfigurieren.
 Wählen Sie Optionen/Kalender und dort Frei-/Gebucht-Informationen aus und verwenden Sie eine Frei-/Gebucht-URLs Ihres Servers mit einem Platzhalter wie%Name%, z. http://myserver/freebusy.php/%Name%
@@ -1349,51 +1349,47 @@ Die experimentelle Zuordnung der ersten Kategoriefarbe des Termins auf das entsp
 
 ### Erinnerungen ###
 
-In event and task mapping configuration you can define if you want to map (all/non/just upcoming) reminders. If you get the following error message when trying to set reminders in Outlook 
-> The reminder will not appear because the item is in a folder that doesn’t support reminders.
+In der Konfiguration der Ereignis- und Aufgabenzuordnung können Sie festlegen, ob Sie Erinnerungen (alle/nicht/nur bevorstehende Ereignisse) zuordnen möchten. Wenn Sie folgende Fehlermeldung erhalten, wenn Sie versuchen, Erinnerungen in Outlook festzulegen
+> Die Erinnerung wird nicht angezeigt, da sich das Element in einem Ordner befindet, der keine Erinnerungen unterstützt.
 
-you can try to change the Outlook options as discussed in
-[http://answers.microsoft.com/en-us/office/forum/office_2016-outlook/outlook-2016-calendar-reminders/8f40bcdd-e3fc-4f29-acaf-544f48d63992](http://answers.microsoft.com/en-us/office/forum/office_2016-outlook/outlook-2016-calendar-reminders/8f40bcdd-e3fc-4f29-acaf-544f48d63992)
-or try the following reported by #Todo18
+Sie können versuchen, die Outlook-Optionen wie in [http://answers.microsoft.com/en-us/office/forum/office_2016-outlook/outlook-2016-calendar-reminders/8f40bcdd-e3fc-4f29-acaf-544f48d63992](http://answers.microsoft.com/en-us/office/forum/office_2016-outlook/outlook-2016-calendar-reminders/8f40bcdd-e3fc-4f29-acaf-544f48d63992) beschrieben zu ändern oder probieren Sie folgendes aus, das von #Todo18 berichtet wurde.
 
+1. Erstellen Sie in Outlook über das Menü Datei, Info, Kontoeinstellungen einen neuen Speicherordner. Auf der Registerkarte Datendateien können Sie eine neue (.pst-)Datendatei hinzufügen. Nachdem die Datei hinzugefügt wurde, legen Sie sie als Standarddatei fest, und schließen Sie den Dialog.
+2. Gehen Sie zum Kalenderfenster, klicken Sie mit der rechten Maustaste auf den Kalender, der Probleme bereitet, und wählen Sie Kalender verschieben. Wählen Sie im Dialogfeld die Datendatei aus, die Sie im ersten Schritt erstellt haben, und bestätigen Sie die Auswahl. Vergessen Sie nicht, den Speicherordner in den CalDav Synchronizer-Einstellungen zu aktualisieren!
 
-1. Create a new storage folder in Outlook via the File menu, Info, Account Settings. In the Data Files tab, you can Add a new (.pst) data file. After the file has been added, Make it the default [data file], and close the dialog.
-2. Go to the Calendar window, right click on the calendar that's giving you problems, and select Move Calendar. In the dialog, pick the data file that you created in the first step, and confirm. Don't forget to update the storage folder in the CalDav Synchronizer settings!
+### Benutzerdefinierte Eigenschaftszuordnung ###
 
-### Custom properties mapping ###
+Wenn Sie die Strukturansicht des Profils für Ereignisse und Aufgaben erweitern, können Sie die Zuordnung von benutzerdefinierten Eigenschaften konfigurieren.
 
-When you expand the tree view of the profile for events and tasks, you can configure the mapping of custom properties.
+- *Ordnen Sie alle benutzerdefinierten Eigenschaften von Outlook den X-CALDAVSYNCHRONIZER-Attributen zu* Wenn diese Option aktiviert ist, werden alle benutzerdefinierten Outlook-Texteigenschaften des Termins/Tasks den DAV-Attributen mit dem Präfix X-CALDAVSYNCHRONIZER- und umgekehrt zugeordnet.
+- Sie können auch manuelle Zuordnungspaare aus benutzerdefinierten Outlook-Attributen und DAV-X-Attributen definieren. Dadurch wird die allgemeine Zuordnung aller benutzerdefinierten Outlook-Eigenschaften überschrieben, wenn beide aktiviert sind. Outlook-Eigenschaften, die nicht vorhanden sind, werden erstellt. DAV-Eigenschaften MÜSSEN mit X- beginnen. Nur benutzerdefinierte Outlook-Eigenschaften des Typs Text können zugeordnet werden.  
 
-- *Map all Outlook custom properties to X-CALDAVSYNCHRONIZER attributes* If enabled, all Outlook custom text properties of the appointment/task are mapped to DAV attributes with the prefix X-CALDAVSYNCHRONIZER- and vice versa.
-- You can also define manual mapping pairs of Outlook custom attributes and DAV X-Attributes. This will overrule the general mapping of all Outlook custom properties if both is activated. Outlook properties that don't exist, will be created. DAV properties MUST start with X-. Only Outlook custom properties of type Text can be mapped.  
+### Verteilerliste ###
 
-### Distribution Lists ###
+Wenn diese Option in der Kontaktzuordnungskonfiguration aktiviert ist, können Sie jetzt auch Outlook-Verteilerlisten mit Ihren Serverkontaktgruppen synchronisieren. Da verschiedene Server unterschiedliche Formate zum Speichern von Kontaktgruppen verwenden, können Sie das verwendete DAV-Kontaktgruppenformat auswählen. Derzeit wird das VLIST-Format für SOGo-Server, vCards mit KIND:Gruppe- und iCloud-Gruppen unterstützt. Aktivieren Sie keine dieser Optionen, wenn Ihr Server dies nicht unterstützt!
 
-When enabled in Contact Mapping configuration you can now also sync Outlook Distribution Lists with your server contact groups. Since different servers use different formats to store contact groups, you will be able to choose the used DAV contact group format. Right now, the VLIST format for SOGo servers, vCards with KIND:group and iCloud groups are supported. Don't enable any of these options when your server doesn't support it!
+Da Outlook-Verteilerlisten auch Listenmitglieder unterstützen, die nicht im Adressbuch enthalten sind, SOGo-VLISTs jedoch nicht, werden diese als benutzerdefinierte X-Attribute hinzugefügt. Mit dieser Problemumgehung werden diese Mitglieder nicht in SOGo angezeigt, gehen jedoch beim Synchronisieren mit Outlook nicht verloren.
 
-Since Outlook Distribution Lists also support list members which aren't in the addressbook but SOGo VLISTs don't, we add them as custom X-Attributes. With this workaround those members aren't displayed in SOGo but won't get lost when syncing back to Outlook.
+Da vCard in Version 3.0 keine Kontaktgruppen unterstützt, verwenden wir X-ADDRESSBOOK-SERVER-Attribute für KIND und MEMBER für Kontaktgruppen und ordnen das Mitglied CN und EMAIL für vCards mit KIND:Gruppe oder die Member-UID für die icloud-Gruppen zu.
 
-Since vCard in version 3.0 doesn't support contact groups we use X-ADDRESSBOOK-SERVER attributes for KIND and MEMBER for contact groups and map the member CN and EMAIL for vCards with KIND:group or the member UID for the icloud groups.
+### Einstellungen für Google Kalender/Adressbücher/Aufgaben ###
 
-### Google Calender / Addressbooks / Tasks settings ###
+Für Google können Sie das neue Google-Typenprofil verwenden, das die Einrichtung vereinfacht. Sie müssen nur die E-Mail-Adresse Ihres Google-Kontos eingeben. Beim Testen der Einstellungen werden Sie zu Ihrem Browser umgeleitet, um das Kennwort Ihres Google-Kontos einzugeben und über das sichere OAuth-Protokoll Zugriffsrechte für Ihren Google Kalender, Kontakte und Aufgaben für OutlookCalDavSynchronizer zu erteilen. Nach dieser automatischen Suche wird versucht, verfügbare Kalender-, Adressbuch- und Aufgabenressourcen zu finden. 
 
-For Google you can use the new Google type profile which simplifies the setup. You just need to enter the email address of your google account. When testing the settings, you will be redirected to your browser to enter your Google Account password and grant access rights to your Google Calender, Contacts and Tasks for OutlookCalDavSynchronizer via the safe OAuth protocol. After that Autodiscovery will try to find available calendar, addressbook and task resources. 
+Sie können steuern, welche Kalender über CalDAV verfügbar sind und in den Kalendereinstellungen automatisch erkannt werden, siehe [https://calendar.google.com/calendar/syncselect](https://calendar.google.com/calendar/syncselect)
 
-You can control which calendars are available via CalDAV and shown in autodiscovery in your calendar settings, see [https://calendar.google.com/calendar/syncselect](https://calendar.google.com/calendar/syncselect)
+Aktivieren Sie für Kontakte das Kontrollkästchen **Google native API verwenden**. Dies verbessert die Leistung und andere Zuordnungsprobleme, da die Google Contacts-API mehr Funktionen als die generische CardDAV-API unterstützt. Im Vergleich zu CardDAV wird Folgendes hinzugefügt:
 
-For contacts you should activate the checkbox **Use Google native API**. This will improve performance and other mapping issues, since the Google Contacts API supports more features than the generic CardDAV API. Compared to CardDAV this adds:
+- Unterstützung für Google-Kontaktgruppen, die mit Outlook-Kategorien synchronisiert werden.
+- Mapping für Jubiläum, Verwandte (Ehepartner, Kind usw.) und IMs für Google-Kontakte hinzugefügt (Beitrag von Florian Saller, vielen Dank!).
 
-- Support for google contact groups, which are synced to Outlook categories.
-- Added mapping for anniversary, relations (spouse, child, etc.) and IMs for google contacts (Contribution from Florian Saller, thank you!).
+Beim Umschalten zwischen der nativen API und CardDAV wird der Synchronisierungscache gelöscht und beim nächsten Synchronisierungslauf wird eine vollständige anfängliche Synchronisierung durchgeführt.
 
-When switching between native API and CardDAV the sync cache is cleared and a complete initial sync is performed during next sync run.
+Für Aufgaben können Sie die Jobliste auswählen, die Sie mit einem Outlook-Aufgabenordner synchronisieren möchten. Die ID der Aufgabenliste wird in der erkannten URL angezeigt. Mit der Schaltfläche "Url bearbeiten" können Sie die Url noch manuell ändern, z. Wenn Sie einen freigegebenen Google-Kalender mit einem anderen Konto synchronisieren möchten.
 
-For tasks you can choose the tasklist you want to sync with an Outlook task folder and the id of the task list is shown in the Discovered Url. With the button 'Edit Url' you still can manually change the Url e.g. when you want to sync a shared google calendar from another account.
+Wenn Sie bei unzureichendem Zugriff einen Fehler erhalten, müssen Sie das Token aktualisieren, indem Sie das vorherige Token in `C:\Users\<your Username>\AppData\Roaming\Google.Apis.Auth` löschen.
 
-If you get an error with insufficient access you need to refresh the token by deleting the previous token in 
-`C:\Users\<your Username>\AppData\Roaming\Google.Apis.Auth`
-
-### GMX calendar settings ###
+### GMX-Kalendereinstellungen ###
 
 For GMX calendar use the GMX Calendar account type, which sets the autodiscovery DAV Url `https://caldav.gmx.net`
 Since GMX doesn't allow to create events with the Windows Timezone IDs, for the GMX account type the `Create events on server with downloaded IANA Timezones` checkbox in Mapping Configuration is checked by default to avoid errors when creating events and syncing from Outlook to GMX.
