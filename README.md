@@ -1051,67 +1051,67 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 - Behebt den Erinnerungszeitwert.
 
 #### 1.3.2 ####
-- Fix reminders for google
-- Clarify test settings info for read-only resources and set Synchronization mode
+- Behebt Erinnerungen für Google
+- Klärt die Testeinstellungen für schreibgeschützte Ressourcen und legt den Synchronisationsmodus fest
 
 #### 1.3.1 ####
-- Add guard to prevent that a SynchronizationWorker is running multiple times.
-- Fix priority mapping for tasks.
-- Initial implementation of recurring tasks.
+- Fügt einen Guard hinzu, um zu verhindern, dass ein SynchronizationWorker mehrmals ausgeführt wird.
+- Korrigiert die Prioritätszuordnung für Aufgaben.
+- Erste Implementierung wiederkehrender Aufgaben.
 
 #### 1.3.0 ####
-- Add support for Autodiscovery of CalDAV urls
-- Workaround: Since DDay.iCal is not capable to parse events, which contain unsorted TimeZoneComponents, they must be sorted before parsing.
+- Fügt Unterstützung für die automatische Erkennung von CalDAV-URLs hinzu.
+- Problemumgehung: Da DDay.iCal keine Ereignisse analysieren kann, die unsortierte TimeZoneComponents enthalten, müssen diese vor der Analyse sortiert werden.
 
 #### 1.2.2 ####
-- Fixed bug in InitialEventEntityMatcher which caused a duplication of events, when a profile was deleted and recreated.
-- Catch UriFormatExceptions in attendee and organizer Values from CalDav.
-- Include response message in exception, if a protocol error occurs.
+- Fehler in InitialEventEntityMatcher behoben, der zu einer Duplizierung von Ereignissen führte, wenn ein Profil gelöscht und neu erstellt wurde.
+- Fängt UriFormatExceptions in Teilnehmer- und Organisatorwerten aus CalDav ab.
+- Enthält eine Antwortnachricht in Ausnahmefällen, wenn ein Protokollfehler auftritt.
 
 #### 1.2.1 ####
-- Fixed HttpClient redirect issue, which affected Zimbra integration
+- HttpClient-Umleitungsproblem behoben, das Auswirkungen auf die Zimbra-Integration hatte.
 
 #### 1.2.0 ####
-- Added option to ignore new version and wait for next update.
-- Added workaround for Group Office, which will tolerate empty VALARMs.
-- Disable SynchronizeNowButton during synchronization.
-- Disable TestConnectionButton while test is in progress.
-- Add proper disposing for web messages.
+- Option hinzugefügt, um die neue Version zu ignorieren und auf das nächste Update zu warten.
+- Problemumgehung für Group Office hinzugefügt, die leere VALARMs toleriert.
+- SynchronizeNowButton während der Synchronisierung deaktiviert.
+- Deaktiviert TestConnectionButton, während der Test ausgeführt wird.
+- Richtige Entsorgung von Webnachrichten hinzugefügt.
 
 #### 1.1.0 ####
-- Support for Google OAuth
-- Perform all web operations in the Background
+- Unterstützung für Google OAuth.
+- Führt alle Weboperationen im Hintergrund aus.
 
 #### 1.0.4 ####
--Fix TimeRange filter for events
+- Korrigiert den TimeRange-Filter für Ereignisse.
 
 #### 1.0.3 ####
-- Add feature, which checks if a newer version is available (Ticket 61)
+- Fügt eine Funktion hinzu, die prüft, ob eine neuere Version verfügbar ist (Ticket 61).
 
 #### 1.0.2 ####
-- Bugfix: Preserve UID when updating an Event.
+- Bugfix: UID beim Aktualisieren eines Events beibehalten.
 
 #### 0.99.16 ####
-- Make filtering for time range optional
+- Filterung für Zeitbereich optional.
 
 #### 0.99.15 ####
-- Implement app.config options for disabling SSL/TLS certificate validation and enabling/disabling SSL3/TLS12
+- Implementiert app.config-Optionen zum Deaktivieren der SSL/TLS-Zertifikatüberprüfung und zum Aktivieren/Deaktivieren von SSL3/TLS12.
 
 #### 0.99.14 ####
-- Use BYSETPOS also for other instances from Outlook fixes first/second/... weekday/weekend day in month
+- Verwendet BYSETPOS auch für andere Instanzen aus Outlook-Korrekturen erster/zweiter/... Wochentag/Wochenende-Tag im Monat.
 
 #### 0.99.13 ####
-- Use BYSETPOS -1 to fix last (working)day monthly/yearly recurrences from Outlook
-- Add UserAgent header to request. (needed by BAIKAL for example)
+- Verwendet BYSETPOS -1, um die monatlichen/jährlichen Wiederholungen des letzten Arbeitstages in Outlook zu beheben.
+- Fügt einen UserAgent-Header zur Anforderung hinzu. (z.B. von BAIKAL benötigt).
 
 #### 0.99.12 ####
-- Fix Bug: Mapping is wrong, when master event is not first event in CalDAV resource.
-- Fix logging issue
-- Fix recurrence from Outlook for last weekday in month
+- Behebt Fehler: Die Zuordnung ist falsch, wenn das Master-Ereignis nicht das erste Ereignis in der CalDAV-Ressource ist.
+- Behebt das Protokollierungsproblem
+- Behebt die Wiederholung von Outlook für den letzten Wochentag im Monat
 
 #### 0.99.10 ####
-- Fetch Etag from server, if it is not included in an update response.
-- Factor out CalDavWebClient from CalDavDataAccess.
+- Holt Etag vom Server, wenn es nicht in einer Update-Antwort enthalten ist.
+- CalDavWebClient wird aus CalDavDataAccess herausgerechnet.
 
 #### 0.99.9 ####
 - Dispose Folders in OptionDialog
