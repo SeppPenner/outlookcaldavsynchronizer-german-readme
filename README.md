@@ -765,24 +765,24 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 #### 1.18.0 ####
 - Neue Features
-	- Deactivate prefix filter for custom message_classes by default and make it configurable as general option, since Windows Search Service was needed and not available in all setups.
-	- Add manual "Check for Update" button in about box.
+	- Deaktiviert den Präfixfilter für benutzerdefinierte Nachrichtenklassen standardmäßig und macht ihn als allgemeine Option konfigurierbar, da der Windows-Suchdienst benötigt wurde und nicht in allen Setups verfügbar sind.
+	- Manuelle Schaltfläche "Nach Updates suchen" in der Info-Box hinzugefügt.
 - Fehlerbehebungen
-	- proper check for IsInstantSearchEnabled for the store when using prefix filter.
-	- Remove unused DisplayAllProfilesAsGeneric general option.
-	- Remove unneeded enableTaskSynchronization in app.config.
-	- Change mapping errors to warnings for logging.
+	- Bei Verwendung des Präfixfilters wurde eine korrekte Prüfung auf IsInstantSearchEnabled für den Store hinzugefügt.
+	- Nicht verwendete allgemeine Option DisplayAllProfilesAsGeneric wurde entfernt.
+	- Nicht benötigte enableTaskSynchronization in app.config entfernt.
+	- Zuordnungsfehler in Warnungen für die Protokollierung geändert.
 
 #### 1.17.0 ####
 - Neue Features
-	- Improved formatted view for sync reports with possibility to view Outlook and server entities causing mapping warnings or errors.
-	- Improve UI. Rename Advanced Options to Network and proxy options and move button to server settings. Move Mapping Configuration button from advanced options form to main profile configuration form.
-	- Use prefix comparison in Outlook Repositories to filter also custom message_classes.
+	- Verbesserte formatierte Ansicht für Synchronisierungsberichte mit der Möglichkeit, Outlook- und Server-Entitäten anzuzeigen, die Zuordnungswarnungen oder -fehler verursachen.
+	- Verbesserte Benutzeroberfläche. Erweiterte Optionen in Netzwerk- und Proxy-Optionen umbenannt und Schaltfläche in Servereinstellungen verschoben. Schaltfläche "Zuordnungskonfiguration" aus erweiterten Formularen in Hauptprofil-Konfigurationsformular verschoben.
+	- Verwenden des Präfixvergleichs in Outlook-Repositorys, um auch benutzerdefinierte Nachrichtenklassen zu filtern.
 - Fehlerbehebungen
-	- Fix test settings and don't allow an Outlook task folder for google calendar but only for a google tasklist.
-	- Change BackColor of all UI forms and textboxes to SystemColors.Window.
-	- Fix wordrap in changelog textbox of update window and make window resizable, feature request 24.
-	- Use empty password, if decrypting password fails, ticket #165.
+	- Testeinstellungen behoben und Outlook-Aufgabenordner nicht für Google-Kalender, sondern nur für eine Google-Jobliste zugelassen.
+	- Die BackColor aller UI-Formulare und Textfelder wurde in SystemColors.Window geändert.
+	- Problem mit der Wortänderung im Änderungsprotokoll des Update-Fensters behoben und die Größe des Fensters wurde geändert. Feature-Request 24.
+	- Leeres Passwort verwendet, wenn das Entschlüsseln des Passworts fehlschlägt, Ticket #165.
 
 #### 1.16.0 ####
 - Neue Features
