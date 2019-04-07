@@ -826,29 +826,29 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 #### 1.14.0 ####
 - Neue Features
-	- Skip sync runs, if network is not available to avoid error reports in that case, add general option to check Internet connection with dns query to www.google.com. If you are in a local network without dns or google.com blocked, disable this option.
-	- Implement EventMappingConfiguration options for syncing private flag to CLASS:CONFIDENTIAL and vice versa, feature request 15.
+	- Überspringen der Synchronisierungsläufe. Wenn das Netzwerk nicht verfügbar ist, um in diesem Fall Fehlerberichte zu vermeiden, wurde eine allgemeine Option zum Überprüfen der Internetverbindung mit der DNS-Abfrage zu www.google.com hinzugefügt. Wenn Sie sich in einem lokalen Netzwerk befinden, ohne dns oder google.com blockiert zu haben, deaktivieren Sie diese Option.
+	- Implementierte Konfigurationsoptionen für die Ereigniszuordnung zum Synchronisieren des privaten Flags mit CLASS: CONFIDENTIAL und umgekehrt, Feature-Request 15.
 - Fehlerbehebungen
-	- Fix mapping outlook task dates to DTSTART and DUE, use local timezone and time 00:00:00 for start, 23:59:59 for due values and remove DURATION to be RFC 5545 compliant, see ticket #170. Use also localtime for COMPLETED instead of UTC to be consistent and fix VTIMEZONE DST rules for tasks.
-	- Fix yearly recurrence with interval=1 for tasks.
-	- Treat not recognized PARTSTAT same way as NEEDS-ACTION according to RFC 5545.
-	- Fix mapping of attendees with type resource/room or unknown role, map X-LOCATION to type resource, set CUTYPE=RESOURCE for resources.
-	- Catch COMException when setting recurrence interval and ignore invalid intervals for Appointments and Tasks, ticket #174.
-	- Fix logging uid of events for recurrence errors.
-	- Avoid COMException for invalid organizer in MapAttendeesAndOrganizer2To1, skip organizer if no email and no CN is valid.
-	- Replace year 0001 with 1970 in VTIMEZONE definitions before deserializing icaldata, since DDay.iCal is extremely slow otherwise, needed for emClient, see ticket #150.
+	- Das Mapping von Outlook-Taskdaten zu DTSTART und DUE wurde korrigiert. Für den Start wird die lokale Zeitzone und die Uhrzeit 00:00:00 verwendet, für fällige Werte 23:59:59. DURATION wird entfernt, um RFC 5545-kompatibel zu sein. Siehe Ticket #170. Verwendet auch localtime für COMPLETED anstelle von UTC, um konsistent zu sein, und korrigiert VTIMEZONE-DST-Regeln für Aufgaben.
+	- Feste jährliche Wiederholung mit Intervall = 1 für Aufgaben.
+	- Nicht erkannte PARTSTAT-Behandlung wie bei NEEDS-ACTION gemäß RFC 5545.
+	- Zuordnung von Teilnehmern mit Typ Ressource / Raum oder unbekannter Rolle behoben, X-LOCATION der Typ Ressource zuordnen, CUTYPE = RESOURCE für Ressourcen festgelegt.
+	- COMException beim Festlegen des Wiederholungsintervalls abgefangen und ungültige Termine für Termine und Aufgaben ignoriert. Ticket #174.
+	- Protokollierung der UID von Ereignissen für Wiederholungsfehler behoben.
+	- Vermeidung einer COMException für ungültigen Organiser in MapAttendeesAndOrganizer2To1, Überspringen des Organisators, wenn keine E-Mail und kein gültiger CN vorhanden ist.
+	- In den VTIMEZONE-Definitionen vor der Deserialisierung von icaldata das Jahr 0001 durch 1970 ersetzt, da DDay.iCal ansonsten extrem langsam ist und für emClient erforderlich ist, siehe Ticket #150.
 
 #### 1.13.2 ####
 - Fehlerbehebungen
-	- Refactor SetOrganizer and GetMailUrl in EventEntityMapper to avoid Nullreference Exceptions and catch COMExceptions.
-	- Catch COMExceptions when accessing timezone of AppointmentItem and fallback to UTC in that case.
-	- Catch COMException when AppointmentItem of an Exception doesn't exist, ignore that exception then since we can't get the changes. This happens when the recurring event is not in the local Outlook timezone.
-	- Set WordWrap in newFeaturesTextBox for better readability of Neue Features, feature request 24.
-	- Check for invalid DTEND of vevents and catch COMException when trying to set EndTime, use DTSTART in those cases.
-	- Catch COMException in GetEventOrganizer(), fixes issues with OL2007.
-	- Avoid possible NullReferenceExceptions in MapAttendeesandOrganizer2To1.
-	- Catch possible COMException in MapOrganizer1To2.
-	- Catch UriFormatException also in Map2To1 when the server sends invalid attendee email adresses, ticket #168.
+	- SetOrganizer und GetMailUrl in EventEntityMapper umgeändert, um Nullreferenzausnahmen zu vermeiden und COMExceptions abzufangen.
+	- COMExceptions beim Zugriff auf die Zeitzone von AppointmentItem und Fallback auf UTC in diesem Fall abgefangen.
+	- COMException abgefangen, wenn AppointmentItem einer Ausnahme nicht vorhanden ist, ignoriert diese Ausnahme, da die Änderungen nicht abgerufen werden können. Dies geschieht, wenn sich das wiederkehrende Ereignis nicht in der lokalen Outlook-Zeitzone befindet.
+	- Zeilenumbrüche in newFeaturesTextBox eingestellt, um die neuen Funktionen besser lesbar zu machen, Feature-Request 24.
+	- Ungültige DTEND-Werte von Ereignissen geprüft und COMException abgefangen, wenn versucht wird, EndTime festzulegen, verwendet in diesen Fällen DTSTART.
+	- COMException in GetEvent Organizer() abgefangen, Probleme mit OL2007 behoben.
+	- Mögliche NullReferenceExceptions in MapAttendeesandOrganizer2To1 vermieden.
+	- Mögliche COMException in MapOrganizer1To2 abgefangen.
+	- UriFormatException wurde auch in Map2To1 abgefangen, wenn der Server ungültige E-Mail-Adressen der Teilnehmer sendet, Ticket #168.
 
 #### 1.13.0 ####
 - Neue Features
