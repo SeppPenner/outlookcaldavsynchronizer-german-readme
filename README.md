@@ -1504,55 +1504,50 @@ In der Symbolleiste der Synchronisationsprofile können Sie alle Profile in eine
 
 ### Berichte über Synchronisierungsläufe ###
 
-You can also configure Synchronization reports for all profiles, this can be configured via general Options:
+Sie können auch Synchronisationsberichte für alle Profile konfigurieren. Dies kann über allgemeine Optionen konfiguriert werden:
 
-- **Log** You can choose if you want to generate reports for *"Only sync runs with errors"* or *"Sync runs with errors or warnings"* or *"All sync runs"*.
-- **Show immediately** configures if the Sync reports should be shown immediately after a sync run with errors, with warnings or errors, or not at all.
-- **Delete reports older than (days)** Automatically delete reports which are older than the days configured.
-- **Log Entity Names** Enable to display the summary of the event or task or the name of the contact to identify the entity in the sync report.
-- 
-- **Log all entities, even without warnings or errors** Enable if a full report of all modified entities is needed.
+- **Log** Sie können wählen, ob Sie Berichte für erstellen möchten für *"Nur Synchronisierungsläufe mit Fehlern loggen"* or *"Nur Synchronisierungsläufe mit Fehlern oder Warnungen loggen"* or *"Alle Synchronisierungsläufe loggen"*.
+- **Zeige sofort** Konfiguriert, ob die Sync-Berichte sofort nach einem Sync-Lauf mit Fehlern, Warnungen oder Fehlern angezeigt werden sollen oder nicht.
+- **Berichte löschen, die älter als (Tage) sind** Löscht automatisch Berichte, die älter sind als die konfigurierten Tage.
+- **EntityNamen loggen** Aktivieren Sie diese Option, um die Zusammenfassung des Ereignisses oder der Aufgabe oder den Namen des Kontakts anzuzeigen, um die Entität im Synchronisierungsbericht zu identifizieren.
+- **Alle Entitäten protokollieren, auch ohne Warnungen oder Fehler** Aktivieren Sie diese Option, wenn ein vollständiger Bericht aller geänderten Entitäten benötigt wird.
 
-You can show reports manually with the **Reports** button in the CalDav Synchronizer Ribbon. There you can choose from available reports (shown as profile name with timestamp of the sync run) and see informations about items synced and if there were any warnings or errors. You can also delete reports or add them to a zip file via the context menu. If the last sync run lead to any errors, a warning symbol is shown in the Ribbon or the Report window opens if configured in the general options.
+Sie können Berichte manuell mit der Schaltfläche **Berichte** in der CalDav Synchronizer-Multifunktionsleiste anzeigen. Dort können Sie aus verfügbaren Berichten (angezeigt als Profilname mit Zeitstempel des Synchronisierungslaufs) auswählen und Informationen zu synchronisierten Elementen sowie zu Warnungen oder Fehlern anzeigen. Sie können Berichte auch löschen oder über das Kontextmenü zu einer ZIP-Datei hinzufügen. Wenn der letzte Synchronisierungslauf zu Fehlern führte, wird ein Warnsymbol in der Multifunktionsleiste angezeigt oder das Berichtsfenster wird geöffnet, sofern dies in den allgemeinen Optionen konfiguriert ist.
 
-### Synchronization Status and System TrayIcon with Notifications ###
+### Synchronisationsstatus und System TrayIcon mit Benachrichtigungen ###
 
-With the **Status** button in the CalDav Synchronizer Ribbon or via doubleclick from the TrayIcon you can access the status of the active sync profiles with their last sync run shown in minutes ago and the status OK, error, or warning. When clicking on the profile name you get to the according sync profile settings, when clicking the status icon, you can open the according sync report. When a sync run has any errors or warnings you will get a notification from the CalDav Synchronizer TrayIcon.
+Mit der Schaltfläche **Status** in der CalDav Synchronizer-Multifunktionsleiste oder per Doppelklick über TrayIcon können Sie auf den Status der aktiven Synchronisationsprofile zugreifen, wobei der letzte Synchronisierungslauf in Minuten zuvor angezeigt wurde und der Status OK, Fehler oder Warnung angezeigt wird. Wenn Sie auf den Profilnamen klicken, gelangen Sie zu den entsprechenden Synchronisationsprofileinstellungen. Wenn Sie auf das Statussymbol klicken, können Sie den entsprechenden Synchronisierungsbericht öffnen. Wenn bei einem Synchronisierungslauf Fehler oder Warnungen angezeigt werden, erhalten Sie eine Benachrichtigung von CalDav Synchronizer TrayIcon.
 
-## Trouble Shooting ##
+## Fehlerbehebung ##
 
-Options and state information is normally stored in the following folder:
+Optionen und Statusinformationen werden normalerweise im folgenden Ordner gespeichert:
 
     C:\Users\<Your Username>\AppData\Local\CalDavSychronizer
-If you activated Store data in roaming folder the location is changed to the following folder:
+Wenn Sie "Daten in Roaming-Ordner speichern" aktiviert haben, wird der Speicherort in den folgenden Ordner geändert:
 
     C:\Users\<Your Username>\AppData\Roaming\CalDavSychronizer
 
-There is one `options_<your outlook profile>.xml` file which stores the options for each outlook profile.
-For each sync profile there is a subfolder with state information stored in a relations.xml file after the inital sync. If you delete that folder, a fresh inital sync is performed. In the Synchronization profiles dialog a context menu is available in each profile (right click), which allows to open the cache directory and read the relations.xml file.
+Es gibt eine `options_<Ihr Outlook-Profil>.xml`-Datei, in der die Optionen für jedes Outlook-Profil gespeichert werden. Für jedes Synchronisationsprofil gibt es einen Unterordner mit Statusinformationen, die nach der ersten Synchronisierung in einer Datei `relations.xml` gespeichert sind. Wenn Sie diesen Ordner löschen, wird eine neue Anfangssynchronisierung durchgeführt. Im Dialogfeld "Synchronisationsprofile" ist in jedem Profil ein Kontextmenü (rechte Maustaste) verfügbar, mit dem das Cache-Verzeichnis geöffnet und die Datei `relations.xml` gelesen werden kann.
 
-Each synchronization attempt is logged in the `log.txt` file. There you can find information about sync duration and the amount of added, deleted or modified events. Errors and Exceptions are logged aswell. You can view and clear the log file in **General Options**. There you can also change the log level from `INFO` to `DEBUG`. 
+Jeder Synchronisationsversuch wird in der `log.txt`-Datei protokolliert. Dort finden Sie Informationen zur Dauer der Synchronisierung und die Anzahl der hinzugefügten, gelöschten oder geänderten Ereignisse. Fehler und Ausnahmen werden ebenfalls protokolliert. Sie können die Protokolldatei in **Allgemeine Optionen** anzeigen und löschen. Dort können Sie auch den Log-Level von `INFO` in `DEBUG` ändern.
 
- 
-### Debugging and more config options ###
+### Debugging und weitere Konfigurationsoptionen ###
 
-In the install dir (The default is `'C:\Program Files (x86)\CalDavSynchronizer'`) you will find the app config file
+Im Installationsverzeichnis (Die Standardeinstellung ist `'C:\Program Files (x86)\CalDavSynchronizer'`) finden Sie die App-Konfigurationsdatei
 
     CalDavSynchronizer.dll.config
+In dieser XML-Datei können Sie Timeout-Parameter und Konfigurationsoptionen im Abschnitt `appSettings` konfigurieren. Nach dem Ändern der Parameter müssen Sie Outlook neu starten.
 
-In that xml file you can config timeout parameters and config options in the section `appSettings`
-After changing parameters you have to restart Outlook.
+- **wpfRenderModeSoftwareOnly**: Deaktivieren Sie mit true die Hardwarebeschleunigung und verwenden Sie nur Software-Rendering. Nützlich bei Problemen mit WPF und dem Grafikkartentreiber.
 
-- **wpfRenderModeSoftwareOnly**: When set to true, turn off hardware acceleration and use Software Rendering only. Useful if you have issues with WPF and your graphics card driver.
+Sie können auch die Standardeinstellungen für einige der allgemeinen Optionen wie CheckForNewVersions, StoreAppDatainRoamingFolder, IncludeCustomMessageClasses und SSL-/TLS-Optionen ändern. Diese Optionen sind für die Bereitstellung für alle Nutzer nützlich, da allgemeine Optionen pro Benutzer in der HKCU-Registrierungsstruktur gespeichert werden.
 
-You can also change defaults for some of the general options like CheckForNewVersions, StoreAppDatainRoamingFolder, IncludeCustomMessageClasses and SSL/TLS options, useful for All Users deployment, because general options are stored per user in the HKCU registry hive.
-
-In the section `system.net` you can define proxy settings, e.g. use of NTLM credentials
+Im Abschnitt `system.net` können Sie Proxy-Einstellungen definieren, z. Verwendung von NTLM-Anmeldeinformationen
 
     <defaultProxy useDefaultCredentials="true">
     </defaultProxy>
 
-In this section you can also allow UnsafeHeaderParsing if the server sends invalid http headers.
+In diesem Abschnitt können Sie auch UnsafeHeaderParsing zulassen, wenn der Server ungültige http-Header sendet.
 
     <system.net>
     	<settings>
@@ -1561,21 +1556,20 @@ In this section you can also allow UnsafeHeaderParsing if the server sends inval
     	</settings>
     </system.net>
 
-This setting can also be enabled in the general options, starting with version 2.10.0.
+Diese Einstellung kann ab Version 2.10.0 auch in den allgemeinen Optionen aktiviert werden.
 
-In the section `log4net` you can define the log level for the main log (also possible in general options now) and for the caldav data access, 
-    level value can be DEBUG or INFO, e.g. :
+Im Abschnitt `log4net` können Sie die Protokollebene für das Hauptprotokoll festlegen (jetzt auch in den allgemeinen Optionen möglich). Für den Caldav-Datenzugriff kann der Wert für die Ebene DEBUG oder INFO sein, z. B.:
 
 	<root>
       <level value="DEBUG" />
       <appender-ref ref="MainLogAppender" />
     </root>
     
-### Common network errors ###
+### Häufige Netzwerkfehler ###
 
-- System.Net.Http.HttpRequestException: Response status code does not indicate success: '401' ('Unauthorized').
-	- Wrong Username and/or Password provided.
-- System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The underlying connection was closed: A connection that was expected to be kept alive was closed by the server.
-	- The server has KeepAlive disabled. Use *"Close connection after each request"* in **Network and proxy options**.
-- System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The server committed a protocol violation. Section=ResponseStatusLine
-	- The server sends invalid headers. Enable the general option **Enable useUnsafeHeaderParsing** or the commented out option **useUnsafeHeaderparsing** in the app config file, see **Debugging and more config options** above.
+- System.Net.Http.HttpRequestException: Der Antwortstatuscode gibt keinen Erfolg an: '401' ('Unauthorized').
+	- Falscher Benutzername und/oder Passwort angegeben.
+- System.Net.Http.HttpRequestException: Beim Senden der Anfrage ist ein Fehler aufgetreten. ---> System.Net.WebException: Die zugrunde liegende Verbindung wurde geschlossen: Eine Verbindung, von der erwartet wurde, dass sie am Leben bleibt, wurde vom Server geschlossen.
+	- Der Server hat KeepAlive deaktiviert. Benutzen Sie *"Verbindung nach jeder Anfrage schließen"* in den **Netzwerk- und Proxy-Optionen**.
+- System.Net.Http.HttpRequestException: Beim Senden der Anfrage ist ein Fehler aufgetreten. ---> System.Net.WebException: Der Server hat eine Protokollverletzung begangen. Section=ResponseStatusLine
+	- Der Server sendet ungültige Header. Aktivieren Sie die allgemeine Option **Aktiviere useUnsafeHeaderParsing** oder die auskommentierte Option **useUnsafeHeaderparsing** in der App-Konfigurationsdatei, siehe **Debugging und weitere Konfigurationsoptionen** oben.
