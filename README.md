@@ -1255,33 +1255,33 @@ Die folgenden Eigenschaften müssen für ein neues generisches Profil festgelegt
 - **DAV-Ressource erstellen** Sie können Server-DAV-Ressourcen (Kalender oder Adressbücher) hinzufügen. Sie können den Anzeigenamen der Ressource konfigurieren und festlegen, ob die URL mit einer zufälligen Zeichenfolge oder dem Anzeigenamen erstellt werden soll. Bei Kalendern können Sie auch die Serverkalenderfarbe ändern. *(nur in erweiterten Einstellungen)*
 
 - *Sync-Einstellungen*:
-	- Synchronization settings
-		- **Outlook -> Server (Replicate):** syncronize everything from Outlook to the server (one way)
-		- **Outlook <- Server (Replicate):** synchronize everything from the server to Outlook (one way)
-		- **Outlook -> Server (Merge):** synchronize everything from Outlook to the server but don't change events created on the server
-		- **Outlook <- Server (Merge):** synchronize everything from the server to Outlook but don't change events created in Outlook
-		- **Outlook <-> Server (Two-Way):** Two-Way synchronization between Outlook and the server with one of the following conflict resolution
-	- Conflict resolution (only used in Two-Way synchronization mode and only available in *advanced settings*)
-		- **Outlook Wins:** If an event is modified in Outlook and in the server since last snyc, use the Outlook version. If an event is modified in Outlook and deleted in the server since last snyc, also use the Outlook version. If an event is deleted in Outlook and modified in the server, also delete it in the server.
-		- **Server Wins:** If an event is modified in Outlook and in the server since last snyc, use the server version. If an event is modified in Outlook and deleted in the server since last snyc, also delete it in Outlook. If an event is deleted in Outlook and modified in the server, recreate it in Outlook.
-		- **Automatic:** If event is modified in Outlook and in the server since last snyc, use the last recent modified version. If an event is modified in Outlook and deleted in the server since last snyc, delete it also in Outlook. If an event is deleted in Outlook and modified in the server, also delete it in the server
-	- **Synchronization interval (minutes):** Choose the interval for synchronization in minutes, if 'Manual only' is choosen, there is no automatic sync but you can use the 'Synchronize now' menu item.
-	- **Perform synchronization in chunks** and
-	- **Chunk size** perform CalDAV/CardDAV sync in chunks with configurable chunk size to avoid OutOfMemoryEceptions, enabled by default because of lower memory consumption for huge resources. *(only in advanced settings)*
-	- **Use time range filter** and
-	- **Synchronization timespan past (days)** and
-	- **Synchronization timespan future (days)** *(only in advanced settings)* For performance reasons it is useful to sync only a given timespan of a big calendar, especially past events are normally not necessary to sync after a given timespan. But be aware that Outlook and Google and some other CalDAV servers calculate the intersection with the time-range differently for recurring events which can cause doubled or deleted events, so it is recommended to select a time-range which is larger than the largest interval of your recurring events (e.g. 1 year for birthdays). You can't use the time range filter together with WebDAV collection sync.
+	- Synchronisationseinstellungen
+- **Outlook -> Server (Replikat):** Alles von Outlook zum Server synchronisieren (one way).
+- **Outlook <- Server (Replikat):** Alles vom Server nach Outlook synchronisieren (one way).
+- **Outlook -> Server (Merge):** Synchronisiert alles von Outlook auf den Server, ändert jedoch keine auf dem Server erstellten Ereignisse.
+- **Outlook <- Server (Merge):** Synchronisiert alles vom Server mit Outlook, ändert jedoch keine in Outlook erstellten Ereignisse.
+- **Outlook <-> Server (bidirektional):** Bidirektionale Synchronisierung zwischen Outlook und dem Server mit einer der folgenden Konfliktlösungen.
+- Konfliktlösung (wird nur im bidirektionalen Synchronisationsmodus verwendet und ist nur in den *erweiterten Einstellungen verfügbar*)
+- **Outlook gewinnt:** Wenn seit dem letzten Snyc ein Ereignis in Outlook und auf dem Server geändert wurde, wird die Outlook-Version verwendet. Wenn ein Ereignis in Outlook geändert und seit dem letzten Snyc auf dem Server gelöscht wurde, wird auch die Outlook-Version verwendet. Wenn ein Ereignis in Outlook gelöscht und auf dem Server geändert wird, wird es auch auf dem Server gelöscht.
+- **Server gewinnt:** Wenn seit dem letzten Snyc ein Ereignis in Outlook und auf dem Server geändert wurde, verwendet es die Serverversion. Wenn ein Ereignis in Outlook geändert und seit dem letzten Snyc auf dem Server gelöscht wird, wird es auch in Outlook gelöscht. Wenn ein Ereignis in Outlook gelöscht und auf dem Server geändert wird, wird es in Outlook neu erstellt.
+- **Automatisch:** Wenn das Ereignis in Outlook und auf dem Server seit dem letzten Snyc geändert wurde, verwendet es die zuletzt aktualisierte Version. Wenn ein Ereignis in Outlook geändert und seit dem letzten Snyc auf dem Server gelöscht wird, wird es auch in Outlook gelöscht. Wenn ein Ereignis in Outlook gelöscht und auf dem Server geändert wird, wird es auch auf dem Server gelöscht.
+- **Synchronisationsintervall (Minuten):** Wählen Sie das Synchronisationsintervall in Minuten aus. Wenn Sie die Option "Nur manuell" auswählen, wird keine automatische Synchronisierung durchgeführt. Sie können jedoch den Menüpunkt "Jetzt synchronisieren" verwenden
+- **Synchronisation in Abschnitten** und durchführen
+- **Chunk-Größe** Durchführen der CalDAV- / CardDAV-Synchronisierung in Chunks mit konfigurierbarer Chunk-Größe, um OutOfMemoryEceptions zu vermeiden, die standardmäßig aktiviert sind, da der Speicherverbrauch bei großen Ressourcen geringer ist. *(nur in erweiterten Einstellungen)*
+- **Verwenden Sie den Zeitbereichsfilter** und
+- **Synchronisationszeit vergangene (Tage)** und
+- **Zukünftige Synchronisierungszeit (Tage)** *(nur in den erweiterten Einstellungen)* Aus Leistungsgründen ist es sinnvoll, nur eine bestimmte Zeitspanne eines großen Kalenders zu synchronisieren. Insbesondere vergangene Ereignisse sind normalerweise nicht erforderlich, um nach einer bestimmten Zeit zu synchronisieren. Beachten Sie jedoch, dass Outlook und Google sowie einige andere CalDAV-Server die Schnittmenge mit dem Zeitbereich für wiederkehrende Ereignisse unterschiedlich berechnen, was zu doppelten oder gelöschten Ereignissen führen kann. Es wird daher empfohlen, einen Zeitbereich auszuwählen, der größer als das größte Intervall Ihrer wiederkehrenden Ereignisse ist (z. B. 1 Jahr für Geburtstage). Sie können den Zeitbereichsfilter nicht zusammen mit der Synchronisierung der WebDAV-Sammlung verwenden.
 
-- **Is active checkbox in the tree view** If deactivated, current profile is not synced anymore without the need to delete the profile.
+- **Aktiviertes Kontrollkästchen in der Baumansicht** Wenn deaktiviert, wird das aktuelle Profil nicht mehr synchronisiert, ohne dass das Profil gelöscht werden muss.
 
-If you expand the tree view of the profile you can configure network and proxy options and mapping configuration options. *(only in advanced settings)*
+Wenn Sie die Baumansicht des Profils erweitern, können Sie Netzwerk- und Proxyoptionen sowie Zuordnungskonfigurationsoptionen konfigurieren. *(nur in erweiterten Einstellungen)*
 
-- **Network and proxy options**: Here you can configure advanced network options and proxy settings. 
-	- **Close connection after each request** Don't use KeepAlive for servers which don't support it. 
-	- **Use Preemptive Authentication** Send Authentication header with each request to avoid 401 responses and resending the request, disable only if the server has problems with preemptive authentication.
-	- **Force basic authentication** Set basic authentication headers to avoid problems with negotiation or digest authentication with servers like OS X. This is only recommended if you use a secure HTTPS connection, otherwise passwords are sent in cleartext.
-	- **Use System Default Proxy** Use proxy settings from Internet Explorer or config file, uses default credentials if available for NTLM authentication.
-	- **Use manual proxy configuration** Specify proxy URL as `http://<your-proxy-domain>:<your-proxy-port>` and optional Username and Password for Basic Authentication.
+- **Netzwerk- und Proxy-Optionen**: Hier können Sie erweiterte Netzwerkoptionen und Proxy-Einstellungen konfigurieren.
+- **Verbindung nach jeder Anforderung schließen** Verwenden Sie KeepAlive nicht für Server, die diese nicht unterstützen.
+- **Präventive Authentifizierung verwenden** Senden des Authentication-Header mit jeder Anforderung, um 401-Antworten zu vermeiden und die Anforderung erneut zu senden. Deaktivieren Sie diese Option nur, wenn der Server Probleme mit der präemptiven Authentifizierung hat.
+- **Standardauthentifizierung erzwingen** Legen Sie Standardauthentifizierungsheader fest, um Probleme mit der Aushandlung oder Digestauthentifizierung bei Servern wie OS X zu vermeiden. Dies wird nur empfohlen, wenn Sie eine sichere HTTPS-Verbindung verwenden. Andernfalls werden Passwörter im Klartext gesendet.
+- **System Default Proxy verwenden** Proxy-Einstellungen aus Internet Explorer oder Konfigurationsdatei verwenden, verwendet Standardberechtigungsnachweise, falls für die NTLM-Authentifizierung verfügbar.
+- **Verwenden der manuellen Proxy-Konfiguration.** Geben Sie die Proxy-URL als http://<Ihre-Proxy-Domäne>:<Ihr-Proxy-Port> und optional Benutzername und Kennwort für die Basisauthentifizierung an.
 	
 - **Mapping Configuration**: Here you can configure what properties should be synced.
 	- For appointments you can choose if you want to map reminders (just upcoming, all or none) and the description body.
