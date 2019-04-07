@@ -786,43 +786,43 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 #### 1.16.0 ####
 - Neue Features
-	- Google task support added. You can sync google tasklists to Outlook task folders via the Google Task Api. Just use a google profile and choose a task folder and do autodiscovery to select the google tasklist.
-	- Improved UpdateChecker, add button to automatically download and extract the new version and start the installer.
-	- Improved Synchronisation reports with formatted view.
-	- Small UI improvements and layout changes.
-	- Add Link to Helppage and Wiki in About Dialog.
-	- Improve Autodiscovery in google profiles and add button to start a new autodiscovery.
+	- Google Aufgabenunterstützung hinzugefügt. Sie können Google-Joblisten mit Outlook-Aufgabenordnern über Google Task Api synchronisieren. Verwenden Sie einfach ein Google-Profil, wählen Sie einen Aufgabenordner aus und führen Sie eine automatische Erkennung durch, um die Google-Jobliste auszuwählen.
+	- UpdateChecker verbessert, Schaltfläche hinzufügen, um die neue Version automatisch herunterzuladen, zu extrahieren und das Installationsprogramm zu starten.
+	- Verbesserte Synchronisationsberichte mit formatierter Ansicht.
+	- Kleine Verbesserungen der Benutzeroberfläche und Layoutänderungen.
+	- Link zu Hilfesite und Wiki in About Dialog hinzugefügt.
+	- Verbesserte Autodiscovery in Google-Profilen und Schaltfläche zum Hinzufügen einer neuen Autodiscovery.
 - Fehlerbehebungen
-	- fix workaround for Synology NAS empty collections wrongly returning 404 NotFound, ticket #203.
-	- Perform delete and create new , if an update for a Google-event returns HTTP-error 403, ticket #205.
-	- Fix logging of server resource uri in sync reports.
-	- Fix wrong handling of folder in OutlookTaskRepository.
-	- Properly dispose WebClient in UpdateChecker and IsOnline check.
+	- Behobener Workaround für leere Sammlungen des Synology NAS, die fälschlicherweise 404 NotFound zurückgeben. Ticket #203.
+	- Löschen durchführen und neu erstellen, wenn ein Update für ein Google-Ereignis den HTTP-Fehler 403 zurückgibt. Ticket #205.
+	- Protokollierung der UI der Serverressource in Synchronisierungsberichten korrigiert.
+	- Falsche Behandlung von Ordnern in OutlookTaskRepository behoben.
+	- Ordnungsgemäßes disposen des WebClients in UpdateChecker- und IsOnline-Prüfung.
 
 #### 1.15.0 ####
-- WARNING: This version changes the internal cache structure, when downgrading to an older version, the cache gets cleared and a new inital sync is performed!
+- WARNUNG: Diese Version ändert die interne Cache-Struktur. Beim Downgrade auf eine ältere Version wird der Cache gelöscht und eine neue Anfangssynchronisierung durchgeführt!
 - Neue Features
-	- Improved handling of Uris, Use custom class WebResourceName instead of System.Uri to identify WebDAV resources. This should fix various issues with filenames with wrongly encoded special chars like slashes or spaces especially for Owncloud, see ticket #193 and discussions.
-	- Add advanced option for preemptive authentication and set it to default for new profiles, feature request from ticket #198.
-	- Make Options-Tabs draggable.
-	- Delete caches if they have a version, other than the required version and implement cache conversion from version 0 to 1. 
-	- Improve InitialTaskEntityMatcher and also compare Start and Due Date if available for matching tasks.
+	- Verbesserte Behandlung von Uris, Verwendung der benutzerdefinierten Klasse WebResourceName anstelle von System.Uri zum Identifizieren von WebDAV-Ressourcen. Dies sollte verschiedene Probleme mit Dateinamen mit falsch codierten Sonderzeichen wie Schrägstrichen oder Leerzeichen speziell für Owncloud beheben, siehe Ticket #193 und Diskussionen.
+	- Erweiterte Option für die präemptive Authentifizierung hinzugefügt und für neue Profile als Standard festgelegt, Feature-Request von Ticket #198.
+	- Optionen-Tabs ziehbar gemacht.
+	- Löschen von Caches, wenn sie eine andere Version als die erforderliche Version haben, und Implementieren der Cache-Konvertierung von Version 0 in 1.
+	- InitialTaskEntityMatcher wurde verbessert und außerdem Start und Fälligkeitsdatum verglichen, falls dies für übereinstimmende Aufgaben verfügbar ist.
 - Fehlerbehebungen
-	- Set PatternEndDate of Recurrence to PatternStartDate if it is an invalid date before the start in the vevent to avoid COMException, ticket #197.
-	- Don't set task completed in local timezone, COMPLETED of vtodo must be in UTC, fix regression introduced in 1.14.0.
-	- Avoid UTC conversion in InitialEventEntityMatcher and use local timezone to avoid Nullreference Exceptions from Dday.iCal library in some strange timezone cases, ticket #154. Also fix matching of allday events and check if date matches.
-	- Catch COMException when getting AddressEntryUserType of Recipient, ticket 109 from github.
+	- Setzen des PatternEndDate of Recurrence auf PatternStartDate, wenn es vor dem Start im Ereignis ein ungültiges Datum ist, um die COMException zu vermeiden. Ticket #197.
+	- Task nicht in lokaler Zeitzone abschließen, COMPLETED von vtodo muss in UTC sein, Korrektur der Regression in 1.14.0 wurde vorgenommen.
+	- UTC-Konvertierung in InitialEventEntityMatcher wurde vermieden und lokale Zeitzone verwendet, um Nullreferenzausnahmen aus der Dday.iCal-Bibliothek in einigen seltsamen Zeitzonenfällen zu vermeiden. (Ticket #154) Korrigiert auch den Abgleich alltäglicher Ereignisse und prüft, ob das Datum passt.
+	- COMException abfangen, wenn AddressEntryUserType of Recipient abgerufen wird. Ticket 109 von Github.
 
 #### 1.14.2 ####
 - Fehlerbehebungen
-	- Fix every workday recurrence and avoid INTERVAL=0 which is wrongly set from Outlook Object Model, fixes problem with certain versions of SabreDAV/OwnCloud, where INTERVAL=0 leads to an internal server error
-	- Catch also possible ArgumentException in  MapRecurrence1To2 when trying to get AppointmentItem of a changed occurence.
-	- Improve handling of DECLINED and cancelled meetings.
-	- Prefix AppointmentItem Subject with "Cancelled: " if event status is CANCELLED
-	- Use extension .vcf instead of .vcs for newly created vcards.
-	- Improve mapping of phonenumbers, map Outlook OtherPhoneNumber and OtherFaxNumber and set TYPE=MAIN for PrimaryPhoneNumber.
-	- Improve mapping of HOME and WORK URLs for vcards.
-	- Refactor IsOnline() check to avoid problems in proxy environments, ticket #189
+	- Behebung jedes Arbeitstages und Vermeidung von INTERVAL = 0, das falsch aus dem Outlook-Objektmodell festgelegt wurde, behebt ein Problem mit bestimmten Versionen von SabreDAV / OwnCloud, wobei INTERVAL = 0 zu einem internen Serverfehler führt
+	- Es wurde auch eine mögliche ArgumentException in MapRecurrence1To2 abgefangen, wenn versucht wird, AppointmentItem eines geänderten Vorkommens abzurufen.
+	- Verbesserter Umgang mit DECLINED und abgesagten Meetings.
+	- Präfix AppointmentItem Betreff mit "Abgebrochen:", wenn der Ereignisstatus ABBRUCH ist.
+	- Verwendet die Erweiterung .vcf anstelle von .vcs für neu erstellte Vcards.
+	- Verbesserte Zuordnung von Telefonnummern, Zuordnung von Outlook OtherPhoneNumber und OtherFaxNumber und Festlegen von TYPE = MAIN für PrimaryPhoneNumber.
+	- Verbesserte Zuordnung von HOME- und WORK-URLs für Vcards.
+	- Refactored IsOnline () überprüft, um Probleme in Proxy-Umgebungen zu vermeiden, Ticket #189.
 
 #### 1.14.0 ####
 - Neue Features
