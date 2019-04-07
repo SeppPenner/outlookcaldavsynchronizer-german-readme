@@ -893,22 +893,23 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 #### 1.10.0 ####
 - Neue Features
-	- Add possibility to set server calendar color to selected category color
-	- Allow to specify shortcut key of category and improve EventMappingConfiguration UI
-	- Add scheduling configuration options to EventMappingConfiguration and set RSVP for attendees. (You can specify if you want to set SCHEDULE-AGENT:CLIENT or X-SOGO-SEND-APPOINTMENT-NOTIFICATIONS:NO for SOGo)
+	- Möglichkeit hinzugefügt, Serverkalenderfarbe auf ausgewählte Kategorienfarbe einzustellen
+	- Ermöglicht die Angabe des Tastenkürzels der Kategorie und die Verbesserung der Benutzeroberfläche von EventMappingConfiguration
+	- Zeitplanungskonfigurationsoptionen zu EventMappingConfiguration hinzugefügt und RSVP für Teilnehmer festgelegt. (Sie können angeben, ob Sie SCHEDULE-AGENT einstellen möchten: CLIENT oder X-SOGO-SEND-APPOINTMENT-NOTIFICATIONS: NO für SOGo.)
 - Fehlerbehebungen
-	- Escape single quotes in category filter string and validate it in EventMappingConfiguration, it must not contain commas or semicolons to avoid exceptions
-	- Use DASL filter instead of JET syntax to fix category filtering for OL 2010(64bit)
-	- Take relative redirects in account. (fixes Autodiscovery for some servers based on cpanel/horde)
-	- Avoid UTC conversion from Dday.iCal library for upcoming reminder check.
-	- Use GlobalAppointmentID for new events instead of random Guid to avoid doubling events from invitations for own attendee.
+	- Es wurden einfache Anführungszeichen in der Kategorie-Filterzeichenfolge mit Escapezeichen versehen und in EventMappingConfiguration validiert. Es darf keine Kommas oder Semikola enthalten, um Ausnahmen zu vermeiden.
+	- Verwenden des DASL-Filters anstelle der JET-Syntax zum Beheben der Kategoriefilterung für OL 2010 (64-Bit)
+	- Berücksichtigung relativer Weiterleitungen. (behebt die Autodiscovery für einige Server basierend auf cpanel / horde)
+	- UTC-Konvertierung aus der Dday.iCal-Bibliothek für die bevorstehende Erinnerungsprüfung vermeiden.
+	- Verwenden von GlobalAppointmentID für neue Ereignisse anstelle einer zufälligen Guid, um das Verdoppeln von Ereignissen aus Einladungen für den eigenen Teilnehmer zu vermeiden.
+	
 #### 1.9.0 ####
 - Neue Features
-	- Map CalDAV server colors to Outlook category colors. It is possible to choose the  category color manually or fetch the color from the server and map it to the nearest supported Outlook color.
+	- Zuordnen von CalDAV-Serverfarben zu Outlook-Kategorienfarben. Sie können die Kategoriefarbe manuell auswählen oder die Farbe vom Server abrufen und der nächsten unterstützten Outlook-Farbe zuordnen.
 - Fehlerbehebungen
-	- Don't use environment specific newline, in data sent to the server
-	- Escape Uris, which are inserted into XML documents
-	- Remove unused calDavReadWriteTimeout from config
+	- Verwendet keine umgebungsspezifischen Zeilenumbrüche für Daten, die an den Server gesendet werden.
+	- Uris, die in XML-Dokumente eingefügt werden, werden escaped.
+	- Nicht verwendete calDavReadWriteTimeout wurde aus der Konfiguration entfernt.
 
 #### 1.8.0 ####
 - Neue Features
