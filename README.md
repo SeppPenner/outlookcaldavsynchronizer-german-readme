@@ -1114,98 +1114,98 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 - CalDavWebClient wird aus CalDavDataAccess herausgerechnet.
 
 #### 0.99.9 ####
-- Dispose Folders in OptionDialog
-- Call GarbageCollector after each synchronizer run to avoid issues with recurrence exceptions
+- Löscht den Ordner in OptionDialog.
+- Ruft GarbageCollector nach jedem Synchronizer-Lauf auf, um Probleme mit Wiederholungsausnahmen zu vermeiden.
 
 #### 0.99.8 ####
-- Fix some caldav timeout issues, properly dispose WebRequests
+- Behebt einige Probleme mit dem Zeitlimit von Caldav, um WebRequests ordnungsgemäß zu beseitigen.
 
 #### 0.99.7 ####
-- Check if organizer address is empty to avoid COM Exception in GetMailUrl
-- Fix exdate calculation for moved recurrence exceptions
+- Überprüft, ob die Organiseradresse leer ist, um eine COM-Ausnahme in GetMailUrl zu vermeiden.
+- Behebt die Exdate-Berechnung für verschobene Wiederholungsausnahmen.
 
 #### 0.99.6 ####
-- Catch 404 response for empty caldav repositories from Synology
-- Some generic Refactoring
+- Fängt 404-Antwort für leere Caldav-Repositorys von Synology ab.
+- Etwas generisches Refactoring.
 
 #### 0.99.4 ####
-- Dispose Outlook-Folders after usage
-- Some more recurrence exception fixes:
-- If Outlook provides a Changed-Exception and a Deleted-Exception with the same OriginalDate the Deleted-Exception is discarded
-- Prevent skipping of Appointment-exceptions while moving
-- Swap handling of ExeptionDates and RecurrenceIDs
-- Clarify logging error
-- check if new exception is already present in target
+- Entsorgt Outlook-Ordner nach dem Gebrauch.
+- Weitere Fehlerbehebungen für Wiederholungsausnahmen:
+- Wenn Outlook eine geänderte Ausnahme und eine gelöschte Ausnahme mit demselben Originaldatum bereitstellt, wird die gelöschte Ausnahme verworfen.
+- Verhindert das Überspringen von Terminausnahmen während des Verschiebens.
+- Vertauscht die Handhabung von ExeptionDates und RecurrenceIDs.
+- Klärt den Protokollierungsfehler.
+- Überprüft, ob im Ziel bereits eine neue Ausnahme vorhanden ist.
 
 #### 0.99.3 ####
-- Fix timezone definition
+- Behebt die Definition der Zeitzone.
 
 #### 0.99.2 ####
-- fix timezone issues for syncing from Outlook to CalDav for recurrent events
-- Add local timezone info to new CalDav events
-- Set start and end date in local timezone instead of utc for CalDav events
-- fixes recurrent events that span over daylight saving time changes
-- fix calculation of exdates for recurrence exceptions
-- Fix date calculation for GetOccurence
-- Honor BYSETPOS for monthly and yearly recurrence rules
+- Behebt Zeitzonenprobleme bei der Synchronisierung von Outlook mit CalDav für wiederkehrende Ereignisse.
+- Fügt den neuen CalDav-Ereignissen lokale Zeitzoneninformationen hinzu.
+- Legt das Start- und Enddatum in der lokalen Zeitzone anstelle von utc für CalDav-Ereignisse fest.
+- Behebt wiederkehrende Ereignisse, die sich über die Sommerzeit hinweg erstrecken.
+- Berechnet Exception-Daten für Wiederholungsausnahmen.
+- Behebt die Datumsberechnung für GetOccurence.
+- Beachtet BYSETPOS für monatliche und jährliche Wiederholungsregeln.
 
 #### 0.99.1 ####
-- Improved validation of calendar url in options dialog
+- Verbesserte Überprüfung der Kalender-URL im Dialogfeld "Optionen".
 
 #### 0.99 ####
-- Fixes for google
+- Korrekturen für Google.
 
 #### 0.98 ####
-- Add SCHEDULE-AGENT=CLIENT for organizer to avoid sending invitations twice in SOGo, see ticket 45
+- Fügt SCHEDULE-AGENT = CLIENT für den Organisator hinzu, um zu vermeiden, dass Einladungen in SOGo zweimal gesendet werden, siehe Ticket 45.
 
 #### 0.97.8 ####
-- Add debug logging for caldav requests
+- Fügt die Debug-Protokollierung für Caldav-Anforderungen hinzu.
 
 #### 0.97.7 ####
-- more fixes for exchange email addresses for attendees and better logging
-- catch COM exception for not found recurrence exceptions
+- Weitere Korrekturen für den Austausch von E-Mail-Adressen für Teilnehmer und eine bessere Protokollierung.
+- Fängt eine COM-Ausnahme für nicht gefundene Wiederholungsausnahmen ab.
 
 #### 0.97.6 ####
-- more fixes for GetMailUrl
-- Improve handling of WebExceptions
+- Weitere Korrekturen für GetMailUrl.
+- Verbesserte Handhabung von WebExceptions.
 
 #### 0.97.5 ####
-- fixes for GetMailUrl for Exchange and GAL
-- fix WebException exceptions
-- response header 'location' is allowed to contain a relative Uri
+- Korrekturen für GetMailUrl für Exchange und GAL.
+- Behebt WebException-Ausnahmen.
+- Der Antwortheader "location" darf eine relative Uri enthalten.
 
 #### 0.97.3 ####
-- fix interval for yearly recurrence rules
+- Legt das Intervall für jährliche Wiederholungsregeln fest.
 
 #### 0.97.2 ####
-- add synchronization context if missing
-- fix for task sync if start and due dates are equal
+- Fügt einen Synchronisationskontext hinzu, falls er fehlt.
+- Korrekturen für die Task-Synchronisierung, wenn Start- und Fälligkeitsdatum gleich sind.
 
 #### 0.97.1 ####
-- swap default values for sync timespans in options dialog
-- catch exceptions if PR_SMTP_ADDRESS property not available
-- set meetingstatus to nonmeeting if only own organizer and no attendees are present
+- Vertauscht die Standardwerte für die Synchronisierungszeiträume im Dialogfeld "Optionen".
+- Fängt Ausnahmen ab, wenn die PR_SMTP_ADDRESS-Eigenschaft nicht verfügbar ist.
+- Stellt den Besprechungsstatus auf Nicht-Treffen ein, wenn nur der eigene Organisator und keine Teilnehmer anwesend sind.
 
 #### 0.97 ####
-- Initial task sync support (alpha)
-- Make caldav requests async, Outlook UI stays responsive during caldav get requests
-- some recurrence fixes
-- improve total progress handling
+- Erste Task-Synchronisierungsunterstützung (Alpha)
+- Caldav-Anforderungen asynchron machen, Outlook-Benutzeroberfläche reagiert während Caldav-Abrufanforderungen
+- Einige Wiederholungskorrekturen
+- Verbessert die Handhabung des gesamten Fortschritts
 
 #### 0.96 ####
-- Fixes for google
+- Korrekturen für Google.
 
 #### 0.95.1 ####
-- Fix getting smtp address for exchange users
+- Behebt die Einstellung der SMTP-Adresse für Exchange-Benutzer.
 
 #### 0.95 ####
-- Implement 301,302 redirects to support Zimbra
-- Add validation for options
+- Implementiert 301.302 Weiterleitungen zur Unterstützung von Zimbra.
+- Fügt Validierung für Optionen hinzu.
 
 #### 0.94 ####
-- Fix exception in initial mapping if event subject or summary is null
+- Behebt eine Ausnahme in der anfänglichen Zuordnung, wenn der Betreff oder die Zusammenfassung des Ereignisses null ist
 
-## User Documentation ##
+## Benutzerdokumentation ##
 
 After installing the plugin, a new ribbon called 'Caldav Synchronizer' is added in Outlook with 6 menu items. 
 - Synchronize now
