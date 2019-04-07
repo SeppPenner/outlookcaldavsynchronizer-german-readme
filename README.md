@@ -913,42 +913,42 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 #### 1.8.0 ####
 - Neue Features
-	- Add filtering on outlook side, so that multiple CalDAV-Calendars can be synchronized into one Outlook calendar via an Outlook category
-	- Add mapping configuration options for Contacts (Enable or Disable mapping of Birthdays, feature #12)
-	- Provide entity version (etag) on delete and set If-Match header
-	- Add option to synchronize just upcoming reminders.
-	- Autodiscovery improvemnts: Ignore xml Exceptions during Autodiscovery (needed for some wrong owncloud server paths)  and try hostname without path too if well-known not available, fixes autodiscovery for posteo (https://posteo.de:8443), Display if no resources were found via well-known URLs
+	- Filterung auf der Outlook-Seite hinzugefügt, so dass mehrere CalDAV-Kalender über eine Outlook-Kategorie in einem Outlook-Kalender synchronisiert werden können
+	- Mapping-Konfigurationsoptionen für Kontakte hinzugefügt (Mapping von Geburtstagen aktivieren oder deaktivieren, Feature #12).
+	- Entity-Version (Etag) beim Löschen bereitstellen und If-Match-Header festlegen
+	- Option hinzugefügt, um gerade anstehende Erinnerungen zu synchronisieren.
+	- Verbesserungen bei der AutoErmittlung: Ignoriert XML-Ausnahmen während der AutoErmittlung (wird für einige falsche owncloud-Serverpfade benötigt) und versucht, den Hostnamen auch ohne Pfad zu verwenden, wenn well-known nicht verfügbar, behebt die AutoErmittlung für posteo (https://posteo.de:8443), Anzeigen, wenn keine Ressourcen über bekannte URLs gefunden wurden.
 - Fehlerbehebungen
-	- Filter out SOGo vlists (contenttype text/x-vlist) since we can't parse them atm, avoids syncing vlists to a empty vcard and destroying the vlist when syncing back to SOGo
-	- Trim category names for events,tasks and contacts when mapping to caldav
-	- Use ENCODING=b instead of BASE64 according to vcard 3.0 spec for binary attributes
+	- Filtert SOGo-Vlists (contenttype text / x-vlist) heraus, da diese momentan nicht analysiert werden können. Dadurch wird vermieden, dass Vlisten mit einer leeren Vcard synchronisiert werden und die Vlist zerstört wird, wenn Sie wieder mit SOGo synchronisieren.
+	- Beschneidet Kategorienamen für Ereignisse, Aufgaben und Kontakte bei der Zuordnung zu caldav.
+	- Verwendet ENCODING=b anstelle von BASE64 gemäß der vcard 3.0-Spezifikation für binäre Attribute.
 
 #### 1.7.0 ####
 - Neue Features
-	- GUI redesign for Google profiles to simplify setup and autodiscovery for google accounts. When creating a new sync profile you can choose between a generic CalDAV/CardDAV and a google profile. For google it is sufficient to enter the Email address and autodiscovery will try to find resources once OAuth is configured.
-	- Improvements in autodisovery logic
-	- Calendar Colors are now shown in Autodiscovery SelectResourceForm, syncing colors to Outlook categories is work in progress.
-	- Add group label to Ribbon and set ScreenTips and SuperTips
+	- GUI-Neugestaltung für Google-Profile zur Vereinfachung der Einrichtung und automatischen Erkennung von Google-Konten. Beim Erstellen eines neuen Synchronisierungsprofils können Sie zwischen einem generischen CalDAV / CardDAV- und einem Google-Profil wählen. Für Google reicht es aus, die E-Mail-Adresse einzugeben. Die automatische Erkennung versucht, nach der Konfiguration von OAuth nach Ressourcen zu suchen.
+	- Verbesserungen der Autodisovery-Logik.
+	- Kalenderfarben werden jetzt in "AutoErmittlung" angezeigt. SelectResourceForm. Das Synchronisieren von Farben mit Outlook-Kategorien ist in Arbeit.
+	- Gruppenbeschriftung im Menüband hinzugefügt und ScreenTips und SuperTips festgelegt.
 - Fehlerbehebungen
-	- Clear ol phonenumbers before updating, fixes doubling of home and work numbers, ticket #142
-	- Change TabIndex ordering, ticket #140
-	- Delete profile cache also when username is changed, helps when google id is changed , ticket #141
-	- Delete profile cache also when time range filter is modified or deactivated, ticket #138
-	- Fix calDavDateTimeFormatString and use today instead of now to filter timerange
-	- Add missing quotes to etags on system boundaries.
+	- Löscht alte Telefonnummern vor dem Update, behebt die Verdoppelung der Heimat- und Arbeitsnummern, Ticket #142.
+	- Änderungen der TabIndex-Ordnung, Ticket #140.
+	- Löscht den Profilcache auch bei einer Änderung des Benutzernamens, hilft bei der Änderung der Google-ID, Ticket #141.
+	- Löscht den Profil-Cache auch bei einer Änderung oder Deaktivierung des Zeitbereichsfilters. Ticket #138.
+	- Korrigiert calDavDateTimeFormatString und verwendet heute anstelle von jetzt Timer-Filter.
+	- Fügt Etags an Systemgrenzen fehlende Anführungszeichen hinzu.
 
 #### 1.6.0 ####
 - Neue Features:
-	- Provide entity version (etag) on update and set If-Match header
-	- Implement own vCardImprovedWriter to fix serialization problems of vCardStandardWriter and avoid costly Regex workarounds 
-	- Add TYPE=HOME for personal homepages
+	- Stellt die Entitätsversion (etag) für das Update bereit und setzt den If-Match-Header
+	- Implementiert einen eigenen vCardImprovedWriter, um Serialisierungsprobleme von vCardStandardWriter zu beheben und kostspielige Regex-Workarounds zu vermeiden
+	- Fügt TYPE = HOME für persönliche Homepages hinzu
 - Fehlerbehebungen:
-	- Fix mapping of HomeFaxNumber for vcards, ticket #134
-	- Log Exceptions during ConnectionTests and don't try to list calendars or addressbooks for empty homesets, fixes github issue #82
-	- Fix GetContacts for Yandex, since Yandex returns directory itself even with an etag
-	- Improve error handling
-	- Fixes TYPE subproperties needed for Yandex vcards
-	- Ensure that Etag is double quoted when adding in Entity repositories, since some caldav servers like yandex send etags without quotes
+	- Behebt die Zuordnung von HomeFaxNumber für Vcards, Ticket #134.
+	- Protokolliert Ausnahmen während Verbindungstests und versucht nicht, Kalender oder Adressbücher für leere Homesets aufzulisten. Behebt das Problem #82 von Github.
+	- Behebt GetContacts für Yandex, da Yandex selbst mit einem etag das Verzeichnis selbst zurückgibt.
+	- Verbesserte Fehlerbehandlung.
+	- Behebt die für Yandex-Vcards erforderlichen TYPE-Subeigenschaften.
+	- Stellt sicher, dass Etag beim Hinzufügen in Entity-Repositorys in doppelte Anführungszeichen gesetzt wird, da einige Caldav-Server wie Yandex ETAGs ohne Anführungszeichen senden.
 	
 #### 1.5.4 ####
 - Neue Features:
