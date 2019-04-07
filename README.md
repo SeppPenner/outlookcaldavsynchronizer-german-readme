@@ -952,88 +952,88 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 	
 #### 1.5.4 ####
 - Neue Features:
-	- General options in GUI for changing SSL options and other global settings
-	- Add option to store state information in Appdata\Roaming instead of Local, Ticket #125
-	- Add mapping configuration options for Appointments (Enable or Disable mapping of reminders, attendees or the description body)
-	- Add Donate link to About Dialog
-	- Add context menu to options , which allows to open the cache directory
+	- Allgemeine Optionen in der Benutzeroberfläche zum Ändern von SSL-Optionen und anderen globalen Einstellungen
+	- Option hinzugefügt, um Statusinformationen in Appdata\Roaming statt Local zu speichern. Ticket #125.
+	- Mapping-Konfigurationsoptionen für Termine hinzugefügt (Mapping von Erinnerungen, Teilnehmern oder Beschreibungstext aktivieren oder deaktivieren).
+	- Spendenlink zu About Dialog hinzugefügt.
+	- Kontextmenü zu Optionen hinzugefügt, wodurch das Cache-Verzeichnis geöffnet werden kann.
 - Fehlerbehebungen:
-	- Fix mapping of ORG property to CompanyName and Department for vcards, ticket #127
-	- Catch COM Exceptions when trying to add invalid Outlook items in repositories, ticket #130
-	- Fix for unescaping relative urls for entity ids, ticket #129
+	- Die Zuordnung der ORG-Eigenschaft zu CompanyName und der Abteilung für Vcards wurde korrigiert. Ticket #127.
+	- Fängt COM-Ausnahmen ab, wenn versucht wird, ungültige Outlook-Elemente in Repositorys hinzuzufügen, Ticket #130.
+	- Korrekturen für das Ausblenden relativer URLs für Entitäts-IDs, Ticket #129.
 
 #### 1.5.3 ####
-- Avoid Nullreference Exception which prevents syncing when there are no proxy settings in config file, bug #124
-- set correct mime type text/vcard when putting contacts
+- Vermeidet Nullreferenzausnahmen, die die Synchronisierung verhindert, wenn in der Konfigurationsdatei keine Proxy-Einstellungen vorhanden sind, Fehler #124.
+- Richten Sie den richtigen Mime-Text / Vcard ein, wenn Sie Kontakte platzieren.
 
 #### 1.5.2 ####
-- Delete profile cache, if outlook-folder or caldav-server-url is changed, ticket #117, prevents data loss and forces new inital sync in such cases
-- Fix for linebreak issues of OpenX-change, merged from pull request #79, thx to bjoernbusch
+- Löscht den Profil-Cache. Wenn der Outlook-Ordner oder der Caldav-Server-URL geändert wird, Ticket #117. Verhindert den Datenverlust und erzwingt in solchen Fällen eine neue Anfangssynchronisierung.
+- Fix für Linebreak-Probleme von OpenX-change, zusammengeführt von Pull-Request #79, danke an bjoernbusch.
 
 #### 1.5.1 ####
 - Neue Features:
-	- Support for proxy configuration in GUI to specify manual proxy settings and allow Basic Auth and NTLM proxies
+	- Unterstützung für die Proxy-Konfiguration in der GUI, um manuelle Proxy-Einstellungen festzulegen und Basic Auth- und NTLM-Proxies zuzulassen.
 - Fehlerbehebungen:
-	- Use ContactItemWrapper and reload Items to avoid a second sync with a changed modification time in Outlook, see ticket #111
-	- Avoid sending meeting response if meeting is self organized
-	- Avoid unnecessary connection tests during autodiscovery, fixes Google CardDAV autodiscovery
+	- Verwendet ContactItemWrapper und lädt Elemente erneut, um eine zweite Synchronisierung mit einer geänderten Änderungszeit in Outlook zu vermeiden, siehe Ticket #111.
+	- Verhindert das Senden von Meeting-Antworten, wenn das Meeting selbst organisiert ist.
+	- Vermeidet unnötige Verbindungstests während der automatischen Erkennung, behebt die automatische Erkennung von Google CardDAV.
 
 #### 1.5.0 ####
 - Neue Features:
-	- Autodiscovery for CardDAV addressbooks
-	- Change-triggered partial sync (Synchronize appointment items immediately after change in Outlook)
-	- Support Yandex CalDAV server
-	- Many improvements for CardDAV
-	- Add OAuth Scope for Google CardDAV
+	- Autodiscovery für CardDAV-Adressbücher
+	- Änderungsgesteuerte Teilsynchronisierung (Terminelemente sofort nach Änderung in Outlook synchronisieren).
+	- Unterstützt den Yandex CalDAV-Server.
+	- Viele Verbesserungen für CardDAV.
+	- Fügt OAuth Scope für Google CardDAV hinzu.
 - Fehlerbehebungen:
-	- Fix syncing contact notes with umlauts
-	- Disable TimeRangeFiltering when contact folder is chosen
-	- Ensure that FN of vcard is not empty, since it is a MUST attribute (bug #109)
-	- Map AccessClassification of vcards
-	- Ensure that vcard UID is not empty also in Updates
-	- Skip addressbook collection itself when fetching vcards from Owncloud
-	- Use existing UID for filename in PUT requests
-	- Get ETAG via propfind if it is not returned in header to avoid Null Reference
-	- Check also for Write privilege when detecting calendar access rights
-	- Map other vcard telephonenumber types
-	- Honor RevisionDate in vcard Updates if available (bug #111)
-	- Fix InitialEventEntityMatcher if DTEnd is null (bug #110)
-	- Filter only ContactItems in ContactRepository GetTable to avoid COM Exceptions, since we don't sync groups or distribution lists at the moment
-	- Avoid exception in Autodiscovery DoubleClick EventHandler when clicking the header
+	- Korrigieren der Synchronisierung von Kontaktnotizen mit Umlauten.
+	- Deaktiviert TimeRangeFiltering, wenn der Kontaktordner ausgewählt wird.
+	- Stellt sicher, dass die FN von vcard nicht leer ist, da es ein MUST-Attribut ist (Bug #109).
+	- Mappe ZugriffKlassifizierung von Vcards.
+	- Stellt sicher, dass die vcard-UID auch in Updates nicht leer ist.
+	- Überspringt die Adressbuchsammlung selbst, wenn Vcards von Owncloud abgerufen werden.
+	- Verwendet eine vorhandene UID für Dateinamen in PUT-Anforderungen.
+	- Ruft ETAG über propfind ab, wenn es nicht im Header zurückgegeben wird, um Nullreferenz zu vermeiden.
+	- Überprüft auch das Schreibrecht beim Erkennen von Kalenderzugriffsrechten.
+	- Ordnet andere vcard-telefonnummern zu.
+	- Erkennt RevisionDate in vcard-Updates, falls verfügbar (Fehler #111).
+	- Behebt InitialEventEntityMatcher, wenn DTEnd null ist (Fehler #110).
+	- Filtert nur ContactItems in ContactRepository GetTable, um COM-Ausnahmen zu vermeiden, da derzeit keine Gruppen oder Verteilerlisten synchronisiert werden.
+	- Vermeidet Ausnahmen beim automatischen Erkennen von DoubleClick EventHandler, wenn Sie auf die Kopfzeile klicken.
 
 #### 1.4.5 ####
-- Fix regex in workaround for DDay.iCal timezone parsing, should fix bug #105 for syncing with Owncloud/Davdroid
-- Rework of exdate generation to work around some strange Outlook Exception Collection missing elements, fixes Bug #91 and other recurrence exceptions with complex patterns
+- Behebt Regex in der Problemumgehung für die DDay.iCal-Zeitzonenanalyse, sollte Bug #105 für die Synchronisierung mit Owncloud/Davdroid beheben.
+- Überarbeitung der Exdate-Generierung, um einige seltsame Elemente der Outlook Exception Collection zu umgehen, Fehler #91 und andere Wiederholungsausnahmen mit komplexen Mustern zu beheben.
 
 #### 1.4.4 ####
-- Another fix for VTIMEZONE definition for Google, hopefully fixes US and Moscow timezone
-- Add UID when vCard is created, according to the RFC UID is mandatory
-- Another fix for recurrence exceptions and exdates for Bug #101
-- Handle exceptions when updating outlook folders or during profile loading at startup
+- Ein weiterer Fix für die VTIMEZONE-Definition für Google, behebt hoffentlich die Fehler mit den Zeitzonen in den USA und in Moskau.
+- Fügt eine UID hinzu, wenn vCard erstellt wird. Die RFC-UID ist obligatorisch.
+- Ein weiterer Fix für Wiederholungsausnahmen und -daten für Bug #101.
+- Behandelt Ausnahmen beim Aktualisieren von Outlook-Ordnern oder beim Laden des Profils beim Start.
 
 #### 1.4.3 ####
-- Another DDay.iCal Workaround to fix VTIMEZONE generation for timezones wih changing DST rules like Moscow or Cairo
-- bugfix: Use timezone ID for comparison, avoid exporting double VTIMEZONE definitons
-- Options for not using keepalive and accepting invalid headers added
+- Eine weitere DDay.iCal Workaround, um die TIMEZONE-Generierung für Zeitzonen mit sich ändernden DST-Regeln wie Moskau oder Kairo festzulegen.
+- bugfix: Verwendet die Zeitzonen-ID zum Vergleich und vermeidet den Export von doppelten TIMEZONE-Definitionen.
+- Optionen hizugefügt, um Keepalive nicht zu verwenden und ungültige Header zu akzeptieren.
 
 #### 1.4.2 ####
-- Use StartTimeZone and EndTimeZone of events if different to system timezone
-- Map server timezones to Windows Timezones and set time in StartTimeZone to fix recurring events which span DST shifts (fixes bug #94)
-- Fix many cases of mapping recurrence exceptions and finding them over DST changes or if Outlook and Server are in different timezones
-- Fix for bug #101, wrong exdate calculation
-- Fix originalDate calculation of recurrence exceptions if they are on previous day in UTC
-- Don't export historical timezone data before 1970
+- Verwendet StartTimeZone und EndTimeZone von Ereignissen, wenn sie sich von der Systemzeitzone unterscheiden.
+- Ordnet Server-Zeitzonen Windows-Zeitzonen zu und legt die Zeit in StartTimeZone fest, um wiederkehrende Ereignisse zu beheben, die DST-Verschiebungen umfassen (behebt Fehler #94).
+- Behebt viele Fälle, in denen Mapping-Wiederholungsausnahmen auftreten und über DST-Änderungen oder wenn sich Outlook und Server in unterschiedlichen Zeitzonen befinden.
+- Fix für Bug #101, falsche Exdate-Berechnung.
+- Korrektur der ursprünglichen Datumsberechnung für Wiederholungsausnahmen, wenn sie sich am Vortag in UTC befinden.
+- Exportiert keine historischen Zeitzonen vor 1970.
 
 #### 1.4.1 ####
-- Add mapping of IMAddress for contacts
-- Add mapping of contact notes
-- Fix vcard mapping for fax numbers and address type other
-- Add doubleclick eventhandler for Autodiscovery
-- Fixed TestConnection behavior, so that cancelling Autodiscovery works
-- Add mapping of contact photos
-- Mapping of FormattedName for contacts
-- Add mapping for X509 certificates for contacts (e.g. S/MIME) to vCard KEY attribute
-- Implement EmailAddress Mapping for Exchange contacts (type "EX")
+- Fügt die Zuordnung von IMAddress für Kontakte hinzu.
+- Fügt Zuordnung von Kontaktnotizen hinzu.
+- Behebt die vcard-Zuordnung für Faxnummern und andere Adressarten.
+- Fügt einen Doppelklick-Ereignishandler für die AutoErmittlung hinzu.
+- Das Verhalten von TestConnection wurde korrigiert, so dass das Abbrechen der automatischen Erkennung funktioniert.
+- Fügt das Mapping von Kontaktfotos hinzu.
+- Zuordnung von FormattedName für Kontakte.
+- Fügt Mapping für X509-Zertifikate für Kontakte (z. B. S / MIME) zum Attribut vCard KEY hinzu.
+- Implementiert EmailAddress Mapping für Exchange-Kontakte (Typ "EX").
 
 #### 1.4.0 ####
 - Initial CardDAV support to sync contacts (alpha)
