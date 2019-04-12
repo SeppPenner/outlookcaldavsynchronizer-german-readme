@@ -119,6 +119,16 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 ### Änderungsprotokoll ###
 
+#### 3.6.0 ####
+- Erschienen am 10.04.2019
+- Neue Features
+	- Zuordnung für Outlook-Kontakte AssistantName, Gatte und ManagerName zu vCard X-ASSISTANT, X-SPOUSE und X-MANAGER hinzugefügt.
+	- Aktualisiertes Profillogo von mailbox.org.
+	- Aktualisierte NuGet-Pakete.
+- Fehlerbehebungen
+	- Übernimmt die vorhandene Farbe aus der vorhandenen Kategorie anstelle des Wörterbuchs, um eine KeyNotFoundException zu verhindern. Github issue #251.
+	- Reduzierung der Höhe des Optionsfensters zur Verbesserung der Anzeige für kleinere Bildschirmgrößen.
+
 #### 3.5.0 ####
 - Erschienen am 26.02.2019
 - Neue Features
