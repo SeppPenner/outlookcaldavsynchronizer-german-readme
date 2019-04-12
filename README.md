@@ -126,7 +126,7 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 	- Aktualisiertes Profillogo von mailbox.org.
 	- Aktualisierte NuGet-Pakete.
 - Fehlerbehebungen
-	- Übernimmt die vorhandene Farbe aus der vorhandenen Kategorie anstelle des Wörterbuchs, um eine KeyNotFoundException zu verhindern. Github issue #251.
+	- Übernimmt die vorhandene Farbe aus der vorhandenen Kategorie anstelle des Wörterbuchs, um eine KeyNotFoundException zu verhindern. Github-Issue #251.
 	- Reduzierung der Höhe des Optionsfensters zur Verbesserung der Anzeige für kleinere Bildschirmgrößen.
 
 #### 3.5.0 ####
