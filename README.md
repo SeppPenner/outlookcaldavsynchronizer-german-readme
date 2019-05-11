@@ -119,6 +119,13 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 ### Änderungsprotokoll ###
 
+#### 3.6.1 ####
+- Erschienen am 23.04.2019
+- Bug fixes
+	- Google-Kontakte-Synchronisierung aufgrund geänderter nativer API gefixt.
+	- Aktualisierung der Google API NuGet-Pakete.
+	- Angepasste Google-Integrationstests.
+
 #### 3.6.0 ####
 - Erschienen am 10.04.2019
 - Neue Features
