@@ -119,6 +119,15 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 ### Änderungsprotokoll ###
 
+#### 3.6.2 ####
+
+- Erschienen am 26.06.2019
+- Bug fixes
+	- Legt den Autorisierungsheader manuell fest, wenn forceBasicAuthentication aktiviert ist, um Probleme mit einigen Serverkonfigurationen zu beheben, die andernfalls mit 401 fehlschlagen.
+	- WebResourcUrls auf https aktualisiert.
+	- Aktualisieren des AboutForm-Layouts und des LicenseInfo-Texts.
+	- Korrektur globaler Optionen für den Integrationstest.
+
 #### 3.6.1 ####
 - Erschienen am 23.04.2019
 - Bug fixes
