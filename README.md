@@ -119,10 +119,21 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 ### Änderungsprotokoll ###
 
+#### 3.7.0 ####
+
+- Erschienen am 14.11.2019
+- Neue Features
+	- Unterstützung für Ressourcen mit urn: uuid-Werten und EMAIL-Eigenschaft zu Teilnehmern hinzugefügt.
+	- Bericht zur Suche nach Principal-Eigenschaften hinzugefügt, um die Ressourcen-ID aus dem Anzeigenamen zu ermitteln.
+	- Unterstützung für X-KIND und X-MEMBER in vCard für Kontaktgruppen hinzugefügt, Ticket Nr. 1267.
+- Fehlerbehebungen
+	- Die Zuordnung abgeschlossener Aufgaben wurde korrigiert, wenn PercentComplete nicht gesetzt ist. Tickets Nr. 1211 und Nr. 1273.
+	- Der Titel des Importprofilfensters wurde korrigiert. Ticket Nr. 1235.
+
 #### 3.6.2 ####
 
 - Erschienen am 26.06.2019
-- Bug fixes
+- Fehlerbehebungen
 	- Legt den Autorisierungsheader manuell fest, wenn forceBasicAuthentication aktiviert ist, um Probleme mit einigen Serverkonfigurationen zu beheben, die andernfalls mit 401 fehlschlagen.
 	- WebResourcUrls auf https aktualisiert.
 	- Aktualisieren des AboutForm-Layouts und des LicenseInfo-Texts.
@@ -130,7 +141,7 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 #### 3.6.1 ####
 - Erschienen am 23.04.2019
-- Bug fixes
+- Fehlerbehebungen
 	- Google-Kontakte-Synchronisierung aufgrund geänderter nativer API gefixt.
 	- Aktualisierung der Google API NuGet-Pakete.
 	- Angepasste Google-Integrationstests.
