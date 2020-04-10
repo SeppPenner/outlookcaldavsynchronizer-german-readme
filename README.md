@@ -119,6 +119,16 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 ### Änderungsprotokoll ###
 
+#### 3.8.0 ####
+
+- Erschienen am 09.04.2020
+- Neue Features
+	- Unterstützung für externe Mitglieder mit E-Mail und CN in iCloud-Gruppen für die Zuordnung von Verteilungslisten.
+- Fehlerbehebungen
+	- Google API und andere NuGet-Pakete aktualisiert.
+	- Verwenden von Utc für aVersion LastModification-Zeitstempel im Cache, um eine vollständige Neusynchronisierung zu vermeiden, wenn sich die Windows-Zeitzone ändert, Ticket Nr. 1266.
+	- Codesignaturzertifikat aktualisiert.
+
 #### 3.7.0 ####
 
 - Erschienen am 14.11.2019
