@@ -119,6 +119,11 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 ### Änderungsprotokoll ###
 
+#### 3.8.1 ####
+- Erschienen am 24.06.2020
+- Fehlerbehebungen
+	- HOTFIX: JavaScript-Fehler während swisscom oauth unterdrücken.
+
 #### 3.8.0 ####
 
 - Erschienen am 09.04.2020
