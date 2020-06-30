@@ -119,6 +119,12 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 ### Änderungsprotokoll ###
 
+#### 3.8.2 ####
+- Erschienen am 30.06.2020
+- Fehlerbehebungen
+	- Korrektur der Schaltflächenbreite "Neue Version installieren" für nicht englische Gebietsschemas.
+	- Korrektur der Assembly-Info-Version für das OAuth.Swisscom-Projekt und Verknüpfung mit CalDavSynchronizer-Dateien.
+
 #### 3.8.1 ####
 - Erschienen am 24.06.2020
 - Fehlerbehebungen
