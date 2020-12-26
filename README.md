@@ -108,7 +108,7 @@ Wir arbeiten eng zusammen und testen die Interopabilität mit DAVx⁵ für Andro
 
 ### Installationsanweisungen ###
 
-**WARNUNG**: Ab Release 3.0.0 ist .NET Framework 4.6.1 die Mindestanforderung.
+**WARNUNG**: Ab Release 4.0.0 ist .NET Framework 4.8 die Mindestanforderung.
 
 Laden Sie die `OutlookCalDavSynchronizer-<Version>.zip`-Datei herunter, entpacken Sie sie in ein beliebiges Verzeichnis und starten Sie die Datei setup.exe. Sie können den Standardinstallationspfad ändern, aber Sie müssen ein Verzeichnis auf dem `C:\` -Laufwerk verwenden. Wenn sich das Installationsprogramm über die fehlenden Visual Studio 2010-Tools für Office Runtime beschwert, installieren Sie es manuell über [Microsoft Download-Link](https://www.microsoft.com/en-us/download/details.aspx?id=56961).
 Sie sollten auch manuell auf die neuesten Visual Studio 2010 Tools für Office Runtime (Version 10.0.60828) aktualisieren, wenn Sie eine ältere Version installiert haben, da einige COMExceptions behoben wurden.
@@ -118,6 +118,21 @@ Ab Version 2.9.0 ist das Standardinstallationsverzeichnis `ProgramFilesDir\CalDa
 Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal erforderliche Version ist .NET 4.6.1, die unter Windows XP nicht unterstützt wird. Wenn Sie Outlook CalDav Synchronizer für Windows XP benötigen, können Sie von [hier](https://sourceforge.net/projects/outlookcaldavsynchronizerxp/) einen Backport auf .Net 4.0 herunterladen, danke, [Salvatore Isaja](https://sourceforge.net/u/salvois/profile/) für die großartige Arbeit!
 
 ### Änderungsprotokoll ###
+
+#### 4.0.0 ####
+- Erschienen am 30.11.2020
+- **WARNUNG**: Diese Version ist ein größeres Upgrade und benötigt als Mindestanforderung .NET Framework 4.8. Das automatische Upgrade funktioniert nicht, wenn nur .NET Framework 4.6.1 installiert ist. In diesem Fall bitte manuell installieren und aktualisieren!
+- Neue Features
+	- Unterstützung für .NET Framework 4.8.
+	- Unterstützung für TLS 1.3.
+	- Die Google Task-API wurde aktualisiert.
+	- Die NuGet-Bibliotheken wurden aktualisiert.
+	- Der Fuago-Kontakt für Outlook Sync für OX wurde hinzugefügt. Wenden Sie sich an [OSfO@fuago.io] (mailto: OSfO@fuago.io).
+- Fehlerbehebungen
+	- Die Synchronisierung für leere Aufgabenlisten und die Suche nach versteckten Aufgaben (für abgeschlossene Aufgaben erforderlich) wurden behoben. Das Ticket Nr. 1377 und das Problem Nr. 280 wurden behoben.
+	- PostBuildEvent gefixt, dass auch setup.exe signiert wird.
+	- Microsoft.Bcl.Build-Referenz wurde entfernt.
+	- Zu Paketreferenzen und VS 2019 migriert.
 
 #### 3.8.2 ####
 - Erschienen am 30.06.2020
