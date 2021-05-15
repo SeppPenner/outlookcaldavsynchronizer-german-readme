@@ -119,6 +119,16 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 ### Änderungsprotokoll ###
 
+#### 4.1.0 ####
+- Erschienen am 12.05.2021
+- Neue Features
+	- Neue Adressbuch-Profilbehandlung für Profiltyp Swisscom.
+	- Verwenden der Google OAuth-Bibliothek zur Authentifizierung im Swisscom-Profil.
+	- Aktualisierung der Google NuGet-Bibliotheken.
+- Fehlerbehebungen
+	- Festlegen der CurrentUICulture beim Start von CompontentContainer, um Probleme zu vermeiden, bei denen die Lokalisierung in einigen Dialogfeldern nicht funktioniert hat, z. Github-Issue 241.
+	- Verbesserungen an der naive Behandlung von Zeichenfolgen in der vcard-Parser-Bibliothek. Behobene Leistungsprobleme beim Synchronisieren großer Bilder, Github-Issue 299.
+
 #### 4.0.0 ####
 - Erschienen am 30.11.2020
 - **WARNUNG**: Diese Version ist ein größeres Upgrade und benötigt als Mindestanforderung .NET Framework 4.8. Das automatische Upgrade funktioniert nicht, wenn nur .NET Framework 4.6.1 installiert ist. In diesem Fall bitte manuell installieren und aktualisieren!
