@@ -119,6 +119,19 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 ### Änderungsprotokoll ###
 
+#### 4.2.0 ####
+- Erschienen am 02.03.2022
+- Neue Features
+	- Aktualisierung des NuGet-Pakets für log4net, CVE-2018-1285, Github issue #343.
+- Fehlerbehebungen
+ 	- Behandlung des Schließens von OptionsWindow korrigiert.
+ 	- Alle Telefonnummern zurücksetzen, nicht nur die Hauptnummern, Github issue #342.
+ 	- Validierung das Swisscom-Profils und Überprüfung, ob der Kontaktordner ausgewählt ist.
+ 	- Standardmäßig wird CardDAV für das Google-Massenprofil verwendet, da die native API geändert wurde und aktualisiert werden muss.
+ 	- Behebung der Autodiscovery und Ignorieren des 400-Fehlers bei der Abfrage der Google CardDAV-Adressbuchressource.
+ - Bekannte Probleme
+ 	- Google Contact API wurde geändert und wird daher nicht mehr unterstützt. Bitte verwende inzwischen CardDAV anstelle der nativen Google API.
+
 #### 4.1.0 ####
 - Erschienen am 12.05.2021
 - Neue Features
