@@ -119,6 +119,18 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 ### Änderungsprotokoll ###
 
+#### 4.3.0 ####
+- Erschienen am 05.07.2022
+- Security Fixes
+	- NuGet-Pakete aktualisiert. (behebt eine Sicherheitslücke in Newtonsoft.Json).
+- Neue Features
+	- Übersetzung für vereinfachtes Chinesisch hinzugefügt (中国) [zh-CN]. Danke an Liu Yihua (yihuajack)
+	- Profiltyp untermStrich eingefügt.
+- Fehlerbehebungen
+	- PasswordBox ausblenden, wenn UsaAccountPassword aktiviert ist, um die Profilerstellung im ServerSettings Dialog zu verbessern.
+	- Korrektur von Tippfehlern in der fr-FR Übersetzung.
+	- Fix der WebDavSync-Einstellung in der Profilauswahl nach einem Ordnerwechsel.
+
 #### 4.2.0 ####
 - Erschienen am 02.03.2022
 - Neue Features
