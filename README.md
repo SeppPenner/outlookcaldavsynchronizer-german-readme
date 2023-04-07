@@ -119,13 +119,31 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 ### Änderungsprotokoll ###
 
+#### 4.4.0 ####
+- Erschienen am 21.03.2023
+- Neue Features
+	- Implementierung von PKCE für Swisscom Oauth2 Anfragen.
+	- NuGet-Pakete aktualisiert.
+	- mailbox.org Logo aktualisiert.
+	- Optimierung des vCardStandardReader/Writer und Verwenden von LINQ.
+	- Implementierung eines neuen RemoveInvalidXmlCharacterStreamReader für die Option "Accept invalid chars" in der Server-Antwort.
+- Fehlerbehebungen
+	- Tippfehler korrigiert und Übersetzung für den Dialog "Profilfenster schließen" hinzugefügt.
+	- Leere Foto-URI ignorieren, Sourceforge-Ticket 1822.
+	- Erzwingen grundlegender Authentifizierung als Standard für neue Profile, mit CredentialCache gibt es Probleme mit akzentuierten Zeichen in Passwörtern, Issue 1774, Github-Issue #363.
+	- Passwort und Salt nicht serialisieren für Profile, bei denen UseAccountPassword aktiviert ist, Github-Issue #364.
+	- ProxyPassword nicht serialisieren, wenn DefaultProxy aktiviert ist.
+	- Abfangen möglicher Ausnahmen beim Zugriff auf MAPI-Ordner beim Abrufen von ItemCount, sollte das Laden von Profilen beheben, wenn auf Ordner nicht zugegriffen werden kann, Github-Issue #310,#381.
+	- NoEndDate explizit auf true gesetzt für wiederkehrende Ereignisse und Aufgaben, Github-Issue #334.
+	- Entfernen ungültiger XML-Zeichen aus Termin-, Aufgaben- und vcard-kodierten Zeichenketten.
+
 #### 4.3.0 ####
 - Erschienen am 05.07.2022
 - Security Fixes
 	- NuGet-Pakete aktualisiert. (behebt eine Sicherheitslücke in Newtonsoft.Json).
 - Neue Features
 	- Übersetzung für vereinfachtes Chinesisch hinzugefügt (中国) [zh-CN]. Danke an Liu Yihua (yihuajack)
-	- Profiltyp untermStrich eingefügt.
+	- Profiltyp unterm Strich eingefügt.
 - Fehlerbehebungen
 	- PasswordBox ausblenden, wenn UsaAccountPassword aktiviert ist, um die Profilerstellung im ServerSettings Dialog zu verbessern.
 	- Korrektur von Tippfehlern in der fr-FR Übersetzung.
