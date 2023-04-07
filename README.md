@@ -119,6 +119,11 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 ### Änderungsprotokoll ###
 
+#### 4.4.1 ####
+- Erschienen am 06.04.2023
+- Fehlerbehebungen
+	- Behebung des Regressionsfehlers Github-Issue #388, wiederkehrende Ereignisse und Aufgaben mit COUNT!=0, Sourceforge-Ticket 1770.
+
 #### 4.4.0 ####
 - Erschienen am 21.03.2023
 - Neue Features
