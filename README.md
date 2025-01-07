@@ -119,6 +119,13 @@ Es wird empfohlen, auf das neueste .NET-Framework zu aktualisieren. Die minimal 
 
 ### Änderungsprotokoll ###
 
+#### 4.5.0 ####
+- Erschienen am 26.12.2024
+- Neue Features
+	- Update der NuGet-Pakete.
+	- Verwenden der Unicolour-Bibliothek für den Farbvergleich und entfernen des ColorMine-Pakets.
+	- Die JSON-Webseite verwenden, um nach einer neuen Version zu suchen.
+
 #### 4.4.1 ####
 - Erschienen am 06.04.2023
 - Fehlerbehebungen
